@@ -27,6 +27,9 @@ public class HordeInterface extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFrame1 = new javax.swing.JFrame();
+        MapIcone = new javax.swing.JLabel();
+        jPopupMenu1 = new javax.swing.JPopupMenu();
         jPanel1 = new javax.swing.JPanel();
         PAProgressBar = new javax.swing.JProgressBar();
         LifeProgressBar = new javax.swing.JProgressBar();
@@ -56,6 +59,11 @@ public class HordeInterface extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
+        jButton5 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+
+        MapIcone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/map.gif"))); // NOI18N
+        jFrame1.getContentPane().add(MapIcone, java.awt.BorderLayout.CENTER);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -191,6 +199,8 @@ public class HordeInterface extends javax.swing.JFrame {
         jTextField3.setBounds(320, 20, 90, 20);
 
         jLabel17.setIcon(new javax.swing.ImageIcon("C:\\Users\\Gabriel\\Documents\\NetBeansProjects\\Horde\\HordeGraphique\\src\\hordegraphique\\Journal.png")); // NOI18N
+        jLabel17.setFocusable(false);
+        jLabel17.setInheritsPopupMenu(false);
         jPanel1.add(jLabel17);
         jLabel17.setBounds(110, 90, 990, 500);
 
@@ -238,8 +248,21 @@ public class HordeInterface extends javax.swing.JFrame {
         jPanel1.add(jTextField4);
         jTextField4.setBounds(1190, 450, 80, 20);
 
+        jButton5.setText("Afficher carte");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jButton5);
+        jButton5.setBounds(1170, 500, 120, 23);
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(jPanel2);
+        jPanel2.setBounds(640, 150, 260, 280);
+
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(-1, 0, 1310, 590);
+        jPanel1.setBounds(10, 0, 1310, 590);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -288,6 +311,11 @@ public class HordeInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
 
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here: // Boutton afficher carte
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    
     /**
      * @param args the command line arguments
      */
@@ -325,11 +353,14 @@ public class HordeInterface extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JProgressBar LifeProgressBar;
+    private javax.swing.JLabel MapIcone;
     private javax.swing.JProgressBar PAProgressBar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -349,6 +380,8 @@ public class HordeInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
