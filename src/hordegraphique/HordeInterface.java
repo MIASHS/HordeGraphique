@@ -60,7 +60,11 @@ public class HordeInterface extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        jButton6 = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList();
 
         MapIcone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/map.gif"))); // NOI18N
         jFrame1.getContentPane().add(MapIcone, java.awt.BorderLayout.CENTER);
@@ -100,7 +104,7 @@ public class HordeInterface extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(1120, 210, 160, 130);
+        jLabel3.setBounds(1130, 210, 160, 130);
 
         jLabel4.setText("Gourde");
         jPanel1.add(jLabel4);
@@ -122,7 +126,7 @@ public class HordeInterface extends javax.swing.JFrame {
         jLabel8.setText("Journal");
         jLabel8.setMaximumSize(new java.awt.Dimension(35, 16));
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(550, 60, 90, 30);
+        jLabel8.setBounds(590, 100, 90, 30);
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/Boisson.jpg"))); // NOI18N
         jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -178,7 +182,7 @@ public class HordeInterface extends javax.swing.JFrame {
 
         jTextField1.setText("Nombres tours :");
         jPanel1.add(jTextField1);
-        jTextField1.setBounds(693, 20, 90, 20);
+        jTextField1.setBounds(700, 20, 90, 20);
 
         jTextField2.setText("Jours:");
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
@@ -202,7 +206,7 @@ public class HordeInterface extends javax.swing.JFrame {
         jLabel17.setFocusable(false);
         jLabel17.setInheritsPopupMenu(false);
         jPanel1.add(jLabel17);
-        jLabel17.setBounds(110, 90, 990, 500);
+        jLabel17.setBounds(90, 60, 890, 530);
 
         jButton1.setText("Haut");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -257,15 +261,52 @@ public class HordeInterface extends javax.swing.JFrame {
         jPanel1.add(jButton5);
         jButton5.setBounds(1170, 500, 120, 23);
 
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jPanel2);
-        jPanel2.setBounds(640, 150, 260, 280);
+        jButton6.setText("Finir tour");
+        jPanel1.add(jButton6);
+        jButton6.setBounds(1233, 20, 100, 23);
+
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setText("Journal");
+        jLabel20.setMaximumSize(new java.awt.Dimension(35, 16));
+        jPanel1.add(jLabel20);
+        jLabel20.setBounds(530, 50, 90, 30);
+
+        jCheckBox1.setText("jCheckBox1");
+        jCheckBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.add(jCheckBox1);
+        jCheckBox1.setBounds(670, 340, 81, 23);
+
+        jList1.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
+
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(940, 0, 35, 130);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(10, 0, 1310, 590);
+        jPanel1.setBounds(10, 0, 1350, 590);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here: // Boutton afficher carte
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
@@ -298,22 +339,6 @@ public class HordeInterface extends javax.swing.JFrame {
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         // TODO add your handling code here: POUR LES GOURDES
     }//GEN-LAST:event_jLabel2MouseClicked
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
-
-    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
-        // TODO add your handling code here: // Boutton afficher carte
-    }//GEN-LAST:event_jButton5MouseClicked
 
     
     /**
@@ -360,6 +385,8 @@ public class HordeInterface extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -372,6 +399,7 @@ public class HordeInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -379,9 +407,10 @@ public class HordeInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JList jList1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
