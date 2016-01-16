@@ -17,7 +17,28 @@ public class HordeInterface extends javax.swing.JFrame {
     public HordeInterface() {
         initComponents();
     }
+    
+    private int cpt;
+    private boolean partieDemarree=false;
 
+    public boolean isPartieDemarree() {
+        return partieDemarree;
+    }
+
+    public void setPartieDemarree(boolean partieDemarree) {
+        this.partieDemarree = partieDemarree;
+    }
+
+    public int getCpt() {
+        return cpt;
+    }
+
+    public void setCpt(int cpt) {
+        this.cpt = cpt;
+    }
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -67,6 +88,7 @@ public class HordeInterface extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
 
         MapIcone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/map.gif"))); // NOI18N
         jFrame1.getContentPane().add(MapIcone, java.awt.BorderLayout.CENTER);
@@ -309,6 +331,10 @@ public class HordeInterface extends javax.swing.JFrame {
         jPanel1.add(jPanel2);
         jPanel2.setBounds(20, 20, 190, 160);
 
+        jLabel25.setText("jLabel25");
+        jPanel1.add(jLabel25);
+        jLabel25.setBounds(370, 110, 59, 15);
+
         getContentPane().add(jPanel1);
         jPanel1.setBounds(10, 0, 1350, 590);
 
@@ -416,6 +442,7 @@ public class HordeInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
