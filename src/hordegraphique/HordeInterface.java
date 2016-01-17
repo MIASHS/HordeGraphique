@@ -20,6 +20,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JRadioButton;
+import javax.swing.JTextPane;
 /**
  *
  * @author Gabriel
@@ -185,13 +186,7 @@ public class HordeInterface extends javax.swing.JFrame {
         this.LifeProgressBar = LifeProgressBar;
     }
 
-    public JLabel getMapIcone() {
-        return MapIcone;
-    }
-
-    public void setMapIcone(JLabel MapIcone) {
-        this.MapIcone = MapIcone;
-    }
+   
 
     public JProgressBar getPAProgressBar() {
         return PAProgressBar;
@@ -657,13 +652,15 @@ public class HordeInterface extends javax.swing.JFrame {
         this.pJournal = pJournal;
     }
 
-    public JLabel getPage1() {
+    public JTextPane getPage1() {
         return page1;
     }
 
-    public void setPage1(JLabel page1) {
+    public void setPage1(JTextPane page1) {
         this.page1 = page1;
     }
+
+    
 
     public JLabel getPage2() {
         return page2;
@@ -757,7 +754,8 @@ public class HordeInterface extends javax.swing.JFrame {
     private void initComponents() {
 
         jFrame1 = new javax.swing.JFrame();
-        MapIcone = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
         bgEcranA = new javax.swing.ButtonGroup();
         ecranTitre = new javax.swing.JPanel();
         logo = new javax.swing.JLabel();
@@ -790,7 +788,6 @@ public class HordeInterface extends javax.swing.JFrame {
         butBas = new javax.swing.JLabel();
         butCarte = new javax.swing.JLabel();
         pJournal = new javax.swing.JPanel();
-        page1 = new javax.swing.JLabel();
         page2 = new javax.swing.JLabel();
         afficherResume = new javax.swing.JRadioButton();
         afficherRegle = new javax.swing.JRadioButton();
@@ -804,6 +801,8 @@ public class HordeInterface extends javax.swing.JFrame {
         consulterEntrepot = new javax.swing.JRadioButton();
         interagirPorte = new javax.swing.JRadioButton();
         jRadioButton1 = new javax.swing.JRadioButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        page1 = new javax.swing.JTextPane();
         nomJoueur = new javax.swing.JLabel();
         tour = new javax.swing.JLabel();
         jour = new javax.swing.JLabel();
@@ -830,9 +829,49 @@ public class HordeInterface extends javax.swing.JFrame {
         nbGourde = new javax.swing.JLabel();
         nbRation = new javax.swing.JLabel();
         nbClou = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        defense = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
 
-        MapIcone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/map.gif"))); // NOI18N
-        jFrame1.getContentPane().add(MapIcone, java.awt.BorderLayout.CENTER);
+        jFrame1.setTitle("Maps");
+        jFrame1.setMaximumSize(new java.awt.Dimension(1030, 750));
+        jFrame1.setMinimumSize(new java.awt.Dimension(1030, 750));
+        jFrame1.setPreferredSize(new java.awt.Dimension(1030, 750));
+        jFrame1.setResizable(false);
+
+        jScrollPane2.setEnabled(false);
+        jScrollPane2.setMaximumSize(new java.awt.Dimension(1030, 750));
+        jScrollPane2.setMinimumSize(new java.awt.Dimension(1030, 750));
+        jScrollPane2.setOpaque(false);
+        jScrollPane2.setPreferredSize(new java.awt.Dimension(1030, 750));
+
+        jTextPane1.setEditable(false);
+        jTextPane1.setFont(new java.awt.Font("Dialog", 0, 8)); // NOI18N
+        jTextPane1.setEnabled(false);
+        jTextPane1.setMaximumSize(new java.awt.Dimension(1027, 750));
+        jTextPane1.setMinimumSize(new java.awt.Dimension(1027, 750));
+        jTextPane1.setOpaque(false);
+        jTextPane1.setPreferredSize(new java.awt.Dimension(1027, 750));
+        jScrollPane2.setViewportView(jTextPane1);
+
+        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
+        jFrame1.getContentPane().setLayout(jFrame1Layout);
+        jFrame1Layout.setHorizontalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame1Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1030, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jFrame1Layout.setVerticalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame1Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Horde");
@@ -952,6 +991,7 @@ public class HordeInterface extends javax.swing.JFrame {
         hub.setLayout(null);
 
         PAProgressBar.setMaximum(10);
+        PAProgressBar.setToolTipText("Unité à dépenser pour effectuer certaines actions du jeu");
         PAProgressBar.setValue(10);
         PAProgressBar.setName("PA/100"); // NOI18N
         hub.add(PAProgressBar);
@@ -983,13 +1023,15 @@ public class HordeInterface extends javax.swing.JFrame {
         hub.add(butRation);
         butRation.setBounds(980, 90, 40, 40);
 
+        pointAction.setFont(new java.awt.Font("Purisa", 1, 14)); // NOI18N
         pointAction.setText("Points d'action:");
         hub.add(pointAction);
-        pointAction.setBounds(900, 300, 130, 15);
+        pointAction.setBounds(900, 300, 140, 25);
 
+        pointVie.setFont(new java.awt.Font("Purisa", 1, 14)); // NOI18N
         pointVie.setText("Points de vie:");
         hub.add(pointVie);
-        pointVie.setBounds(900, 360, 120, 15);
+        pointVie.setBounds(900, 360, 130, 25);
 
         butBois.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/soft.png"))); // NOI18N
         butBois.setToolTipText("Boire une boisson énergissante");
@@ -1024,9 +1066,10 @@ public class HordeInterface extends javax.swing.JFrame {
         hub.add(butClou);
         butClou.setBounds(980, 30, 46, 50);
 
+        indsac.setFont(new java.awt.Font("Purisa", 1, 14)); // NOI18N
         indsac.setText("Sac:");
         hub.add(indsac);
-        indsac.setBounds(960, 10, 30, 15);
+        indsac.setBounds(950, 10, 40, 20);
 
         butTalki.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/talkie.png"))); // NOI18N
         butTalki.setToolTipText("Mettre à jour la carte");
@@ -1036,17 +1079,25 @@ public class HordeInterface extends javax.swing.JFrame {
             }
         });
         hub.add(butTalki);
-        butTalki.setBounds(30, 280, 60, 200);
+        butTalki.setBounds(30, 250, 60, 200);
 
+        jLabel1.setFont(new java.awt.Font("Purisa", 1, 14)); // NOI18N
         jLabel1.setText("Déplacement:");
         hub.add(jLabel1);
-        jLabel1.setBounds(60, 0, 110, 15);
+        jLabel1.setBounds(40, 0, 160, 25);
 
+        indcoor.setFont(new java.awt.Font("Purisa", 1, 14)); // NOI18N
         indcoor.setText("Position joueur:");
+        indcoor.setToolTipText("Position du joueur sur la carte. La carte va de (0;0) à (-24;24). ");
         hub.add(indcoor);
-        indcoor.setBounds(10, 200, 120, 15);
+        indcoor.setBounds(0, 200, 170, 25);
 
+        finirTour.setBackground(new java.awt.Color(153, 0, 0));
+        finirTour.setFont(new java.awt.Font("FreeMono", 1, 14)); // NOI18N
+        finirTour.setForeground(new java.awt.Color(255, 255, 255));
         finirTour.setText("Finir tour");
+        finirTour.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        finirTour.setOpaque(false);
         finirTour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 finirTourActionPerformed(evt);
@@ -1055,11 +1106,12 @@ public class HordeInterface extends javax.swing.JFrame {
         hub.add(finirTour);
         finirTour.setBounds(900, 430, 150, 50);
 
+        indJournal.setFont(new java.awt.Font("Purisa", 1, 14)); // NOI18N
         indJournal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         indJournal.setText("Journal");
         indJournal.setMaximumSize(new java.awt.Dimension(35, 16));
         hub.add(indJournal);
-        indJournal.setBounds(530, 50, 90, 30);
+        indJournal.setBounds(520, 60, 140, 30);
 
         miniMap.setEnabled(false);
         miniMap.setMinimumSize(new java.awt.Dimension(180, 180));
@@ -1067,6 +1119,7 @@ public class HordeInterface extends javax.swing.JFrame {
         miniMap.setPreferredSize(new java.awt.Dimension(180, 180));
 
         butHaut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/up.png"))); // NOI18N
+        butHaut.setToolTipText("déplacement sur la carte.");
         butHaut.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 butHautMouseClicked(evt);
@@ -1074,6 +1127,7 @@ public class HordeInterface extends javax.swing.JFrame {
         });
 
         butDroit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/right.png"))); // NOI18N
+        butDroit.setToolTipText("déplacement sur la carte.");
         butDroit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 butDroitMouseClicked(evt);
@@ -1081,6 +1135,7 @@ public class HordeInterface extends javax.swing.JFrame {
         });
 
         butGauche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/left.png"))); // NOI18N
+        butGauche.setToolTipText("déplacement sur la carte.");
         butGauche.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 butGaucheMouseClicked(evt);
@@ -1088,6 +1143,7 @@ public class HordeInterface extends javax.swing.JFrame {
         });
 
         butBas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/down.png"))); // NOI18N
+        butBas.setToolTipText("déplacement sur la carte.");
         butBas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 butBasMouseClicked(evt);
@@ -1097,6 +1153,12 @@ public class HordeInterface extends javax.swing.JFrame {
         butCarte.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         butCarte.setForeground(new java.awt.Color(255, 255, 255));
         butCarte.setText(" |          | ");
+        butCarte.setToolTipText("Bouton permettant d'acceder à la carte");
+        butCarte.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                butCarteMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout miniMapLayout = new javax.swing.GroupLayout(miniMap);
         miniMap.setLayout(miniMapLayout);
@@ -1105,7 +1167,7 @@ public class HordeInterface extends javax.swing.JFrame {
             .addGroup(miniMapLayout.createSequentialGroup()
                 .addGap(72, 72, 72)
                 .addComponent(butHaut)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(miniMapLayout.createSequentialGroup()
                 .addComponent(butGauche)
                 .addGap(17, 17, 17)
@@ -1143,22 +1205,27 @@ public class HordeInterface extends javax.swing.JFrame {
         pJournal.setEnabled(false);
         pJournal.setOpaque(false);
 
-        page1.setText("jLabel12");
-
+        page2.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
         page2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         page2.setText("Que souhaitez vous faire ?");
         page2.setMaximumSize(new java.awt.Dimension(35, 16));
 
+        afficherResume.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
         afficherResume.setText("Résumé du jeu");
+        afficherResume.setOpaque(false);
 
+        afficherRegle.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
         afficherRegle.setText("Règle du jeu");
+        afficherRegle.setOpaque(false);
         afficherRegle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 afficherRegleActionPerformed(evt);
             }
         });
 
+        afficherConstruction.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
         afficherConstruction.setText("Liste des constructions");
+        afficherConstruction.setOpaque(false);
         afficherConstruction.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 afficherConstructionActionPerformed(evt);
@@ -1167,7 +1234,14 @@ public class HordeInterface extends javax.swing.JFrame {
 
         exterieur.setOpaque(false);
 
+        fouiller.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
         fouiller.setText("Fouiller la case");
+        fouiller.setOpaque(false);
+        fouiller.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                fouillerMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout exterieurLayout = new javax.swing.GroupLayout(exterieur);
         exterieur.setLayout(exterieurLayout);
@@ -1175,26 +1249,36 @@ public class HordeInterface extends javax.swing.JFrame {
             exterieurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(exterieurLayout.createSequentialGroup()
                 .addComponent(fouiller)
-                .addGap(0, 98, Short.MAX_VALUE))
+                .addGap(0, 116, Short.MAX_VALUE))
         );
         exterieurLayout.setVerticalGroup(
             exterieurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(exterieurLayout.createSequentialGroup()
                 .addComponent(fouiller)
-                .addGap(0, 146, Short.MAX_VALUE))
+                .addGap(0, 182, Short.MAX_VALUE))
         );
 
         interieur.setOpaque(false);
 
+        construire.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
         construire.setText("Construire");
+        construire.setOpaque(false);
 
+        participer.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
         participer.setText("Participer au chantier");
+        participer.setOpaque(false);
 
+        consulterEntrepot.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
         consulterEntrepot.setText("Consulter l'entrepôt");
+        consulterEntrepot.setOpaque(false);
 
+        interagirPorte.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
         interagirPorte.setText("Intéragir avec la porte");
+        interagirPorte.setOpaque(false);
 
+        jRadioButton1.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
         jRadioButton1.setText("Calculer les défenses");
+        jRadioButton1.setOpaque(false);
 
         javax.swing.GroupLayout interieurLayout = new javax.swing.GroupLayout(interieur);
         interieur.setLayout(interieurLayout);
@@ -1243,72 +1327,87 @@ public class HordeInterface extends javax.swing.JFrame {
         jLayeredPane1.setLayer(exterieur, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(interieur, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
+        page1.setFont(new java.awt.Font("URW Chancery L", 0, 14)); // NOI18N
+        page1.setOpaque(false);
+        jScrollPane1.setViewportView(page1);
+
         javax.swing.GroupLayout pJournalLayout = new javax.swing.GroupLayout(pJournal);
         pJournal.setLayout(pJournalLayout);
         pJournalLayout.setHorizontalGroup(
             pJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pJournalLayout.createSequentialGroup()
-                .addGap(86, 86, 86)
+                .addContainerGap(40, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(pJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pJournalLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(page2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(84, 84, 84))
                     .addGroup(pJournalLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(42, 42, 42)
                         .addGroup(pJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(afficherResume)
                             .addComponent(afficherRegle)
                             .addComponent(afficherConstruction)
                             .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(68, 68, 68))
-                    .addGroup(pJournalLayout.createSequentialGroup()
-                        .addComponent(page1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
-                        .addComponent(page2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(84, 84, 84))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         pJournalLayout.setVerticalGroup(
             pJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pJournalLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(pJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(page1)
-                    .addComponent(page2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(70, 70, 70)
-                .addComponent(afficherResume)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(afficherRegle)
-                .addGap(3, 3, 3)
-                .addComponent(afficherConstruction)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addGap(23, 23, 23)
+                .addGroup(pJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pJournalLayout.createSequentialGroup()
+                        .addComponent(page2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addComponent(afficherResume)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(afficherRegle)
+                        .addGap(3, 3, 3)
+                        .addComponent(afficherConstruction)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         hub.add(pJournal);
         pJournal.setBounds(280, 80, 610, 400);
 
-        nomJoueur.setFont(new java.awt.Font("Liberation Sans Narrow", 0, 24)); // NOI18N
+        nomJoueur.setFont(new java.awt.Font("URW Chancery L", 3, 48)); // NOI18N
+        nomJoueur.setForeground(new java.awt.Color(180, 27, 58));
         nomJoueur.setText("jLabel2");
+        nomJoueur.setToolTipText("Nom du joueur actuel");
         hub.add(nomJoueur);
-        nomJoueur.setBounds(370, 10, 90, 30);
+        nomJoueur.setBounds(290, 20, 240, 50);
 
+        tour.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
+        tour.setForeground(new java.awt.Color(204, 51, 0));
         tour.setText("jLabel3");
         hub.add(tour);
-        tour.setBounds(670, 20, 51, 15);
+        tour.setBounds(670, 20, 55, 24);
 
+        jour.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
+        jour.setForeground(new java.awt.Color(204, 51, 0));
         jour.setText("jLabel4");
         hub.add(jour);
-        jour.setBounds(830, 20, 51, 15);
+        jour.setBounds(830, 20, 55, 24);
 
-        indTour.setText("tour(s):");
+        indTour.setFont(new java.awt.Font("Purisa", 1, 14)); // NOI18N
+        indTour.setText("Tour(s):");
         hub.add(indTour);
-        indTour.setBounds(610, 20, 53, 15);
+        indTour.setBounds(600, 20, 100, 25);
 
+        indJour.setFont(new java.awt.Font("Purisa", 1, 14)); // NOI18N
         indJour.setText("Jour(s):");
         hub.add(indJour);
-        indJour.setBounds(770, 20, 60, 15);
+        indJour.setBounds(760, 20, 110, 25);
 
+        position.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
+        position.setForeground(new java.awt.Color(204, 51, 0));
         position.setText("jLabel2");
         hub.add(position);
-        position.setBounds(140, 200, 51, 15);
+        position.setBounds(140, 200, 70, 24);
 
         itemGauche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/left.png"))); // NOI18N
         itemGauche.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1318,6 +1417,7 @@ public class HordeInterface extends javax.swing.JFrame {
         });
 
         item.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/vide.png"))); // NOI18N
+        item.setToolTipText("retirer un item du sac. Soit pour le mettre dans l'entrepôt, soit pour le jeter.");
         item.setMaximumSize(new java.awt.Dimension(46, 46));
         item.setMinimumSize(new java.awt.Dimension(46, 46));
         item.setPreferredSize(new java.awt.Dimension(46, 46));
@@ -1334,7 +1434,12 @@ public class HordeInterface extends javax.swing.JFrame {
             }
         });
 
+        prendreObjet.setBackground(new java.awt.Color(153, 0, 0));
+        prendreObjet.setFont(new java.awt.Font("FreeMono", 1, 14)); // NOI18N
+        prendreObjet.setForeground(new java.awt.Color(255, 255, 255));
         prendreObjet.setText("Jeter");
+        prendreObjet.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        prendreObjet.setOpaque(false);
         prendreObjet.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 prendreObjetMouseClicked(evt);
@@ -1365,7 +1470,7 @@ public class HordeInterface extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(item, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(itemDroit, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1378,9 +1483,15 @@ public class HordeInterface extends javax.swing.JFrame {
         jPanel1.setBounds(900, 190, 150, 110);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/zombie.png"))); // NOI18N
+        jLabel3.setToolTipText("Permet de d'attaquer les zombies lorsqu'il y en a ($1PA/Zombie)");
         jLabel3.setMaximumSize(new java.awt.Dimension(130, 179));
         jLabel3.setMinimumSize(new java.awt.Dimension(130, 179));
         jLabel3.setPreferredSize(new java.awt.Dimension(130, 179));
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
         hub.add(jLabel3);
         jLabel3.setBounds(130, 220, 130, 160);
 
@@ -1392,6 +1503,7 @@ public class HordeInterface extends javax.swing.JFrame {
         });
 
         item1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/vide.png"))); // NOI18N
+        item1.setToolTipText("Prendre un item de l'entrepôt et le mettre dans le sac./Prendre un objet sur la case fouillée. ");
         item1.setMaximumSize(new java.awt.Dimension(46, 46));
         item1.setMinimumSize(new java.awt.Dimension(46, 46));
         item1.setPreferredSize(new java.awt.Dimension(46, 46));
@@ -1408,7 +1520,12 @@ public class HordeInterface extends javax.swing.JFrame {
             }
         });
 
+        prendreObjet1.setBackground(new java.awt.Color(153, 0, 0));
+        prendreObjet1.setFont(new java.awt.Font("FreeMono", 1, 14)); // NOI18N
+        prendreObjet1.setForeground(new java.awt.Color(255, 255, 255));
         prendreObjet1.setText("Prendre");
+        prendreObjet1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        prendreObjet1.setOpaque(false);
         prendreObjet1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 prendreObjet1MouseClicked(evt);
@@ -1439,7 +1556,7 @@ public class HordeInterface extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(item1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(itemDroit1, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1463,33 +1580,70 @@ public class HordeInterface extends javax.swing.JFrame {
         hub.add(lJournal);
         lJournal.setBounds(280, 90, 610, 390);
 
+        indObjet.setFont(new java.awt.Font("Purisa", 1, 14)); // NOI18N
         indObjet.setText("/10");
+        indObjet.setToolTipText("Nombre d'item que peut contenir le sac.");
         hub.add(indObjet);
-        indObjet.setBounds(1000, 160, 30, 15);
+        indObjet.setBounds(1000, 160, 30, 25);
 
         nbObjet.setText("10");
         hub.add(nbObjet);
         nbObjet.setBounds(980, 160, 20, 15);
 
+        nbEnergie.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
+        nbEnergie.setForeground(new java.awt.Color(204, 51, 0));
         nbEnergie.setText("10");
         hub.add(nbEnergie);
-        nbEnergie.setBounds(910, 120, 20, 15);
+        nbEnergie.setBounds(910, 120, 20, 24);
 
+        nbPlanche.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
+        nbPlanche.setForeground(new java.awt.Color(204, 51, 0));
         nbPlanche.setText("10");
         hub.add(nbPlanche);
-        nbPlanche.setBounds(910, 60, 20, 15);
+        nbPlanche.setBounds(910, 60, 20, 24);
 
+        nbGourde.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
+        nbGourde.setForeground(new java.awt.Color(204, 51, 0));
         nbGourde.setText("10");
         hub.add(nbGourde);
-        nbGourde.setBounds(910, 170, 20, 15);
+        nbGourde.setBounds(910, 170, 20, 24);
 
+        nbRation.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
+        nbRation.setForeground(new java.awt.Color(204, 51, 0));
         nbRation.setText("10");
         hub.add(nbRation);
-        nbRation.setBounds(1010, 120, 20, 15);
+        nbRation.setBounds(1010, 120, 20, 24);
 
+        nbClou.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
+        nbClou.setForeground(new java.awt.Color(204, 51, 0));
         nbClou.setText("10");
         hub.add(nbClou);
-        nbClou.setBounds(1010, 60, 20, 15);
+        nbClou.setBounds(1010, 60, 20, 24);
+
+        jLabel2.setFont(new java.awt.Font("Purisa", 1, 14)); // NOI18N
+        jLabel2.setText("Défense de la ville: ");
+        hub.add(jLabel2);
+        jLabel2.setBounds(590, 40, 190, 25);
+
+        defense.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
+        defense.setForeground(new java.awt.Color(204, 51, 0));
+        defense.setText("jLabel4");
+        hub.add(defense);
+        defense.setBounds(760, 40, 55, 24);
+        hub.add(jSeparator1);
+        jSeparator1.setBounds(910, 80, 120, 10);
+        hub.add(jSeparator2);
+        jSeparator2.setBounds(910, 140, 120, 10);
+
+        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        hub.add(jSeparator3);
+        jSeparator3.setBounds(970, 30, 10, 210);
+        hub.add(jSeparator4);
+        jSeparator4.setBounds(610, 40, 270, 30);
+
+        jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        hub.add(jSeparator5);
+        jSeparator5.setBounds(750, 20, 40, 20);
 
         getContentPane().add(hub);
         hub.setBounds(10, 0, 1080, 530);
@@ -1503,6 +1657,7 @@ public class HordeInterface extends javax.swing.JFrame {
 
     private void butTalkiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butTalkiMouseClicked
         // TODO add your handling code here: // Talkie
+        Journal.toString(partie, 'M');
     }//GEN-LAST:event_butTalkiMouseClicked
 
     private void butClouMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butClouMouseClicked
@@ -1515,14 +1670,17 @@ public class HordeInterface extends javax.swing.JFrame {
 
     private void butBoisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butBoisMouseClicked
         // TODO add your handling code here:// boisson énergisante
+        menu.accederBoireE();
     }//GEN-LAST:event_butBoisMouseClicked
 
     private void butRationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butRationMouseClicked
         // TODO add your handling code here: POUR LES RATIONS
+        menu.accederManger();
     }//GEN-LAST:event_butRationMouseClicked
 
     private void butGourdeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butGourdeMouseClicked
         // TODO add your handling code here: POUR LES GOURDES
+        menu.accederBoire();
     }//GEN-LAST:event_butGourdeMouseClicked
 
     private void itemDroitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemDroitMouseClicked
@@ -1557,6 +1715,7 @@ public class HordeInterface extends javax.swing.JFrame {
         this.position.setText(partie.getJoueurActuel().renvoyerCoordonnees());
         this.page1.setText(Journal.afficherPosition(partie, partie.getJoueurActuel()));
         this.butCarte.setText("| VILLE |");
+        this.defense.setText(""+0);
         if(partie.getJoueurActuel().getSac().isEmpty()){
             this.nbClou.setText("0");
             this.nbEnergie.setText("0");
@@ -1580,6 +1739,7 @@ public class HordeInterface extends javax.swing.JFrame {
                 partie=new Jeu();
                 partie.lancerJeu(this);
                 menu=partie.getMenuPartie();
+                menu.demarrer(partie,this);
             }
         
             if(!isNbJoueurSet){
@@ -1720,6 +1880,31 @@ public class HordeInterface extends javax.swing.JFrame {
     private void afficherConstructionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afficherConstructionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_afficherConstructionActionPerformed
+
+    private void fouillerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fouillerMouseClicked
+        // TODO add your handling code here:
+        menu.fouillerCase(JOptionPane.showConfirmDialog(null,Journal.consulterDescription(70))==0);
+        
+        if(partie.getGrille().getTabCase().get(partie.getJoueurActuel().getIndiceCase()).getFouillee()){
+            Outils.affichage(partie.getGrille().getTabCase().get(partie.getJoueurActuel().getIndiceCase()).afficherItems(), 1, this);
+          partie.getJoueurActuel().getCarteJoueur().add(partie.getJoueurActuel().getIndiceCase()+":"+partie.getGrille().getTabCase().get(partie.getJoueurActuel().getIndiceCase()).itemCarte());
+          partie.getMonInterface().getButCarte().setText(" |"+partie.getGrille().getTabCase().get(partie.getJoueurActuel().getIndiceCase()).itemCarte()+"| ");
+        }
+    }//GEN-LAST:event_fouillerMouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        // TODO add your handling code here:
+        menu.attaquerZombies();
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void butCarteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butCarteMouseClicked
+        // TODO add your handling code here:
+        ImagePanel panel = new ImagePanel("images/map.JPG");
+        jTextPane1.setText(Journal.voirCarte(partie.getMonJournal()));
+        jFrame1.getContentPane().add(panel, BorderLayout.CENTER);
+        jTextPane1.setText(Journal.voirCarte(partie.getMonJournal()));
+        jFrame1.setVisible(true);
+    }//GEN-LAST:event_butCarteMouseClicked
     
     public void accederObjetCase(int i){
         if(partie.getJoueurActuel().getIndiceCase()==338){
@@ -1949,7 +2134,7 @@ public class HordeInterface extends javax.swing.JFrame {
     }
     
     public void demarrerPrendreObjet(){
-        if(partie.getJoueurActuel().getIndiceCase()==338){if(cptCase==0||cptCase==3){if(cptCase==0){menu.accesObjet(JOptionPane.showConfirmDialog(rootPane,(Journal.consulterDescription(17)))==0,1,partie);}else{menu.accesObjet(JOptionPane.showConfirmDialog(rootPane,(Journal.consulterDescription(18)))==0,cptCase,partie);}}else{if(cptCase==4){menu.prendreGourde((JOptionPane.showConfirmDialog(rootPane,(Journal.consulterDescription(20)))==0));}}}else{menu.prendreObjet(cptCase);}
+        if(partie.getJoueurActuel().getIndiceCase()==338){if(cptCase==0||cptCase==3){if(cptCase==0){menu.accesObjet(JOptionPane.showConfirmDialog(rootPane,(Journal.consulterDescription(17)))==0,1,partie);}else{menu.accesObjet(JOptionPane.showConfirmDialog(rootPane,(Journal.consulterDescription(18)))==0,cptCase,partie);}}else{if(cptCase==4){menu.prendreGourde((JOptionPane.showConfirmDialog(rootPane,(Journal.consulterDescription(20)))==0));}}}else{menu.prendreObjetCase(cptCase);}
     }
    
     
@@ -1990,7 +2175,6 @@ public class HordeInterface extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JProgressBar LifeProgressBar;
-    private javax.swing.JLabel MapIcone;
     private javax.swing.JProgressBar PAProgressBar;
     private javax.swing.JRadioButton afficherConstruction;
     private javax.swing.JRadioButton afficherRegle;
@@ -2010,6 +2194,7 @@ public class HordeInterface extends javax.swing.JFrame {
     private javax.swing.JRadioButton construire;
     private javax.swing.JRadioButton consulterEntrepot;
     private javax.swing.JRadioButton continuer;
+    private javax.swing.JLabel defense;
     private javax.swing.JRadioButton demarrer;
     private javax.swing.JPanel ecranAccueil;
     private javax.swing.JPanel ecranTitre;
@@ -2036,11 +2221,20 @@ public class HordeInterface extends javax.swing.JFrame {
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JTextPane jTextPane1;
     private javax.swing.JLabel jour;
     private javax.swing.JLabel lJournal;
     private javax.swing.JLabel logo;
@@ -2053,7 +2247,7 @@ public class HordeInterface extends javax.swing.JFrame {
     private javax.swing.JLabel nbRation;
     private javax.swing.JLabel nomJoueur;
     private javax.swing.JPanel pJournal;
-    private javax.swing.JLabel page1;
+    private javax.swing.JTextPane page1;
     private javax.swing.JLabel page2;
     private javax.swing.JRadioButton participer;
     private javax.swing.JLabel pointAction;

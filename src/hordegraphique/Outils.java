@@ -43,6 +43,25 @@ public abstract class Outils  {
         //uneInterface.validate();
     }
     
+    public static int affichage(String str,int i,HordeInterface uneInterface){
+        //if(uneInterface.getjPanel2().isVisible()){
+        //    uneInterface.getjLabel1().setText(str); 
+        //}else{
+        //    uneInterface.getjTextArea1().append(str);
+        //    uneInterface.pack();
+        //}
+        if(i==0){
+        return JOptionPane.showConfirmDialog(null, str);
+        }else{
+        uneInterface.getPage1().setText(""+uneInterface.getPage1().getText()+str);
+        return 1;
+        }
+        
+        
+        //uneInterface.pack();
+        //uneInterface.validate();
+    }
+    
     public static void afficher(int niveau, Jeu partieActuelle){ 
         //Outils.affichage(partieActuelle.getMonJournal().toString(partieActuelle, 'S'),partieActuelle.getMonInterface());
         switch (niveau) {

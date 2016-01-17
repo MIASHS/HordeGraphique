@@ -52,14 +52,14 @@ public class Case {
     public String afficherItems(){
         String tabItem="\n";
         for(int i=0;i<items.size();i++){
-            tabItem+=i+" | "+items.get(i).getNom()+" | "+items.get(i).getQuantite()+'\n';
+            tabItem+=i+"|"+items.get(i).getNom()+"|"+items.get(i).getQuantite()+'\n';
         }
    
         return tabItem;
     }
     
     public String itemCarte(){
-        return "P"+this.items.get(0).getQuantite()+" M"+this.items.get(1).getQuantite()+" B"+this.items.get(2).getQuantite();
+        return "P"+this.items.get(0).getQuantite()+"M"+this.items.get(1).getQuantite()+"B"+this.items.get(2).getQuantite();
     }
     
     public boolean getFouillee(){
@@ -78,7 +78,7 @@ public class Case {
         
         if(b){
             nbZombiesRestants=Zombies.nbZombiesCase();
-            Outils.affichage(Journal.consulterDescription(22)+nbZombiesRestants+Journal.consulterDescription(23),partieActuelle.getMonInterface());
+            Outils.affichage(Journal.consulterDescription(22)+nbZombiesRestants+Journal.consulterDescription(23),2,partieActuelle.getMonInterface());
             fouillee=true;
             changement=true;
         }

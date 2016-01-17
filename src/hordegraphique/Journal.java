@@ -386,13 +386,15 @@ public class Journal {
                     break;
             case 113:description="";
                     break;
-            case 114:description=" VILLE  ";
+            case 114:description=" VILLE ";
                     break;
             case 115:description="\nIl n'y a aucune construction en cours\n";
                     break;
             case 116:description="\nCette case ne contient pas cette item.";
                     break;
             case 117:description="\nVous ne pouvez choisir que la proposition ayant l'indice 0.";
+                    break;
+            case 118:description="la case n'a pas encore été fouillé";
                     break;
             default:description="Erreur.";
                     break;
@@ -426,12 +428,13 @@ public class Journal {
         String str="";
         int k=0;
          for(int i=0;i<25;i++){
+             str+="|";
             for(int j=0;j<25;j++){
                 if(journal.carte.get(k).isEmpty()){
-                    str+="|"+"        "+"|";
+                    str+="         "+"|";
                 }
                 else{
-                     str+="|"+journal.carte.get(k)+"|";
+                     str+=journal.carte.get(k)+"|";
                 }
                 k++;
             }
