@@ -69,7 +69,7 @@ public class Ville extends Case {
         }
         if(!batimentDejaFait){
             if (this.entrepot[1].getQuantite() >=partie.getMonJournal().getConstruction(choix).getRessources_necessaire().get(0)  && this.entrepot[2].getQuantite() >= partie.getMonJournal().getConstruction(choix).getRessources_necessaire().get(1) && partie.getJoueurActuel().getPa() >= 1) {
-                partie.getJoueurActuel().setPa(partie.getJoueurActuel().getPa()-1);
+                partie.getJoueurActuel().setPa(partie.getJoueurActuel().getPa()-1,partie);
                 batimentEnCours.add(partie.getMonJournal().getConstruction(choix));
             } else {
                 Outils.affichage(Journal.consulterDescription(72),partie.getMonInterface());
@@ -97,9 +97,9 @@ public class Ville extends Case {
         pointUse=batimentEnCours.get(choix).getConso_pa();
             if(batimentEnCours.get(choix).setConso_pa((batimentEnCours.get(choix).getConso_pa()-num))){
                 partieActuelle.getMaVille().setNouveauBatiment(partieActuelle.getMonJournal().getConstruction(batimentEnCours.get(choix).getNom()));
-                ceJoueur.setPa(ceJoueur.getPa()-pointUse);
+                ceJoueur.setPa(ceJoueur.getPa()-pointUse,partieActuelle);
             }else{
-                ceJoueur.setPa(ceJoueur.getPa()-num);
+                ceJoueur.setPa(ceJoueur.getPa()-num,partieActuelle);
             }
     }
     

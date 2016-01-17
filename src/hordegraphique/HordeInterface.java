@@ -15,6 +15,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
@@ -39,6 +40,94 @@ public class HordeInterface extends javax.swing.JFrame {
     private int copieNbJoueur;
     private int cptCase=0;
     private int cptSac=0;
+
+    public JRadioButton getAfficherConstruction() {
+        return afficherConstruction;
+    }
+
+    public void setAfficherConstruction(JRadioButton afficherConstruction) {
+        this.afficherConstruction = afficherConstruction;
+    }
+
+    public JRadioButton getAfficherRegle() {
+        return afficherRegle;
+    }
+
+    public void setAfficherRegle(JRadioButton afficherRegle) {
+        this.afficherRegle = afficherRegle;
+    }
+
+    public JRadioButton getAfficherResume() {
+        return afficherResume;
+    }
+
+    public void setAfficherResume(JRadioButton afficherResume) {
+        this.afficherResume = afficherResume;
+    }
+
+    public JRadioButton getConstruire() {
+        return construire;
+    }
+
+    public void setConstruire(JRadioButton construire) {
+        this.construire = construire;
+    }
+
+    public JRadioButton getConsulterEntrepot() {
+        return consulterEntrepot;
+    }
+
+    public void setConsulterEntrepot(JRadioButton consulterEntrepot) {
+        this.consulterEntrepot = consulterEntrepot;
+    }
+
+    public JPanel getExterieur() {
+        return exterieur;
+    }
+
+    public void setExterieur(JPanel exterieur) {
+        this.exterieur = exterieur;
+    }
+
+    public JRadioButton getFouiller() {
+        return fouiller;
+    }
+
+    public void setFouiller(JRadioButton fouiller) {
+        this.fouiller = fouiller;
+    }
+
+    public JRadioButton getInteragirPorte() {
+        return interagirPorte;
+    }
+
+    public void setInteragirPorte(JRadioButton interagirPorte) {
+        this.interagirPorte = interagirPorte;
+    }
+
+    public JPanel getInterieur() {
+        return interieur;
+    }
+
+    public void setInterieur(JPanel interieur) {
+        this.interieur = interieur;
+    }
+
+    public JLayeredPane getjLayeredPane1() {
+        return jLayeredPane1;
+    }
+
+    public void setjLayeredPane1(JLayeredPane jLayeredPane1) {
+        this.jLayeredPane1 = jLayeredPane1;
+    }
+
+    public JRadioButton getParticiper() {
+        return participer;
+    }
+
+    public void setParticiper(JRadioButton participer) {
+        this.participer = participer;
+    }
 
     public Menu getMenu() {
         return menu;
@@ -417,59 +506,59 @@ public class HordeInterface extends javax.swing.JFrame {
     }
 
     public JRadioButton getjRadioButton1() {
-        return jRadioButton1;
+        return afficherResume;
     }
 
     public void setjRadioButton1(JRadioButton jRadioButton1) {
-        this.jRadioButton1 = jRadioButton1;
+        this.afficherResume = jRadioButton1;
     }
 
     public JRadioButton getjRadioButton2() {
-        return jRadioButton2;
+        return afficherRegle;
     }
 
     public void setjRadioButton2(JRadioButton jRadioButton2) {
-        this.jRadioButton2 = jRadioButton2;
+        this.afficherRegle = jRadioButton2;
     }
 
     public JRadioButton getjRadioButton3() {
-        return jRadioButton3;
+        return afficherConstruction;
     }
 
     public void setjRadioButton3(JRadioButton jRadioButton3) {
-        this.jRadioButton3 = jRadioButton3;
+        this.afficherConstruction = jRadioButton3;
     }
 
     public JRadioButton getjRadioButton4() {
-        return jRadioButton4;
+        return construire;
     }
 
     public void setjRadioButton4(JRadioButton jRadioButton4) {
-        this.jRadioButton4 = jRadioButton4;
+        this.construire = jRadioButton4;
     }
 
     public JRadioButton getjRadioButton5() {
-        return jRadioButton5;
+        return participer;
     }
 
     public void setjRadioButton5(JRadioButton jRadioButton5) {
-        this.jRadioButton5 = jRadioButton5;
+        this.participer = jRadioButton5;
     }
 
     public JRadioButton getjRadioButton6() {
-        return jRadioButton6;
+        return consulterEntrepot;
     }
 
     public void setjRadioButton6(JRadioButton jRadioButton6) {
-        this.jRadioButton6 = jRadioButton6;
+        this.consulterEntrepot = jRadioButton6;
     }
 
     public JRadioButton getjRadioButton7() {
-        return jRadioButton7;
+        return interagirPorte;
     }
 
     public void setjRadioButton7(JRadioButton jRadioButton7) {
-        this.jRadioButton7 = jRadioButton7;
+        this.interagirPorte = jRadioButton7;
     }
 
     public JLabel getJour() {
@@ -703,13 +792,18 @@ public class HordeInterface extends javax.swing.JFrame {
         pJournal = new javax.swing.JPanel();
         page1 = new javax.swing.JLabel();
         page2 = new javax.swing.JLabel();
+        afficherResume = new javax.swing.JRadioButton();
+        afficherRegle = new javax.swing.JRadioButton();
+        afficherConstruction = new javax.swing.JRadioButton();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        exterieur = new javax.swing.JPanel();
+        fouiller = new javax.swing.JRadioButton();
+        interieur = new javax.swing.JPanel();
+        construire = new javax.swing.JRadioButton();
+        participer = new javax.swing.JRadioButton();
+        consulterEntrepot = new javax.swing.JRadioButton();
+        interagirPorte = new javax.swing.JRadioButton();
         jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jRadioButton7 = new javax.swing.JRadioButton();
         nomJoueur = new javax.swing.JLabel();
         tour = new javax.swing.JLabel();
         jour = new javax.swing.JLabel();
@@ -973,12 +1067,32 @@ public class HordeInterface extends javax.swing.JFrame {
         miniMap.setPreferredSize(new java.awt.Dimension(180, 180));
 
         butHaut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/up.png"))); // NOI18N
+        butHaut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                butHautMouseClicked(evt);
+            }
+        });
 
         butDroit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/right.png"))); // NOI18N
+        butDroit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                butDroitMouseClicked(evt);
+            }
+        });
 
         butGauche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/left.png"))); // NOI18N
+        butGauche.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                butGaucheMouseClicked(evt);
+            }
+        });
 
         butBas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/down.png"))); // NOI18N
+        butBas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                butBasMouseClicked(evt);
+            }
+        });
 
         butCarte.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         butCarte.setForeground(new java.awt.Color(255, 255, 255));
@@ -1035,46 +1149,120 @@ public class HordeInterface extends javax.swing.JFrame {
         page2.setText("Que souhaitez vous faire ?");
         page2.setMaximumSize(new java.awt.Dimension(35, 16));
 
-        jRadioButton1.setText("Résumé du jeu");
+        afficherResume.setText("Résumé du jeu");
 
-        jRadioButton2.setText("Règle du jeu");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        afficherRegle.setText("Règle du jeu");
+        afficherRegle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                afficherRegleActionPerformed(evt);
             }
         });
 
-        jRadioButton3.setText("Liste des constructions");
+        afficherConstruction.setText("Liste des constructions");
+        afficherConstruction.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                afficherConstructionActionPerformed(evt);
+            }
+        });
 
-        jRadioButton4.setText("Construire");
+        exterieur.setOpaque(false);
 
-        jRadioButton5.setText("Participer au chantier");
+        fouiller.setText("Fouiller la case");
 
-        jRadioButton6.setText("Consulter l'entrepôt");
+        javax.swing.GroupLayout exterieurLayout = new javax.swing.GroupLayout(exterieur);
+        exterieur.setLayout(exterieurLayout);
+        exterieurLayout.setHorizontalGroup(
+            exterieurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exterieurLayout.createSequentialGroup()
+                .addComponent(fouiller)
+                .addGap(0, 98, Short.MAX_VALUE))
+        );
+        exterieurLayout.setVerticalGroup(
+            exterieurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exterieurLayout.createSequentialGroup()
+                .addComponent(fouiller)
+                .addGap(0, 146, Short.MAX_VALUE))
+        );
 
-        jRadioButton7.setText("intéragir avec la porte");
+        interieur.setOpaque(false);
+
+        construire.setText("Construire");
+
+        participer.setText("Participer au chantier");
+
+        consulterEntrepot.setText("Consulter l'entrepôt");
+
+        interagirPorte.setText("Intéragir avec la porte");
+
+        jRadioButton1.setText("Calculer les défenses");
+
+        javax.swing.GroupLayout interieurLayout = new javax.swing.GroupLayout(interieur);
+        interieur.setLayout(interieurLayout);
+        interieurLayout.setHorizontalGroup(
+            interieurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(interieurLayout.createSequentialGroup()
+                .addGroup(interieurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRadioButton1)
+                    .addComponent(interagirPorte)
+                    .addComponent(consulterEntrepot)
+                    .addComponent(construire)
+                    .addComponent(participer))
+                .addGap(0, 47, Short.MAX_VALUE))
+        );
+        interieurLayout.setVerticalGroup(
+            interieurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(interieurLayout.createSequentialGroup()
+                .addComponent(construire)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(participer)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(consulterEntrepot)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(interagirPorte)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton1)
+                .addGap(0, 42, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(exterieur, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(interieur, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(exterieur, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addComponent(interieur, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        jLayeredPane1.setLayer(exterieur, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(interieur, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout pJournalLayout = new javax.swing.GroupLayout(pJournal);
         pJournal.setLayout(pJournalLayout);
         pJournalLayout.setHorizontalGroup(
             pJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pJournalLayout.createSequentialGroup()
+            .addGroup(pJournalLayout.createSequentialGroup()
                 .addGap(86, 86, 86)
-                .addComponent(page1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
-                .addComponent(page2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pJournalLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton7)
-                    .addComponent(jRadioButton6)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4)
-                    .addComponent(jRadioButton5))
-                .addGap(68, 68, 68))
+                    .addGroup(pJournalLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(pJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(afficherResume)
+                            .addComponent(afficherRegle)
+                            .addComponent(afficherConstruction)
+                            .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(68, 68, 68))
+                    .addGroup(pJournalLayout.createSequentialGroup()
+                        .addComponent(page1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
+                        .addComponent(page2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(84, 84, 84))))
         );
         pJournalLayout.setVerticalGroup(
             pJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1084,20 +1272,14 @@ public class HordeInterface extends javax.swing.JFrame {
                     .addComponent(page1)
                     .addComponent(page2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(70, 70, 70)
-                .addComponent(jRadioButton1)
+                .addComponent(afficherResume)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton2)
+                .addComponent(afficherRegle)
                 .addGap(3, 3, 3)
-                .addComponent(jRadioButton3)
+                .addComponent(afficherConstruction)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton7)
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         hub.add(pJournal);
@@ -1432,7 +1614,8 @@ public class HordeInterface extends javax.swing.JFrame {
         this.ecranTitre.setVisible(true);
         this.ecranAccueil.setVisible(false);
         this.hub.setVisible(false);
-        
+        this.exterieur.setVisible(false);
+        this.interieur.setVisible(true);
         this.bgEcranA.add(demarrer);
         this.bgEcranA.add(continuer);
         this.bgEcranA.add(quitter);
@@ -1490,9 +1673,9 @@ public class HordeInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_prendreObjet1MouseClicked
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void afficherRegleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afficherRegleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_afficherRegleActionPerformed
 
     private void item1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_item1MouseClicked
         // TODO add your handling code here:
@@ -1513,6 +1696,30 @@ public class HordeInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
         demarrerViderSac();
     }//GEN-LAST:event_prendreObjetActionPerformed
+
+    private void butDroitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butDroitMouseClicked
+        // TODO add your handling code here:
+        menu.seDeplacer('D');
+    }//GEN-LAST:event_butDroitMouseClicked
+
+    private void butHautMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butHautMouseClicked
+        // TODO add your handling code here:
+        menu.seDeplacer('Z');
+    }//GEN-LAST:event_butHautMouseClicked
+
+    private void butGaucheMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butGaucheMouseClicked
+        // TODO add your handling code here:
+        menu.seDeplacer('Q');
+    }//GEN-LAST:event_butGaucheMouseClicked
+
+    private void butBasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butBasMouseClicked
+        // TODO add your handling code here:
+        menu.seDeplacer('S');
+    }//GEN-LAST:event_butBasMouseClicked
+
+    private void afficherConstructionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afficherConstructionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_afficherConstructionActionPerformed
     
     public void accederObjetCase(int i){
         if(partie.getJoueurActuel().getIndiceCase()==338){
@@ -1785,6 +1992,9 @@ public class HordeInterface extends javax.swing.JFrame {
     private javax.swing.JProgressBar LifeProgressBar;
     private javax.swing.JLabel MapIcone;
     private javax.swing.JProgressBar PAProgressBar;
+    private javax.swing.JRadioButton afficherConstruction;
+    private javax.swing.JRadioButton afficherRegle;
+    private javax.swing.JRadioButton afficherResume;
     private javax.swing.ButtonGroup bgEcranA;
     private javax.swing.JLabel butBas;
     private javax.swing.JLabel butBois;
@@ -1797,13 +2007,17 @@ public class HordeInterface extends javax.swing.JFrame {
     private javax.swing.JLabel butPlan;
     private javax.swing.JLabel butRation;
     private javax.swing.JLabel butTalki;
+    private javax.swing.JRadioButton construire;
+    private javax.swing.JRadioButton consulterEntrepot;
     private javax.swing.JRadioButton continuer;
     private javax.swing.JRadioButton demarrer;
     private javax.swing.JPanel ecranAccueil;
     private javax.swing.JPanel ecranTitre;
     private javax.swing.JButton entrer;
+    private javax.swing.JPanel exterieur;
     private javax.swing.JButton finirTour;
     private javax.swing.JLabel fondMini;
+    private javax.swing.JRadioButton fouiller;
     private javax.swing.JPanel hub;
     private javax.swing.JLabel indJour;
     private javax.swing.JLabel indJournal;
@@ -1811,6 +2025,8 @@ public class HordeInterface extends javax.swing.JFrame {
     private javax.swing.JLabel indTour;
     private javax.swing.JLabel indcoor;
     private javax.swing.JLabel indsac;
+    private javax.swing.JRadioButton interagirPorte;
+    private javax.swing.JPanel interieur;
     private javax.swing.JLabel item;
     private javax.swing.JLabel item1;
     private javax.swing.JLabel itemDroit;
@@ -1821,15 +2037,10 @@ public class HordeInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JLabel jour;
     private javax.swing.JLabel lJournal;
     private javax.swing.JLabel logo;
@@ -1844,6 +2055,7 @@ public class HordeInterface extends javax.swing.JFrame {
     private javax.swing.JPanel pJournal;
     private javax.swing.JLabel page1;
     private javax.swing.JLabel page2;
+    private javax.swing.JRadioButton participer;
     private javax.swing.JLabel pointAction;
     private javax.swing.JLabel pointVie;
     private javax.swing.JLabel position;

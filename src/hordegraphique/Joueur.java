@@ -113,8 +113,9 @@ public class Joueur {
      * @param pdv the pdv to set
      * @return changement si le joueur passe de la vie au trépas.
      */
-    public boolean setPdv(int pdv) {
+    public boolean setPdv(int pdv,Jeu partie) {
         this.pdv = pdv;
+        partie.getMonInterface().getLifeProgressBar().setValue(this.pdv);
         boolean changement=false;
         if(this.pdv<=0){
             changement=true;
@@ -135,11 +136,13 @@ public class Joueur {
     /**
      * @param pa the pa to set
      */
-    public void setPa(int pa) {
+    public void setPa(int pa,Jeu partie) {
         if(pa<10){
             this.pa = pa;
+            partie.getMonInterface().getPAProgressBar().setValue(this.pa);
         }else{
             this.pa=11;
+            partie.getMonInterface().getPAProgressBar().setValue(10);
         }
     }
     
@@ -205,7 +208,7 @@ public class Joueur {
     public void setNouveauJour(Jeu partie,int k){
         dejaBu=false;
         dejaMange=false;
-        if(dependant){nbJourDependant+=1;if(nbJourDependant>=3){if(setPdv(pdv-5)){if(partie.dernierJoueur(this,k,false)){partie.finDePartie();}}}}
+        if(dependant){nbJourDependant+=1;if(nbJourDependant>=3){if(setPdv(pdv-5,partie)){if(partie.dernierJoueur(this,k,false)){partie.finDePartie();}}}}
     }
 
     // ---------------DEBUT DES METHODES---------------------
@@ -225,7 +228,7 @@ public class Joueur {
                 i++;
             }
             if(this.sac.get(i).getNom().equals(Journal.consulterDescription(52))){
-                this.setPa(this.getPa() + 6);
+                this.setPa(this.getPa() + 6,partie);
                 this.sac.remove(i);
                 Outils.affichage(Journal.consulterDescription(64),partie.getMonInterface());
                 changement=true;
@@ -249,7 +252,7 @@ public class Joueur {
                 i++;
             }
             if(this.sac.get(i).getNom().equals(Journal.consulterDescription(51))){
-                this.setPa(this.getPa() + 6);
+                this.setPa(this.getPa() + 6,partie);
                 this.sac.remove(i);
                 Outils.affichage(Journal.consulterDescription(64),partie.getMonInterface());
                 changement=true;
@@ -285,7 +288,7 @@ public class Joueur {
     public boolean actionBoireBoisson(Jeu partieActuelle,int i){
         
                 
-                setPa(pa+4);
+                setPa(pa+4,partieActuelle);
                 if(dependant){
                     nbJourDependant=0;
                 }

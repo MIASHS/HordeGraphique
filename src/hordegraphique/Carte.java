@@ -43,6 +43,41 @@ public class Carte {
             
         }
         dispertionDesItems();
+        affecterFond();
+    }
+    
+    public void affecterFond(){
+        for(int i=0;i<625 ;i++){
+            if(tabCase.get(i).longitude>=13){
+                tabCase.get(i).setFond('P');
+            }
+        }
+        for(int i=0;i<625 ;i++){
+            if(tabCase.get(i).latitude<=-13){
+                tabCase.get(i).setFond('O');
+            }
+        }
+        for(int i=0;i<625 ;i++){
+            if(tabCase.get(i).longitude>=13&&tabCase.get(i).latitude<=-13){
+                tabCase.get(i).setFond('J');
+            }
+        }
+        for(int i=0;i<625 ;i++){
+            if(tabCase.get(i).longitude==1||tabCase.get(i).longitude==23||tabCase.get(i).latitude==-1||tabCase.get(i).latitude==-23){
+                tabCase.get(i).setFond('S');
+            }
+        }
+        for(int i=0;i<625 ;i++){
+            if(tabCase.get(i).longitude==0||tabCase.get(i).longitude==24||tabCase.get(i).latitude==0 ||tabCase.get(i).latitude==-24){
+                tabCase.get(i).setFond('M');
+            }
+        }
+        for(int i=0;i<625 ;i++){
+            if((tabCase.get(i).latitude>-15&&tabCase.get(i).latitude<-11)&&(tabCase.get(i).longitude>11&&tabCase.get(i).longitude<15)){
+                tabCase.get(i).setFond('G');
+            }
+            if(i==338){tabCase.get(i).setFond('V');}
+        }
         
     }
     

@@ -37,7 +37,7 @@ public class Temps {
             partie.setIndexJoueurActuel(0);
             numTour+=1;
             for(int i=0;i<partie.getNombreJoueur();i++){
-                    partie.getJoueur(i).setPa(partie.getJoueur(i).getPa()+4);
+                    partie.getJoueur(i).setPa(partie.getJoueur(i).getPa()+4,partie);
                 }
             if(numTour==12){
                 nuit=true;
@@ -58,14 +58,14 @@ public class Temps {
         nuit=true;
         for(int i=0;i<partie.getNombreJoueur();i++){
             if(partie.getJoueur(i).getIndiceCase()!=338){
-               partie.getJoueur(i).setPdv(0);
+               partie.getJoueur(i).setPdv(0,partie);
             }
             if(partie.getMaVille().defenseVille()<Zombies.attaqueNuitZombies(this)){
                 int nbATue= (int)(partie.getNombreJoueur()/2);
                 for(int j=0; j<nbATue;j++){
                     int k=ra.nextInt(partie.getNombreJoueur()-1);
                     Joueur ceJoueur=partie.getJoueur(k);
-                    ceJoueur.setPdv(0);
+                    ceJoueur.setPdv(0,partie);
                     if(partie.dernierJoueur(ceJoueur,k,true)){partie.finDePartie();}
                 }
             }

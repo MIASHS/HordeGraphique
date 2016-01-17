@@ -22,6 +22,7 @@ public class Case {
     private boolean caseTrouve;
     protected boolean laVille = false;
     private Zombies zomb=new Zombies();
+    private char fond='B';
     Scanner sc= new Scanner(System.in);
     Random ra=new Random();
 
@@ -34,6 +35,14 @@ public class Case {
         this.items.add(0,new Item(Journal.consulterDescription(54),0,Journal.consulterDescription(2)));
         this.items.add(1,new Item(Journal.consulterDescription(55),0,Journal.consulterDescription(3)));
         this.items.add(2,new Item(Journal.consulterDescription(53),0,Journal.consulterDescription(4)));
+    }
+
+    public char getFond() {
+        return fond;
+    }
+
+    public void setFond(char fond) {
+        this.fond = fond;
     }
     
     public Zombies getZombies(){
@@ -76,15 +85,15 @@ public class Case {
         return changement;
   }
 
-    public boolean attaquer(Joueur ceJoueur){
+    public boolean attaquer(Joueur ceJoueur,Jeu partie){
         int pourcentage;
         boolean changement=false;
         if(ceJoueur.getPa()>=nbZombiesRestants){
             for(int i=0; i<nbZombiesRestants;i++){
-                ceJoueur.setPa(ceJoueur.getPa()-1);
+                ceJoueur.setPa(ceJoueur.getPa()-1,partie);
                 pourcentage = ra.nextInt(100); // numéro aléatoire en 0 et 100
                     if(pourcentage <=10){ // conditon pour les 10% de chances de perdre de la vie
-                        changement=ceJoueur.setPdv(ceJoueur.getPdv()-10);
+                        changement=ceJoueur.setPdv(ceJoueur.getPdv()-10,partie);
                     }
             }
             nbZombiesRestants=0;
@@ -93,10 +102,10 @@ public class Case {
                 nbZombiesRestants-=1;
                 pourcentage = ra.nextInt(100); // numéro aléatoire en 0 et 100
                     if(pourcentage <=10){ // conditon pour les 10% de chances de perdre de la vie
-                        changement=ceJoueur.setPdv(ceJoueur.getPdv()-10);
+                        changement=ceJoueur.setPdv(ceJoueur.getPdv()-10,partie);
                     }
             }
-            ceJoueur.setPa(0);
+            ceJoueur.setPa(0,partie);
         }
         return changement;
     }

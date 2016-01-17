@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -27,8 +28,9 @@ public class Menu {
     private HordeInterface monInterface;
     private String strReceived="";
     //Constructor
-    public Menu(HordeInterface i){
+    public Menu(HordeInterface i,Jeu partie){
         monInterface=i;
+        partieActuelle=partie;
     }
     
     /****************Getters&Setters**********************/
@@ -110,7 +112,7 @@ public class Menu {
         }else{
             this.outilInitPartie(partie);
         }
-            
+        
         
     }
   
@@ -272,7 +274,7 @@ public class Menu {
         //if(!tabGrille.get(partieActuelle.getJoueurActuel().getIndiceCase()).getFouillee()||tabGrille.get(partieActuelle.getJoueurActuel().getIndiceCase()).getNbZombiesRestants()==0){
             //Outils.afficher(5,partieActuelle);
             //monInterface.getjButton5().doClick();
-            System.out.println("coucou");
+            //System.out.println(partieActuelle);
             consommationDePA=false;
                 if(partieActuelle.getJoueurActuel().getPa()>0||(choix!='Z'&&choix!='Q'&&choix!='D'&&choix!='S')){
                     switch (choix) {
@@ -284,27 +286,27 @@ public class Menu {
                                     break;
                         case 'S':   outilDeplacement(false,false);
                                     break;
-                        case 'R':   this.retournerMenu(2);
+                        case 'R':   //this.retournerMenu(2);
                                     break;
                         default :   //Outils.affichage(Journal.consulterDescription(6),this.getMonInterface());
                                     break;
                     }
-            //}else{
-             //   //Outils.affichage(Journal.consulterDescription(5),this.getMonInterface());
-            //}
+            }else{
+                Outils.affichage(Journal.consulterDescription(5),this.getMonInterface());
+            }
             consommerPA();
-            this.retournerMenu(-3);
+            //this.retournerMenu(-3);
             //sc.nextLine();
             
-        }else{
+       // }else{
             //Outils.affichage(Journal.consulterDescription(7),this.getMonInterface());
-            this.retournerMenu(2);
-        }
+            //this.retournerMenu(2);
+        //}
         
     }
     
     public void consommerPA(){
-        if (consommationDePA){partieActuelle.getJoueurActuel().setPa(partieActuelle.getJoueurActuel().getPa()-1);}
+        if (consommationDePA){partieActuelle.getJoueurActuel().setPa(partieActuelle.getJoueurActuel().getPa()-1,partieActuelle);}
     }
     
     public void outilDeplacement(boolean absysse,boolean positif){
@@ -342,19 +344,25 @@ public class Menu {
         if(test){
             if(!partieActuelle.getMaVille().getOuverturePorte()){
                 if(getxy+getVal==getxyville){
-                    //Outils.affichage(Journal.consulterDescription(11),this.getMonInterface());
+                    Outils.affichage(Journal.consulterDescription(11),this.getMonInterface());
                 }else{
                     if(getxy==getxyville){
-                        //Outils.affichage(Journal.consulterDescription(12),this.getMonInterface());
+                        Outils.affichage(Journal.consulterDescription(12),this.getMonInterface());
                     }else{
                         if(absysse){partieActuelle.getJoueurActuel().setCoordonneeActuelle(partieActuelle.getJoueurActuel().getAbsysseActuelle()+getVal,partieActuelle.getJoueurActuel().getOrdonneeActuelle());}else{partieActuelle.getJoueurActuel().setCoordonneeActuelle(partieActuelle.getJoueurActuel().getAbsysseActuelle(),partieActuelle.getJoueurActuel().getOrdonneeActuelle()+getVal);}
                         partieActuelle.getJoueurActuel().setIndiceCase(partieActuelle.getJoueurActuel().getIndiceCase()+indice);
+                        partieActuelle.getMonInterface().getFondMini().setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/"+partieActuelle.getGrille().getTabCase().get(partieActuelle.getJoueurActuel().getIndiceCase()).getFond()+".jpg")));
+                        partieActuelle.getMonInterface().getPosition().setText(partieActuelle.getJoueurActuel().renvoyerCoordonnees());
+                        if(partieActuelle.getJoueurActuel().getIndiceCase()==338){partieActuelle.getMonInterface().getButCarte().setText(" | VILLE | ");partieActuelle.getMonInterface().getExterieur().setVisible(false);partieActuelle.getMonInterface().getInterieur().setVisible(true);}else{partieActuelle.getMonInterface().getButCarte().setText(" |       | ");partieActuelle.getMonInterface().getExterieur().setVisible(true);partieActuelle.getMonInterface().getInterieur().setVisible(false);}
                         consommationDePA=true;
                     }
                 }
             }else{
                 if(absysse){partieActuelle.getJoueurActuel().setCoordonneeActuelle(partieActuelle.getJoueurActuel().getAbsysseActuelle()+getVal,partieActuelle.getJoueurActuel().getOrdonneeActuelle());}else{partieActuelle.getJoueurActuel().setCoordonneeActuelle(partieActuelle.getJoueurActuel().getAbsysseActuelle(),partieActuelle.getJoueurActuel().getOrdonneeActuelle()+getVal);}
                 partieActuelle.getJoueurActuel().setIndiceCase(partieActuelle.getJoueurActuel().getIndiceCase()+indice);
+                partieActuelle.getMonInterface().getFondMini().setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/"+partieActuelle.getGrille().getTabCase().get(partieActuelle.getJoueurActuel().getIndiceCase()).getFond()+".jpg")));
+                partieActuelle.getMonInterface().getPosition().setText(partieActuelle.getJoueurActuel().renvoyerCoordonnees());
+                if(partieActuelle.getJoueurActuel().getIndiceCase()==338){partieActuelle.getMonInterface().getButCarte().setText(" | VILLE | ");partieActuelle.getMonInterface().getExterieur().setVisible(false);partieActuelle.getMonInterface().getInterieur().setVisible(true);}else{partieActuelle.getMonInterface().getButCarte().setText(" |       | ");partieActuelle.getMonInterface().getExterieur().setVisible(true);partieActuelle.getMonInterface().getInterieur().setVisible(false);}
                 consommationDePA=true;
             }
         }
@@ -485,7 +493,7 @@ public class Menu {
     public void attaquer(boolean b){
         boolean joueurMort=false;
     if(b){
-                joueurMort=tabGrille.get(partieActuelle.getJoueurActuel().getIndiceCase()).attaquer(partieActuelle.getJoueurActuel());
+                joueurMort=tabGrille.get(partieActuelle.getJoueurActuel().getIndiceCase()).attaquer(partieActuelle.getJoueurActuel(),partieActuelle);
                 //Outils.affichage(Journal.consulterDescription(25)+tabGrille.get(partieActuelle.getJoueurActuel().getIndiceCase()).getNbZombiesRestants()+Journal.consulterDescription(23),this.getMonInterface());
             }
     if(joueurMort){

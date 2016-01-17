@@ -63,7 +63,7 @@ public class Jeu {
             grille=new Carte(this);
             maVille=new Ville(this);
             monJournal=new Journal();
-            menuPartie=new Menu(uneInterface);
+            menuPartie=new Menu(uneInterface,this);
             monInterface=uneInterface;
             monInterface.setPartieDemarree(true);
             
