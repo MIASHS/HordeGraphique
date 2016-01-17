@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Scanner;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -36,6 +37,7 @@ public abstract class Outils  {
         //    uneInterface.getjTextArea1().append(str);
         //    uneInterface.pack();
         //}
+        JOptionPane.showMessageDialog(null, str);
         
         //uneInterface.pack();
         //uneInterface.validate();

@@ -380,40 +380,44 @@ public class Menu {
         return b;
     }
 
-    public void accesObjet(boolean b, int a){
+    public void accesObjet(boolean b, int a,Jeu partie){
     
     if(a==1){    
         if(b){
-                        if(partieActuelle.getJoueurActuel().getSac().size()<10){
-                            partieActuelle.getJoueurActuel().getSac().add(partieActuelle.getMaVille().prendreRation(this.partieActuelle));
+                        if(partie.getJoueurActuel().getSac().size()<10){
+                            partie.getJoueurActuel().getSac().add(partie.getMaVille().prendreRation(partie));
+                            monInterface.getNbRation().setText(""+(Integer.parseInt(monInterface.getNbRation().getText())+1));
+                            monInterface.getNbObjet().setText(""+(Integer.parseInt(monInterface.getNbObjet().getText())+1));
                         }else{
-                            //Outils.affichage(Journal.consulterDescription(8),this.getMonInterface());
+                            Outils.affichage(Journal.consulterDescription(8),this.getMonInterface());
                         }
                     }
     }else{
         if(b){
-                            if(partieActuelle.getJoueurActuel().getSac().size()<10){
+                            if(partieActuelle.getJoueurActuel().getSac().isEmpty()||partieActuelle.getJoueurActuel().getSac().size()<10){
                                 partieActuelle.getJoueurActuel().getSac().add(partieActuelle.getMaVille().prendreBoisson(this.partieActuelle));
+                                monInterface.getNbEnergie().setText(""+(Integer.parseInt(monInterface.getNbEnergie().getText())+1));
+                                monInterface.getNbObjet().setText(""+(Integer.parseInt(monInterface.getNbObjet().getText())+1));
                             }else{
-                                //Outils.affichage(Journal.consulterDescription(8),this.getMonInterface());
+                                Outils.affichage(Journal.consulterDescription(8),this.getMonInterface());
                             }
                         }
         }
-    partieActuelle.getMonInterface().setCpt(partieActuelle.getMonInterface().getCpt()-11);
-    menuNiveauUn('I');
+    //    partieActuelle.getMonInterface().setCpt(partieActuelle.getMonInterface().getCpt()-11);
+  //  menuNiveauUn('I');
     }
     public int prendreObjet(int num){
     if(partieActuelle.getMaVille().getEntrepot()[num].getNom().equals(Journal.consulterDescription(51))){
-                //Outils.affichage(Journal.consulterDescription(17),this.getMonInterface());
+                Outils.affichage(Journal.consulterDescription(17),this.getMonInterface());
                 partieActuelle.getMonInterface().setCpt(partieActuelle.getMonInterface().getCpt()+1);
                 return 1;   
     }else{
                 if(partieActuelle.getMaVille().getEntrepot()[num].getNom().equals(Journal.consulterDescription(53))){
-                    //Outils.affichage(Journal.consulterDescription(18),this.getMonInterface());
+                    Outils.affichage(Journal.consulterDescription(18),this.getMonInterface());
                     partieActuelle.getMonInterface().setCpt(partieActuelle.getMonInterface().getCpt()+1);
                     return 2;   
                 }else{
-                    //Outils.affichage(Journal.consulterDescription(19),this.getMonInterface());
+                    Outils.affichage(Journal.consulterDescription(19),this.getMonInterface());
                     partieActuelle.getMonInterface().setCpt(partieActuelle.getMonInterface().getCpt()-10);
                     menuNiveauUn('I');
                     return -1;
@@ -427,7 +431,7 @@ public class Menu {
             consommationDePA=partieActuelle.getMaVille().actionnerPorte(b);
             consommerPA();
         }else{
-            //Outils.affichage(Journal.consulterDescription(5),this.getMonInterface());
+            Outils.affichage(Journal.consulterDescription(5),this.getMonInterface());
         }
     }
     
@@ -435,8 +439,8 @@ public class Menu {
     }
     
     public void accederDefense(){
-        //Outils.affichage(partieActuelle.getMaVille().afficherConstruction(),this.getMonInterface());
-        //Outils.affichage(Journal.consulterDescription(21)+partieActuelle.getMaVille().defenseVille(),this.getMonInterface());
+        monInterface.getPage1().setText(partieActuelle.getMaVille().afficherConstruction());
+        Outils.affichage(Journal.consulterDescription(21)+partieActuelle.getMaVille().defenseVille(),this.getMonInterface());
     }
     
     public void prendreGourde(boolean b){
@@ -445,7 +449,7 @@ public class Menu {
             if(partieActuelle.getJoueurActuel().getSac().size()<10){
                 partieActuelle.getJoueurActuel().getSac().add(partieActuelle.getMaVille().remplirGourde(this.partieActuelle));
             }else{
-                //Outils.affichage(Journal.consulterDescription(8),this.getMonInterface());
+                Outils.affichage(Journal.consulterDescription(8),this.getMonInterface());
             }
         }
     }
@@ -456,7 +460,7 @@ public class Menu {
             if(partieActuelle.getJoueurActuel().getSac().size()<10){
                         partieActuelle.getJoueurActuel().getSac().add(partieActuelle.getMaVille().prendreRation(this.partieActuelle));
                     }else{
-                        //Outils.affichage(Journal.consulterDescription(8),this.getMonInterface());
+                        Outils.affichage(Journal.consulterDescription(8),this.getMonInterface());
                     }
         }
     }
@@ -506,12 +510,13 @@ public class Menu {
             if(partieActuelle.getJoueurActuel().getSac().size()<10){
                 partieActuelle.getJoueurActuel().getSac().add(new Item(nom,description));
                 partieActuelle.getGrille().getTabCase().get(partieActuelle.getJoueurActuel().getIndiceCase()).getItem().get(num).setQuantite(partieActuelle.getGrille().getTabCase().get(partieActuelle.getJoueurActuel().getIndiceCase()).getItem().get(num).getQuantite()-1);
-                //Outils.affichage(Journal.consulterDescription(31)+nom+Journal.consulterDescription(110),this.getMonInterface());
+                monInterface.getNbObjet().setText(""+(Integer.parseInt(monInterface.getNbObjet().getText())+1));
+                Outils.affichage(Journal.consulterDescription(31)+nom+Journal.consulterDescription(110),this.getMonInterface());
             }else{
-                //Outils.affichage(Journal.consulterDescription(8),this.getMonInterface());
+                Outils.affichage(Journal.consulterDescription(8),this.getMonInterface());
             }
         }else{
-            //Outils.affichage(Journal.consulterDescription(116),this.getMonInterface());
+            Outils.affichage(Journal.consulterDescription(116),this.getMonInterface());
         }
         
     }

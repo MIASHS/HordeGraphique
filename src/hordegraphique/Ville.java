@@ -34,6 +34,12 @@ public class Ville extends Case {
         entrepot[1]=new Item(Journal.consulterDescription(54),0,Journal.consulterDescription(2));
         entrepot[2]=new Item("Plaques de métal",0,Journal.consulterDescription(3));
         entrepot[3]=new Item(Journal.consulterDescription(53),0,Journal.consulterDescription(4));
+        /*
+        entrepot.add(0,new Item(Journal.consulterDescription(51),50,Journal.consulterDescription(1)));
+        entrepot.add(1,new Item(Journal.consulterDescription(54),0,Journal.consulterDescription(2)));
+        entrepot.add(2,new Item("Plaques de métal",0,Journal.consulterDescription(3)));
+        entrepot.add(3,new Item(Journal.consulterDescription(53),0,Journal.consulterDescription(4)));
+        */
     }
 
     public Ville(Jeu partie, int absysse, int ordonnee) {

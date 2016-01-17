@@ -339,6 +339,7 @@ public class Joueur {
                     }
                 }
                 Outils.affichage(Journal.consulterDescription(31)+sac.get(num).getNom()+Journal.consulterDescription(111),partieActuelle.getMonInterface());
+                partieActuelle.getMenuPartie().getMonInterface().getNbObjet().setText(""+(Integer.parseInt(partieActuelle.getMenuPartie().getMonInterface().getNbObjet().getText())-1));
                 sac.remove(num);
         }else{
             //int num=0;//Outils.donnerReponseChiffre(sac.size()-1,partieActuelle);
@@ -363,6 +364,7 @@ public class Joueur {
                       
                 }
                 Outils.affichage(Journal.consulterDescription(31)+sac.get(num).getNom()+Journal.consulterDescription(111),partieActuelle.getMonInterface());
+                partieActuelle.getMenuPartie().getMonInterface().getNbObjet().setText(""+(Integer.parseInt(partieActuelle.getMenuPartie().getMonInterface().getNbObjet().getText())-1));
                 sac.remove(num);  
             }
         

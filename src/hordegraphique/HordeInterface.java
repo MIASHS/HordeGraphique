@@ -9,9 +9,16 @@ package hordegraphique;
 import java.awt.BorderLayout;
 import java.awt.Image;
 import java.util.ArrayList;
+import javax.swing.ButtonGroup;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JProgressBar;
+import javax.swing.JRadioButton;
 /**
  *
  * @author Gabriel
@@ -30,6 +37,610 @@ public class HordeInterface extends javax.swing.JFrame {
     private Jeu partie;
     private boolean isNbJoueurSet=false;
     private int copieNbJoueur;
+    private int cptCase=0;
+    private int cptSac=0;
+
+    public Menu getMenu() {
+        return menu;
+    }
+
+    public void setMenu(Menu menu) {
+        this.menu = menu;
+    }
+
+    public Jeu getPartie() {
+        return partie;
+    }
+
+    public void setPartie(Jeu partie) {
+        this.partie = partie;
+    }
+
+    public boolean isIsNbJoueurSet() {
+        return isNbJoueurSet;
+    }
+
+    public void setIsNbJoueurSet(boolean isNbJoueurSet) {
+        this.isNbJoueurSet = isNbJoueurSet;
+    }
+
+    public int getCopieNbJoueur() {
+        return copieNbJoueur;
+    }
+
+    public void setCopieNbJoueur(int copieNbJoueur) {
+        this.copieNbJoueur = copieNbJoueur;
+    }
+
+    public int getCptCase() {
+        return cptCase;
+    }
+
+    public void setCptCase(int cptCase) {
+        this.cptCase = cptCase;
+    }
+
+    public int getCptSac() {
+        return cptSac;
+    }
+
+    public void setCptSac(int cptSac) {
+        this.cptSac = cptSac;
+    }
+
+    public JProgressBar getLifeProgressBar() {
+        return LifeProgressBar;
+    }
+
+    public void setLifeProgressBar(JProgressBar LifeProgressBar) {
+        this.LifeProgressBar = LifeProgressBar;
+    }
+
+    public JLabel getMapIcone() {
+        return MapIcone;
+    }
+
+    public void setMapIcone(JLabel MapIcone) {
+        this.MapIcone = MapIcone;
+    }
+
+    public JProgressBar getPAProgressBar() {
+        return PAProgressBar;
+    }
+
+    public void setPAProgressBar(JProgressBar PAProgressBar) {
+        this.PAProgressBar = PAProgressBar;
+    }
+
+    public ButtonGroup getBgEcranA() {
+        return bgEcranA;
+    }
+
+    public void setBgEcranA(ButtonGroup bgEcranA) {
+        this.bgEcranA = bgEcranA;
+    }
+
+    public JLabel getButBas() {
+        return butBas;
+    }
+
+    public void setButBas(JLabel butBas) {
+        this.butBas = butBas;
+    }
+
+    public JLabel getButBois() {
+        return butBois;
+    }
+
+    public void setButBois(JLabel butBois) {
+        this.butBois = butBois;
+    }
+
+    public JLabel getButCarte() {
+        return butCarte;
+    }
+
+    public void setButCarte(JLabel butCarte) {
+        this.butCarte = butCarte;
+    }
+
+    public JLabel getButClou() {
+        return butClou;
+    }
+
+    public void setButClou(JLabel butClou) {
+        this.butClou = butClou;
+    }
+
+    public JLabel getButDroit() {
+        return butDroit;
+    }
+
+    public void setButDroit(JLabel butDroit) {
+        this.butDroit = butDroit;
+    }
+
+    public JLabel getButGauche() {
+        return butGauche;
+    }
+
+    public void setButGauche(JLabel butGauche) {
+        this.butGauche = butGauche;
+    }
+
+    public JLabel getButGourde() {
+        return butGourde;
+    }
+
+    public void setButGourde(JLabel butGourde) {
+        this.butGourde = butGourde;
+    }
+
+    public JLabel getButHaut() {
+        return butHaut;
+    }
+
+    public void setButHaut(JLabel butHaut) {
+        this.butHaut = butHaut;
+    }
+
+    public JLabel getButPlan() {
+        return butPlan;
+    }
+
+    public void setButPlan(JLabel butPlan) {
+        this.butPlan = butPlan;
+    }
+
+    public JLabel getButRation() {
+        return butRation;
+    }
+
+    public void setButRation(JLabel butRation) {
+        this.butRation = butRation;
+    }
+
+    public JLabel getButTalki() {
+        return butTalki;
+    }
+
+    public void setButTalki(JLabel butTalki) {
+        this.butTalki = butTalki;
+    }
+
+    public JRadioButton getContinuer() {
+        return continuer;
+    }
+
+    public void setContinuer(JRadioButton continuer) {
+        this.continuer = continuer;
+    }
+
+    public JRadioButton getDemarrer() {
+        return demarrer;
+    }
+
+    public void setDemarrer(JRadioButton demarrer) {
+        this.demarrer = demarrer;
+    }
+
+    public JPanel getEcranAccueil() {
+        return ecranAccueil;
+    }
+
+    public void setEcranAccueil(JPanel ecranAccueil) {
+        this.ecranAccueil = ecranAccueil;
+    }
+
+    public JPanel getEcranTitre() {
+        return ecranTitre;
+    }
+
+    public void setEcranTitre(JPanel ecranTitre) {
+        this.ecranTitre = ecranTitre;
+    }
+
+    public JButton getEntrer() {
+        return entrer;
+    }
+
+    public void setEntrer(JButton entrer) {
+        this.entrer = entrer;
+    }
+
+    public JButton getFinirTour() {
+        return finirTour;
+    }
+
+    public void setFinirTour(JButton finirTour) {
+        this.finirTour = finirTour;
+    }
+
+    public JLabel getFondMini() {
+        return fondMini;
+    }
+
+    public void setFondMini(JLabel fondMini) {
+        this.fondMini = fondMini;
+    }
+
+    public JPanel getHub() {
+        return hub;
+    }
+
+    public void setHub(JPanel hub) {
+        this.hub = hub;
+    }
+
+    public JLabel getIndJour() {
+        return indJour;
+    }
+
+    public void setIndJour(JLabel indJour) {
+        this.indJour = indJour;
+    }
+
+    public JLabel getIndJournal() {
+        return indJournal;
+    }
+
+    public void setIndJournal(JLabel indJournal) {
+        this.indJournal = indJournal;
+    }
+
+    public JLabel getIndObjet() {
+        return indObjet;
+    }
+
+    public void setIndObjet(JLabel indObjet) {
+        this.indObjet = indObjet;
+    }
+
+    public JLabel getIndTour() {
+        return indTour;
+    }
+
+    public void setIndTour(JLabel indTour) {
+        this.indTour = indTour;
+    }
+
+    public JLabel getIndcoor() {
+        return indcoor;
+    }
+
+    public void setIndcoor(JLabel indcoor) {
+        this.indcoor = indcoor;
+    }
+
+    public JLabel getIndsac() {
+        return indsac;
+    }
+
+    public void setIndsac(JLabel indsac) {
+        this.indsac = indsac;
+    }
+
+    public JLabel getItem() {
+        return item;
+    }
+
+    public void setItem(JLabel item) {
+        this.item = item;
+    }
+
+    public JLabel getItem1() {
+        return item1;
+    }
+
+    public void setItem1(JLabel item1) {
+        this.item1 = item1;
+    }
+
+    public JLabel getItemDroit() {
+        return itemDroit;
+    }
+
+    public void setItemDroit(JLabel itemDroit) {
+        this.itemDroit = itemDroit;
+    }
+
+    public JLabel getItemDroit1() {
+        return itemDroit1;
+    }
+
+    public void setItemDroit1(JLabel itemDroit1) {
+        this.itemDroit1 = itemDroit1;
+    }
+
+    public JLabel getItemGauche() {
+        return itemGauche;
+    }
+
+    public void setItemGauche(JLabel itemGauche) {
+        this.itemGauche = itemGauche;
+    }
+
+    public JLabel getItemGauche1() {
+        return itemGauche1;
+    }
+
+    public void setItemGauche1(JLabel itemGauche1) {
+        this.itemGauche1 = itemGauche1;
+    }
+
+    public JFrame getjFrame1() {
+        return jFrame1;
+    }
+
+    public void setjFrame1(JFrame jFrame1) {
+        this.jFrame1 = jFrame1;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel14() {
+        return jLabel14;
+    }
+
+    public void setjLabel14(JLabel jLabel14) {
+        this.jLabel14 = jLabel14;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public void setjPanel2(JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+
+    public JRadioButton getjRadioButton1() {
+        return jRadioButton1;
+    }
+
+    public void setjRadioButton1(JRadioButton jRadioButton1) {
+        this.jRadioButton1 = jRadioButton1;
+    }
+
+    public JRadioButton getjRadioButton2() {
+        return jRadioButton2;
+    }
+
+    public void setjRadioButton2(JRadioButton jRadioButton2) {
+        this.jRadioButton2 = jRadioButton2;
+    }
+
+    public JRadioButton getjRadioButton3() {
+        return jRadioButton3;
+    }
+
+    public void setjRadioButton3(JRadioButton jRadioButton3) {
+        this.jRadioButton3 = jRadioButton3;
+    }
+
+    public JRadioButton getjRadioButton4() {
+        return jRadioButton4;
+    }
+
+    public void setjRadioButton4(JRadioButton jRadioButton4) {
+        this.jRadioButton4 = jRadioButton4;
+    }
+
+    public JRadioButton getjRadioButton5() {
+        return jRadioButton5;
+    }
+
+    public void setjRadioButton5(JRadioButton jRadioButton5) {
+        this.jRadioButton5 = jRadioButton5;
+    }
+
+    public JRadioButton getjRadioButton6() {
+        return jRadioButton6;
+    }
+
+    public void setjRadioButton6(JRadioButton jRadioButton6) {
+        this.jRadioButton6 = jRadioButton6;
+    }
+
+    public JRadioButton getjRadioButton7() {
+        return jRadioButton7;
+    }
+
+    public void setjRadioButton7(JRadioButton jRadioButton7) {
+        this.jRadioButton7 = jRadioButton7;
+    }
+
+    public JLabel getJour() {
+        return jour;
+    }
+
+    public void setJour(JLabel jour) {
+        this.jour = jour;
+    }
+
+    public JLabel getlJournal() {
+        return lJournal;
+    }
+
+    public void setlJournal(JLabel lJournal) {
+        this.lJournal = lJournal;
+    }
+
+    public JLabel getLogo() {
+        return logo;
+    }
+
+    public void setLogo(JLabel logo) {
+        this.logo = logo;
+    }
+
+    public JPanel getMiniMap() {
+        return miniMap;
+    }
+
+    public void setMiniMap(JPanel miniMap) {
+        this.miniMap = miniMap;
+    }
+
+    public JLabel getNbClou() {
+        return nbClou;
+    }
+
+    public void setNbClou(JLabel nbClou) {
+        this.nbClou = nbClou;
+    }
+
+    public JLabel getNbEnergie() {
+        return nbEnergie;
+    }
+
+    public void setNbEnergie(JLabel nbEnergie) {
+        this.nbEnergie = nbEnergie;
+    }
+
+    public JLabel getNbGourde() {
+        return nbGourde;
+    }
+
+    public void setNbGourde(JLabel nbGourde) {
+        this.nbGourde = nbGourde;
+    }
+
+    public JLabel getNbObjet() {
+        return nbObjet;
+    }
+
+    public void setNbObjet(JLabel nbObjet) {
+        this.nbObjet = nbObjet;
+    }
+
+    public JLabel getNbPlanche() {
+        return nbPlanche;
+    }
+
+    public void setNbPlanche(JLabel nbPlanche) {
+        this.nbPlanche = nbPlanche;
+    }
+
+    public JLabel getNbRation() {
+        return nbRation;
+    }
+
+    public void setNbRation(JLabel nbRation) {
+        this.nbRation = nbRation;
+    }
+
+    public JLabel getNomJoueur() {
+        return nomJoueur;
+    }
+
+    public void setNomJoueur(JLabel nomJoueur) {
+        this.nomJoueur = nomJoueur;
+    }
+
+    public JPanel getpJournal() {
+        return pJournal;
+    }
+
+    public void setpJournal(JPanel pJournal) {
+        this.pJournal = pJournal;
+    }
+
+    public JLabel getPage1() {
+        return page1;
+    }
+
+    public void setPage1(JLabel page1) {
+        this.page1 = page1;
+    }
+
+    public JLabel getPage2() {
+        return page2;
+    }
+
+    public void setPage2(JLabel page2) {
+        this.page2 = page2;
+    }
+
+    public JLabel getPointAction() {
+        return pointAction;
+    }
+
+    public void setPointAction(JLabel pointAction) {
+        this.pointAction = pointAction;
+    }
+
+    public JLabel getPointVie() {
+        return pointVie;
+    }
+
+    public void setPointVie(JLabel pointVie) {
+        this.pointVie = pointVie;
+    }
+
+    public JLabel getPosition() {
+        return position;
+    }
+
+    public void setPosition(JLabel position) {
+        this.position = position;
+    }
+
+    public JButton getPrendreObjet() {
+        return prendreObjet;
+    }
+
+    public void setPrendreObjet(JButton prendreObjet) {
+        this.prendreObjet = prendreObjet;
+    }
+
+    public JButton getPrendreObjet1() {
+        return prendreObjet1;
+    }
+
+    public void setPrendreObjet1(JButton prendreObjet1) {
+        this.prendreObjet1 = prendreObjet1;
+    }
+
+    public JRadioButton getQuitter() {
+        return quitter;
+    }
+
+    public void setQuitter(JRadioButton quitter) {
+        this.quitter = quitter;
+    }
+
+    public JLabel getTour() {
+        return tour;
+    }
+
+    public void setTour(JLabel tour) {
+        this.tour = tour;
+    }
+    
+    
     public boolean isPartieDemarree() {
         return partieDemarree;
     }
@@ -116,11 +727,6 @@ public class HordeInterface extends javax.swing.JFrame {
         item1 = new javax.swing.JLabel();
         itemDroit1 = new javax.swing.JLabel();
         prendreObjet1 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        itemGauche2 = new javax.swing.JLabel();
-        item2 = new javax.swing.JLabel();
-        itemDroit2 = new javax.swing.JLabel();
-        prendreObjet2 = new javax.swing.JButton();
         fondMini = new javax.swing.JLabel();
         lJournal = new javax.swing.JLabel();
         indObjet = new javax.swing.JLabel();
@@ -533,6 +1139,11 @@ public class HordeInterface extends javax.swing.JFrame {
         item.setMaximumSize(new java.awt.Dimension(46, 46));
         item.setMinimumSize(new java.awt.Dimension(46, 46));
         item.setPreferredSize(new java.awt.Dimension(46, 46));
+        item.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemMouseClicked(evt);
+            }
+        });
 
         itemDroit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/right.png"))); // NOI18N
         itemDroit.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -545,6 +1156,11 @@ public class HordeInterface extends javax.swing.JFrame {
         prendreObjet.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 prendreObjetMouseClicked(evt);
+            }
+        });
+        prendreObjet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                prendreObjetActionPerformed(evt);
             }
         });
 
@@ -597,6 +1213,11 @@ public class HordeInterface extends javax.swing.JFrame {
         item1.setMaximumSize(new java.awt.Dimension(46, 46));
         item1.setMinimumSize(new java.awt.Dimension(46, 46));
         item1.setPreferredSize(new java.awt.Dimension(46, 46));
+        item1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                item1MouseClicked(evt);
+            }
+        });
 
         itemDroit1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/right.png"))); // NOI18N
         itemDroit1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -609,6 +1230,11 @@ public class HordeInterface extends javax.swing.JFrame {
         prendreObjet1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 prendreObjet1MouseClicked(evt);
+            }
+        });
+        prendreObjet1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                prendreObjet1ActionPerformed(evt);
             }
         });
 
@@ -642,62 +1268,6 @@ public class HordeInterface extends javax.swing.JFrame {
 
         hub.add(jPanel2);
         jPanel2.setBounds(120, 370, 150, 110);
-
-        itemGauche2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/left.png"))); // NOI18N
-        itemGauche2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                itemGauche2MouseClicked(evt);
-            }
-        });
-
-        item2.setMaximumSize(new java.awt.Dimension(46, 46));
-        item2.setMinimumSize(new java.awt.Dimension(46, 46));
-        item2.setPreferredSize(new java.awt.Dimension(46, 46));
-
-        itemDroit2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/right.png"))); // NOI18N
-        itemDroit2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                itemDroit2MouseClicked(evt);
-            }
-        });
-
-        prendreObjet2.setText("Jeter");
-        prendreObjet2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                prendreObjet2MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(0, 2, Short.MAX_VALUE)
-                .addComponent(itemGauche2)
-                .addGap(18, 18, 18)
-                .addComponent(item2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(itemDroit2))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(prendreObjet2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(item2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(itemDroit2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(itemGauche2, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(22, 22, 22)
-                .addComponent(prendreObjet2))
-        );
-
-        hub.add(jPanel3);
-        jPanel3.setBounds(900, 190, 150, 110);
 
         fondMini.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/V.jpg"))); // NOI18N
         fondMini.setFocusable(false);
@@ -775,10 +1345,22 @@ public class HordeInterface extends javax.swing.JFrame {
 
     private void itemDroitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemDroitMouseClicked
         // TODO add your handling code here:
+        if(partie.getJoueurActuel().getSac().isEmpty()){cptSac=-1;}else{
+        cptSac+=1;
+        if(cptSac>4){
+        cptSac=0;
+        }
+        accederObjetSac(cptSac);}
     }//GEN-LAST:event_itemDroitMouseClicked
 
     private void itemGaucheMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemGaucheMouseClicked
         // TODO add your handling code here:
+        if(partie.getJoueurActuel().getSac().isEmpty()){cptSac=-1;}else{cptSac-=1;
+            if(cptSac<0){
+                cptSac=4;
+            }
+        }
+        accederObjetSac(cptSac);
     }//GEN-LAST:event_itemGaucheMouseClicked
 
     private void continuerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continuerActionPerformed
@@ -789,6 +1371,7 @@ public class HordeInterface extends javax.swing.JFrame {
         this.LifeProgressBar.setValue(partie.getJoueurActuel().getPdv());
         this.PAProgressBar.setValue(partie.getJoueurActuel().getPa());
         this.item1.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/ration.png")));
+        this.item1.setToolTipText("Il y a "+partie.getMaVille().getEntrepot()[0].getQuantite()+" rations dans l'entrepôt.");
         this.position.setText(partie.getJoueurActuel().renvoyerCoordonnees());
         this.page1.setText(Journal.afficherPosition(partie, partie.getJoueurActuel()));
         this.butCarte.setText("| VILLE |");
@@ -886,32 +1469,282 @@ public class HordeInterface extends javax.swing.JFrame {
 
     private void itemGauche1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemGauche1MouseClicked
         // TODO add your handling code here:
+        cptCase-=1;
+        if(cptCase<0){
+        cptCase=4;
+        }
+        accederObjetCase(cptCase);
     }//GEN-LAST:event_itemGauche1MouseClicked
 
     private void itemDroit1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemDroit1MouseClicked
         // TODO add your handling code here:
+        cptCase+=1;
+        if(cptCase>4){
+        cptCase=0;
+        }
+        accederObjetCase(cptCase);
+        
     }//GEN-LAST:event_itemDroit1MouseClicked
 
     private void prendreObjet1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prendreObjet1MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_prendreObjet1MouseClicked
 
-    private void itemGauche2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemGauche2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_itemGauche2MouseClicked
-
-    private void itemDroit2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemDroit2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_itemDroit2MouseClicked
-
-    private void prendreObjet2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prendreObjet2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_prendreObjet2MouseClicked
-
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
+    private void item1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_item1MouseClicked
+        // TODO add your handling code here:
+        demarrerPrendreObjet();
+    }//GEN-LAST:event_item1MouseClicked
+
+    private void itemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemMouseClicked
+        // TODO add your handling code here:
+        demarrerViderSac();
+    }//GEN-LAST:event_itemMouseClicked
+
+    private void prendreObjet1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prendreObjet1ActionPerformed
+        // TODO add your handling code here:
+        demarrerPrendreObjet();
+    }//GEN-LAST:event_prendreObjet1ActionPerformed
+
+    private void prendreObjetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prendreObjetActionPerformed
+        // TODO add your handling code here:
+        demarrerViderSac();
+    }//GEN-LAST:event_prendreObjetActionPerformed
+    
+    public void accederObjetCase(int i){
+        if(partie.getJoueurActuel().getIndiceCase()==338){
+        switch(i){
+            case 0: this.item1.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/ration.png")));
+                    this.item1.setToolTipText("Il y a "+partie.getMaVille().getEntrepot()[0].getQuantite()+" rations dans l'entrepôt./En cliquant sur l'icone vous pourrez prendre une ration.");
+                    break;
+            case 1: this.item1.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/planche.png")));
+                    this.item1.setToolTipText("Il y a "+partie.getMaVille().getEntrepot()[1].getQuantite()+" planches dans l'entrepôt. Vous ne pouvez pas prendre cette objet.");
+                    break;
+            case 2: this.item1.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/clou.png")));
+                    this.item1.setToolTipText("Il y a "+partie.getMaVille().getEntrepot()[2].getQuantite()+" plaques de métal dans l'entrepôt. Vous ne pouvez pas prendre cette objet.");
+                    break;
+            case 3: this.item1.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/soft.png")));
+                    this.item1.setToolTipText("Il y a "+partie.getMaVille().getEntrepot()[3].getQuantite()+" boissons énergissantes dans l'entrepôt./En cliquant sur l'icone vous pourrez prendre une boisson énergissante.");
+                    break;
+            case 4: this.item1.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/gourde.png")));
+                    this.item1.setToolTipText("En cliquant sur l'icone vous pourrez prendre une gourdes.");
+                    break;
+            default: this.item1.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/vide.png")));
+                     this.item1.setToolTipText("Vous ne pouvez pas prendre cette objet.");
+                    break;
+                 }}else{
+            switch(i){
+            case 0: this.item1.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/ration.png")));
+                    this.item1.setToolTipText("Vous ne pouvez pas trouver cet objet sur une case.");
+                    break;
+            case 1: this.item1.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/planche.png")));
+                    this.item1.setToolTipText("Il y a "+partie.getGrille().getTabCase().get(partie.getJoueurActuel().getIndiceCase()).getItem().get(0).getQuantite()+" planches sur cette case. /En cliquant sur l'icone vous pourrez prendre une planche.");
+                    break;
+            case 2: this.item1.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/clou.png")));
+                    this.item1.setToolTipText("Il y a "+partie.getGrille().getTabCase().get(partie.getJoueurActuel().getIndiceCase()).getItem().get(1).getQuantite()+" plaques de métal sur cette case. /En cliquant sur l'icone vous pourrez prendre une plaque de métal.");
+                    break;
+            case 3: this.item1.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/soft.png")));
+                    this.item1.setToolTipText("Il y a "+partie.getGrille().getTabCase().get(partie.getJoueurActuel().getIndiceCase()).getItem().get(2).getQuantite()+" boissons énergissantes sur cette case./En cliquant sur l'icone vous pourrez prendre une boisson énergissante.");
+                    break;
+            case 4: this.item1.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/gourde.png")));
+                    this.item1.setToolTipText("Vous ne pouvez pas trouver cet objet sur une case.");
+                    break;
+            default: this.item1.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/vide.png")));
+                     this.item1.setToolTipText("Vous ne pouvez pas prendre cet objet.");
+                    break;
+            }
+        }
+    }
+    
+    public void accederObjetSac(int i){
+        int k=0,j=-1;boolean trouve=false;
+        if(partie.getJoueurActuel().getIndiceCase()==338){
+        
+        switch(i){
+            case 0: this.item.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/ration.png")));
+                                        
+                    while(k<partie.getJoueurActuel().getSac().size()&&!partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(12))){
+                        if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(51))){j=k;trouve=true;}
+                        k++;
+                    }
+                    if(j!=-1){
+                        this.item.setToolTipText("Il y a "+partie.getJoueurActuel().getSac().get(j).getQuantite()+" ration dans le sac./En cliquant sur l'icone vous pourrez manger ou déposer une ration dans l'entrepôt.");
+                    }
+                    break;
+            case 1: this.item.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/planche.png")));
+                    while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
+                        if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(54))){j=k;trouve=true;}
+                        k++;
+                    }
+                    if(j!=-1){
+                        this.item.setToolTipText("Il y a "+partie.getJoueurActuel().getSac().get(j).getQuantite()+" planches dans le sac./En cliquant sur l'icone vous pourrez déposer une planche dans l'entrepôt.");
+                    }
+                    
+                    break;
+            case 2: this.item.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/clou.png")));
+                    while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
+                        if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(55))){j=k;trouve=true;}
+                        k++;
+                    }
+                    if(j!=-1){
+                        this.item.setToolTipText("Il y a "+partie.getJoueurActuel().getSac().get(j).getQuantite()+" plaques de métal dans le sac./En cliquant sur l'icone vous pourrez déposer une plaque de métal dans l'entrepôt.");
+                    }
+                    
+                    break;
+            case 3: this.item.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/soft.png")));
+                    while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
+                        if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(53))){j=k;trouve=true;}
+                        k++;
+                    }
+                    if(j!=-1){
+                        this.item.setToolTipText("Il y a "+partie.getJoueurActuel().getSac().get(j).getQuantite()+" boissons énergisantes dans le sac./En cliquant sur l'icone vous pourrez boire ou déposer une boisson énergisante dans l'entrepôt.");
+                    }
+                    
+                    break;
+            case 4: this.item.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/gourde.png")));
+                    while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
+                        if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(52))){j=k;trouve=true;}
+                        k++;
+                    }
+                    if(j!=-1){
+                        this.item.setToolTipText("Il y a "+partie.getJoueurActuel().getSac().get(j).getQuantite()+" gourdes dans le sac./En cliquant sur l'icone vous pourrez boire ou jeter la gourde.");
+                    }
+                    break;
+            default: this.item.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/vide.png")));
+                     this.item.setToolTipText("Vous ne pouvez pas jeter cette objet.");
+                    break;
+                 }
+        }else{
+                
+        switch(i){
+            case 0: this.item.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/ration.png")));
+                                        
+                    while(k<partie.getJoueurActuel().getSac().size()||partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(12))){
+                        if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(51))){j=k;}
+                        k++;
+                    }
+                    if(j!=-1){
+                        this.item.setToolTipText("Il y a "+partie.getJoueurActuel().getSac().get(j).getQuantite()+" ration dans le sac./En cliquant sur l'icone vous pourrez manger ou jeter la ration.");
+                    }
+                    break;
+            case 1: this.item.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/planche.png")));
+                    while(k<partie.getJoueurActuel().getSac().size()||partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(54))){
+                        if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(54))){j=k;}
+                        k++;
+                    }
+                    if(j!=-1){
+                        this.item.setToolTipText("Il y a "+partie.getJoueurActuel().getSac().get(j).getQuantite()+" planches dans le sac./En cliquant sur l'icone vous pourrez déposer une planche sur la case.");
+                    }
+                    
+                    break;
+            case 2: this.item.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/clou.png")));
+                    while(k<partie.getJoueurActuel().getSac().size()||partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(55))){
+                        if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(55))){j=k;}
+                        k++;
+                    }
+                    if(j!=-1){
+                        this.item.setToolTipText("Il y a "+partie.getJoueurActuel().getSac().get(j).getQuantite()+" plaques de métal dans le sac./En cliquant sur l'icone vous pourrez déposer une plaque de métal sur la case.");
+                    }
+                    
+                    break;
+            case 3: this.item.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/soft.png")));
+                    while(k<partie.getJoueurActuel().getSac().size()||partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(53))){
+                        if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(53))){j=k;}
+                        k++;
+                    }
+                    if(j!=-1){
+                        this.item.setToolTipText("Il y a "+partie.getJoueurActuel().getSac().get(j).getQuantite()+" boissons énergisantes dans le sac./En cliquant sur l'icone vous pourrez boire ou déposer une boisson énergisante sur la case.");
+                    }
+                    
+                    break;
+            case 4: this.item.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/gourde.png")));
+                    while(k<partie.getJoueurActuel().getSac().size()||partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(52))){
+                        if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(52))){j=k;}
+                        k++;
+                    }
+                    if(j!=-1){
+                        this.item.setToolTipText("Il y a "+partie.getJoueurActuel().getSac().get(j).getQuantite()+" gourdes dans le sac./En cliquant sur l'icone vous pourrez boire ou jeter la gourde.");
+                    }
+                    break;
+            default: this.item.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/vide.png")));
+                     this.item.setToolTipText("Vous ne pouvez pas jeter cette objet.");
+                    break;
+                 }
+        }
+    }
+    
+    public void demarrerViderSac(){
+    int k=0,j=-1;boolean trouve=false;
+        switch(cptCase){
+            case 0: while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
+                        if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(51))){
+                            j=k;
+                            trouve=true;
+                        }
+                        k++;
+                    }
+                    if(j!=-1){partie.getJoueurActuel().outilViderSac(partie.getJoueurActuel().getIndiceCase()!=338,j,partie);
+                    getNbRation().setText(""+(Integer.parseInt(getNbRation().getText())-1));
+                    }
+                    
+                    break;
+            case 1: while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
+                        if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(54))){
+                            j=k;
+                            trouve=true;
+                        }
+                        k++;
+                    }
+                    if(j!=-1){partie.getJoueurActuel().outilViderSac(partie.getJoueurActuel().getIndiceCase()!=338,j,partie);
+                    getNbPlanche().setText(""+(Integer.parseInt(getNbPlanche().getText())-1));
+                    }
+                    break;
+            case 2: while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
+                        if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(55))){
+                            j=k;
+                            trouve=true;
+                        }
+                        k++;
+                    }
+                    if(j!=-1){partie.getJoueurActuel().outilViderSac(partie.getJoueurActuel().getIndiceCase()!=338,j,partie);
+                    getNbClou().setText(""+(Integer.parseInt(getNbClou().getText())-1));
+                    }
+                    break;
+            case 3: while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
+                        if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(53))){
+                            j=k;
+                            trouve=true;
+                        }
+                        k++;
+                    }
+                    if(j!=-1){partie.getJoueurActuel().outilViderSac(partie.getJoueurActuel().getIndiceCase()!=338,j,partie);
+                    getNbEnergie().setText(""+(Integer.parseInt(getNbEnergie().getText())-1));
+                    }
+                    break;
+            case 4: while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
+                        if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(52))){
+                            j=k;
+                            trouve=true;
+                        }
+                        k++;
+                    }
+                    if(j!=-1){partie.getJoueurActuel().outilViderSac(partie.getJoueurActuel().getIndiceCase()!=338,j,partie);
+                    getNbGourde().setText(""+(Integer.parseInt(getNbGourde().getText())-1));
+                    }
+                    break;
+            
+        }
+        
+    
+    }
+    
+    public void demarrerPrendreObjet(){
+        if(partie.getJoueurActuel().getIndiceCase()==338){if(cptCase==0||cptCase==3){if(cptCase==0){menu.accesObjet(JOptionPane.showConfirmDialog(rootPane,(Journal.consulterDescription(17)))==0,1,partie);}else{menu.accesObjet(JOptionPane.showConfirmDialog(rootPane,(Journal.consulterDescription(18)))==0,cptCase,partie);}}else{if(cptCase==4){menu.prendreGourde((JOptionPane.showConfirmDialog(rootPane,(Journal.consulterDescription(20)))==0));}}}else{menu.prendreObjet(cptCase);}
+    }
+   
     
     /**
      * @param args the command line arguments
@@ -980,20 +1813,16 @@ public class HordeInterface extends javax.swing.JFrame {
     private javax.swing.JLabel indsac;
     private javax.swing.JLabel item;
     private javax.swing.JLabel item1;
-    private javax.swing.JLabel item2;
     private javax.swing.JLabel itemDroit;
     private javax.swing.JLabel itemDroit1;
-    private javax.swing.JLabel itemDroit2;
     private javax.swing.JLabel itemGauche;
     private javax.swing.JLabel itemGauche1;
-    private javax.swing.JLabel itemGauche2;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
@@ -1020,7 +1849,6 @@ public class HordeInterface extends javax.swing.JFrame {
     private javax.swing.JLabel position;
     private javax.swing.JButton prendreObjet;
     private javax.swing.JButton prendreObjet1;
-    private javax.swing.JButton prendreObjet2;
     private javax.swing.JRadioButton quitter;
     private javax.swing.JLabel tour;
     // End of variables declaration//GEN-END:variables
