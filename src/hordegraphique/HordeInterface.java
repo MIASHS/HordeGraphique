@@ -6,6 +6,7 @@
 package hordegraphique;
 
 
+import java.awt.BorderLayout;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 /**
@@ -115,6 +116,8 @@ public class HordeInterface extends javax.swing.JFrame {
         item2 = new javax.swing.JLabel();
         itemDroit2 = new javax.swing.JLabel();
         prendreObjet2 = new javax.swing.JButton();
+        fondMini = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         MapIcone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/map.gif"))); // NOI18N
         jFrame1.getContentPane().add(MapIcone, java.awt.BorderLayout.CENTER);
@@ -152,21 +155,21 @@ public class HordeInterface extends javax.swing.JFrame {
             .addGroup(ecranTitreLayout.createSequentialGroup()
                 .addGroup(ecranTitreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ecranTitreLayout.createSequentialGroup()
-                        .addGap(513, 513, 513)
+                        .addGap(423, 423, 423)
                         .addComponent(logo))
                     .addGroup(ecranTitreLayout.createSequentialGroup()
-                        .addGap(585, 585, 585)
+                        .addGap(500, 500, 500)
                         .addComponent(entrer)))
-                .addContainerGap(513, Short.MAX_VALUE))
+                .addContainerGap(423, Short.MAX_VALUE))
         );
         ecranTitreLayout.setVerticalGroup(
             ecranTitreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ecranTitreLayout.createSequentialGroup()
-                .addGap(200, 200, 200)
+                .addGap(180, 180, 180)
                 .addComponent(logo)
                 .addGap(47, 47, 47)
                 .addComponent(entrer)
-                .addContainerGap(208, Short.MAX_VALUE))
+                .addContainerGap(168, Short.MAX_VALUE))
         );
 
         getContentPane().add(ecranTitre);
@@ -204,37 +207,36 @@ public class HordeInterface extends javax.swing.JFrame {
         ecranAccueilLayout.setHorizontalGroup(
             ecranAccueilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ecranAccueilLayout.createSequentialGroup()
-                .addContainerGap(443, Short.MAX_VALUE)
+                .addContainerGap(353, Short.MAX_VALUE)
                 .addGroup(ecranAccueilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ecranAccueilLayout.createSequentialGroup()
                         .addGroup(ecranAccueilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(demarrer)
                             .addComponent(continuer)
                             .addComponent(quitter))
-                        .addGap(577, 577, 577))
+                        .addGap(475, 475, 475))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ecranAccueilLayout.createSequentialGroup()
                         .addComponent(jLabel14)
-                        .addGap(444, 444, 444))))
+                        .addGap(354, 354, 354))))
         );
         ecranAccueilLayout.setVerticalGroup(
             ecranAccueilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ecranAccueilLayout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jLabel14)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(demarrer)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(continuer)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(quitter)
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         getContentPane().add(ecranAccueil);
         ecranAccueil.setBounds(0, 0, 1080, 530);
 
         hub.setToolTipText("");
-        hub.setMinimumSize(new java.awt.Dimension(1260, 590));
+        hub.setMinimumSize(new java.awt.Dimension(1080, 530));
         hub.setLayout(null);
 
         PAProgressBar.setMaximum(10);
@@ -314,7 +316,7 @@ public class HordeInterface extends javax.swing.JFrame {
         hub.add(indsac);
         indsac.setBounds(960, 10, 30, 15);
 
-        butTalki.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/Talkie Walkie.png"))); // NOI18N
+        butTalki.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/talkie.png"))); // NOI18N
         butTalki.setToolTipText("Mettre à jour la carte");
         butTalki.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -322,7 +324,7 @@ public class HordeInterface extends javax.swing.JFrame {
             }
         });
         hub.add(butTalki);
-        butTalki.setBounds(30, 290, 60, 190);
+        butTalki.setBounds(30, 280, 60, 200);
 
         jLabel1.setText("Déplacement:");
         hub.add(jLabel1);
@@ -347,6 +349,11 @@ public class HordeInterface extends javax.swing.JFrame {
         hub.add(indJournal);
         indJournal.setBounds(530, 50, 90, 30);
 
+        miniMap.setEnabled(false);
+        miniMap.setMinimumSize(new java.awt.Dimension(180, 180));
+        miniMap.setOpaque(false);
+        miniMap.setPreferredSize(new java.awt.Dimension(180, 180));
+
         butHaut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/up.png"))); // NOI18N
 
         butDroit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/right.png"))); // NOI18N
@@ -362,17 +369,21 @@ public class HordeInterface extends javax.swing.JFrame {
         miniMapLayout.setHorizontalGroup(
             miniMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(miniMapLayout.createSequentialGroup()
+                .addGap(72, 72, 72)
+                .addComponent(butHaut)
+                .addContainerGap(72, Short.MAX_VALUE))
+            .addGroup(miniMapLayout.createSequentialGroup()
                 .addComponent(butGauche)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(butCarte)
-                .addGap(34, 34, 34)
-                .addComponent(butDroit))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, miniMapLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(miniMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(butBas)
-                    .addComponent(butHaut))
-                .addGap(76, 76, 76))
+                .addGap(32, 32, 32)
+                .addGroup(miniMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(miniMapLayout.createSequentialGroup()
+                        .addComponent(butCarte)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(butDroit))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, miniMapLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(butBas)
+                        .addGap(72, 72, 72))))
         );
         miniMapLayout.setVerticalGroup(
             miniMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -380,21 +391,22 @@ public class HordeInterface extends javax.swing.JFrame {
                 .addComponent(butHaut)
                 .addGroup(miniMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(miniMapLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
+                        .addGap(42, 42, 42)
                         .addGroup(miniMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(butGauche)
                             .addComponent(butDroit)))
                     .addGroup(miniMapLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
+                        .addGap(52, 52, 52)
                         .addComponent(butCarte)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addComponent(butBas))
         );
 
         hub.add(miniMap);
-        miniMap.setBounds(20, 20, 190, 160);
+        miniMap.setBounds(20, 20, 180, 180);
 
-        pJournal.setBackground(new java.awt.Color(255, 51, 255));
+        pJournal.setEnabled(false);
+        pJournal.setOpaque(false);
 
         page1.setText("jLabel12");
 
@@ -474,7 +486,7 @@ public class HordeInterface extends javax.swing.JFrame {
 
         jLabel2.setText("jLabel2");
         hub.add(jLabel2);
-        jLabel2.setBounds(160, 200, 51, 15);
+        jLabel2.setBounds(140, 200, 51, 15);
 
         itemGauche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/left.png"))); // NOI18N
         itemGauche.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -483,6 +495,7 @@ public class HordeInterface extends javax.swing.JFrame {
             }
         });
 
+        item.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/vide.png"))); // NOI18N
         item.setMaximumSize(new java.awt.Dimension(46, 46));
         item.setMinimumSize(new java.awt.Dimension(46, 46));
         item.setPreferredSize(new java.awt.Dimension(46, 46));
@@ -506,23 +519,23 @@ public class HordeInterface extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(0, 2, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(itemGauche)
                 .addGap(18, 18, 18)
-                .addComponent(item, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(item, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addComponent(itemDroit))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(prendreObjet, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+                .addContainerGap(17, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(item, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(item, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(itemDroit, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(itemGauche, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(22, 22, 22)
@@ -533,8 +546,11 @@ public class HordeInterface extends javax.swing.JFrame {
         jPanel1.setBounds(900, 190, 150, 110);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/zombie.png"))); // NOI18N
+        jLabel3.setMaximumSize(new java.awt.Dimension(130, 179));
+        jLabel3.setMinimumSize(new java.awt.Dimension(130, 179));
+        jLabel3.setPreferredSize(new java.awt.Dimension(130, 179));
         hub.add(jLabel3);
-        jLabel3.setBounds(150, 230, 110, 140);
+        jLabel3.setBounds(130, 220, 130, 160);
 
         itemGauche1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/left.png"))); // NOI18N
         itemGauche1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -543,6 +559,7 @@ public class HordeInterface extends javax.swing.JFrame {
             }
         });
 
+        item1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/vide.png"))); // NOI18N
         item1.setMaximumSize(new java.awt.Dimension(46, 46));
         item1.setMinimumSize(new java.awt.Dimension(46, 46));
         item1.setPreferredSize(new java.awt.Dimension(46, 46));
@@ -566,10 +583,10 @@ public class HordeInterface extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(0, 2, Short.MAX_VALUE)
+                .addGap(0, 6, Short.MAX_VALUE)
                 .addComponent(itemGauche1)
                 .addGap(18, 18, 18)
-                .addComponent(item1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(item1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addComponent(itemDroit1))
             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -580,9 +597,9 @@ public class HordeInterface extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+                .addContainerGap(17, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(item1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(item1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(itemDroit1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(itemGauche1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(22, 22, 22)
@@ -648,8 +665,20 @@ public class HordeInterface extends javax.swing.JFrame {
         hub.add(jPanel3);
         jPanel3.setBounds(900, 190, 150, 110);
 
+        fondMini.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/V.jpg"))); // NOI18N
+        fondMini.setFocusable(false);
+        fondMini.setMaximumSize(new java.awt.Dimension(180, 180));
+        fondMini.setMinimumSize(new java.awt.Dimension(180, 180));
+        fondMini.setPreferredSize(new java.awt.Dimension(180, 180));
+        hub.add(fondMini);
+        fondMini.setBounds(20, 20, 180, 180);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/Journal.png"))); // NOI18N
+        hub.add(jLabel4);
+        jLabel4.setBounds(280, 90, 610, 390);
+
         getContentPane().add(hub);
-        hub.setBounds(10, 0, 1350, 590);
+        hub.setBounds(10, 0, 1080, 530);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -730,6 +759,8 @@ public class HordeInterface extends javax.swing.JFrame {
                 }
                 partie.setJoueurActuel(0);
             }          
+            ImagePanel panel = new ImagePanel("images/Journal.png");
+            pJournal=panel;
             this.ecranTitre.setVisible(false);
             this.ecranAccueil.setVisible(true); 
     }//GEN-LAST:event_entrerActionPerformed
@@ -857,6 +888,7 @@ public class HordeInterface extends javax.swing.JFrame {
     private javax.swing.JPanel ecranTitre;
     private javax.swing.JButton entrer;
     private javax.swing.JButton finirTour;
+    private javax.swing.JLabel fondMini;
     private javax.swing.JPanel hub;
     private javax.swing.JLabel indJour;
     private javax.swing.JLabel indJournal;
@@ -877,6 +909,7 @@ public class HordeInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
