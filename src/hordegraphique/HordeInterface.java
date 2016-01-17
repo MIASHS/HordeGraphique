@@ -838,9 +838,7 @@ public class HordeInterface extends javax.swing.JFrame {
         jSeparator5 = new javax.swing.JSeparator();
 
         jFrame1.setTitle("Maps");
-        jFrame1.setMaximumSize(new java.awt.Dimension(1030, 750));
         jFrame1.setMinimumSize(new java.awt.Dimension(1030, 750));
-        jFrame1.setPreferredSize(new java.awt.Dimension(1030, 750));
         jFrame1.setResizable(false);
 
         jScrollPane2.setEnabled(false);
@@ -1055,9 +1053,6 @@ public class HordeInterface extends javax.swing.JFrame {
 
         butClou.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/clou.png"))); // NOI18N
         butClou.setToolTipText("ressource nécessaire aux constructions");
-        butClou.setMaximumSize(new java.awt.Dimension(46, 46));
-        butClou.setMinimumSize(new java.awt.Dimension(46, 46));
-        butClou.setPreferredSize(new java.awt.Dimension(46, 46));
         butClou.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 butClouMouseClicked(evt);
@@ -1418,9 +1413,6 @@ public class HordeInterface extends javax.swing.JFrame {
 
         item.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/vide.png"))); // NOI18N
         item.setToolTipText("retirer un item du sac. Soit pour le mettre dans l'entrepôt, soit pour le jeter.");
-        item.setMaximumSize(new java.awt.Dimension(46, 46));
-        item.setMinimumSize(new java.awt.Dimension(46, 46));
-        item.setPreferredSize(new java.awt.Dimension(46, 46));
         item.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 itemMouseClicked(evt);
@@ -1459,7 +1451,7 @@ public class HordeInterface extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(itemGauche)
                 .addGap(18, 18, 18)
-                .addComponent(item, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(item)
                 .addGap(20, 20, 20)
                 .addComponent(itemDroit))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -1472,7 +1464,7 @@ public class HordeInterface extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(item, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(item, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(itemDroit, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(itemGauche, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(22, 22, 22)
@@ -1484,9 +1476,6 @@ public class HordeInterface extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/zombie.png"))); // NOI18N
         jLabel3.setToolTipText("Permet de d'attaquer les zombies lorsqu'il y en a ($1PA/Zombie)");
-        jLabel3.setMaximumSize(new java.awt.Dimension(130, 179));
-        jLabel3.setMinimumSize(new java.awt.Dimension(130, 179));
-        jLabel3.setPreferredSize(new java.awt.Dimension(130, 179));
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
@@ -1504,9 +1493,6 @@ public class HordeInterface extends javax.swing.JFrame {
 
         item1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/vide.png"))); // NOI18N
         item1.setToolTipText("Prendre un item de l'entrepôt et le mettre dans le sac./Prendre un objet sur la case fouillée. ");
-        item1.setMaximumSize(new java.awt.Dimension(46, 46));
-        item1.setMinimumSize(new java.awt.Dimension(46, 46));
-        item1.setPreferredSize(new java.awt.Dimension(46, 46));
         item1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 item1MouseClicked(evt);
@@ -1570,9 +1556,6 @@ public class HordeInterface extends javax.swing.JFrame {
 
         fondMini.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/V.jpg"))); // NOI18N
         fondMini.setFocusable(false);
-        fondMini.setMaximumSize(new java.awt.Dimension(180, 180));
-        fondMini.setMinimumSize(new java.awt.Dimension(180, 180));
-        fondMini.setPreferredSize(new java.awt.Dimension(180, 180));
         hub.add(fondMini);
         fondMini.setBounds(20, 20, 180, 180);
 
