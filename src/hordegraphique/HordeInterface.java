@@ -757,6 +757,7 @@ public class HordeInterface extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
         bgEcranA = new javax.swing.ButtonGroup();
+        boutonRadio = new javax.swing.ButtonGroup();
         ecranTitre = new javax.swing.JPanel();
         logo = new javax.swing.JLabel();
         entrer = new javax.swing.JButton();
@@ -800,7 +801,7 @@ public class HordeInterface extends javax.swing.JFrame {
         participer = new javax.swing.JRadioButton();
         consulterEntrepot = new javax.swing.JRadioButton();
         interagirPorte = new javax.swing.JRadioButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        CalculerDefenses = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         page1 = new javax.swing.JTextPane();
         nomJoueur = new javax.swing.JLabel();
@@ -874,7 +875,6 @@ public class HordeInterface extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Horde");
         setMinimumSize(new java.awt.Dimension(1080, 530));
-        setPreferredSize(new java.awt.Dimension(1080, 530));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -993,13 +993,13 @@ public class HordeInterface extends javax.swing.JFrame {
         PAProgressBar.setValue(10);
         PAProgressBar.setName("PA/100"); // NOI18N
         hub.add(PAProgressBar);
-        PAProgressBar.setBounds(900, 320, 148, 30);
+        PAProgressBar.setBounds(900, 320, 146, 30);
         PAProgressBar.getAccessibleContext().setAccessibleName("");
 
         LifeProgressBar.setToolTipText("");
         LifeProgressBar.setValue(100);
         hub.add(LifeProgressBar);
-        LifeProgressBar.setBounds(900, 380, 148, 30);
+        LifeProgressBar.setBounds(900, 380, 146, 30);
 
         butGourde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/gourde.png"))); // NOI18N
         butGourde.setToolTipText("Boire/Remplir la gourde(en ville seulement)");
@@ -1024,12 +1024,12 @@ public class HordeInterface extends javax.swing.JFrame {
         pointAction.setFont(new java.awt.Font("Purisa", 1, 14)); // NOI18N
         pointAction.setText("Points d'action:");
         hub.add(pointAction);
-        pointAction.setBounds(900, 300, 140, 25);
+        pointAction.setBounds(900, 300, 140, 19);
 
         pointVie.setFont(new java.awt.Font("Purisa", 1, 14)); // NOI18N
         pointVie.setText("Points de vie:");
         hub.add(pointVie);
-        pointVie.setBounds(900, 360, 130, 25);
+        pointVie.setBounds(900, 360, 130, 19);
 
         butBois.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/soft.png"))); // NOI18N
         butBois.setToolTipText("Boire une boisson énergissante");
@@ -1079,13 +1079,13 @@ public class HordeInterface extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Purisa", 1, 14)); // NOI18N
         jLabel1.setText("Déplacement:");
         hub.add(jLabel1);
-        jLabel1.setBounds(40, 0, 160, 25);
+        jLabel1.setBounds(40, 0, 160, 19);
 
         indcoor.setFont(new java.awt.Font("Purisa", 1, 14)); // NOI18N
         indcoor.setText("Position joueur:");
         indcoor.setToolTipText("Position du joueur sur la carte. La carte va de (0;0) à (-24;24). ");
         hub.add(indcoor);
-        indcoor.setBounds(0, 200, 170, 25);
+        indcoor.setBounds(0, 200, 170, 19);
 
         finirTour.setBackground(new java.awt.Color(153, 0, 0));
         finirTour.setFont(new java.awt.Font("FreeMono", 1, 14)); // NOI18N
@@ -1250,7 +1250,7 @@ public class HordeInterface extends javax.swing.JFrame {
             exterieurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(exterieurLayout.createSequentialGroup()
                 .addComponent(fouiller)
-                .addGap(0, 182, Short.MAX_VALUE))
+                .addGap(0, 185, Short.MAX_VALUE))
         );
 
         interieur.setOpaque(false);
@@ -1266,14 +1266,24 @@ public class HordeInterface extends javax.swing.JFrame {
         consulterEntrepot.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
         consulterEntrepot.setText("Consulter l'entrepôt");
         consulterEntrepot.setOpaque(false);
+        consulterEntrepot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consulterEntrepotActionPerformed(evt);
+            }
+        });
 
         interagirPorte.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
         interagirPorte.setText("Intéragir avec la porte");
         interagirPorte.setOpaque(false);
+        interagirPorte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                interagirPorteActionPerformed(evt);
+            }
+        });
 
-        jRadioButton1.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
-        jRadioButton1.setText("Calculer les défenses");
-        jRadioButton1.setOpaque(false);
+        CalculerDefenses.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
+        CalculerDefenses.setText("Calculer les défenses");
+        CalculerDefenses.setOpaque(false);
 
         javax.swing.GroupLayout interieurLayout = new javax.swing.GroupLayout(interieur);
         interieur.setLayout(interieurLayout);
@@ -1281,7 +1291,7 @@ public class HordeInterface extends javax.swing.JFrame {
             interieurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(interieurLayout.createSequentialGroup()
                 .addGroup(interieurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton1)
+                    .addComponent(CalculerDefenses)
                     .addComponent(interagirPorte)
                     .addComponent(consulterEntrepot)
                     .addComponent(construire)
@@ -1299,7 +1309,7 @@ public class HordeInterface extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(interagirPorte)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton1)
+                .addComponent(CalculerDefenses)
                 .addGap(0, 42, Short.MAX_VALUE))
         );
 
@@ -1380,23 +1390,23 @@ public class HordeInterface extends javax.swing.JFrame {
         tour.setForeground(new java.awt.Color(204, 51, 0));
         tour.setText("jLabel3");
         hub.add(tour);
-        tour.setBounds(670, 20, 55, 24);
+        tour.setBounds(670, 20, 63, 24);
 
         jour.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
         jour.setForeground(new java.awt.Color(204, 51, 0));
         jour.setText("jLabel4");
         hub.add(jour);
-        jour.setBounds(830, 20, 55, 24);
+        jour.setBounds(830, 20, 63, 24);
 
         indTour.setFont(new java.awt.Font("Purisa", 1, 14)); // NOI18N
         indTour.setText("Tour(s):");
         hub.add(indTour);
-        indTour.setBounds(600, 20, 100, 25);
+        indTour.setBounds(600, 20, 100, 19);
 
         indJour.setFont(new java.awt.Font("Purisa", 1, 14)); // NOI18N
         indJour.setText("Jour(s):");
         hub.add(indJour);
-        indJour.setBounds(760, 20, 110, 25);
+        indJour.setBounds(760, 20, 110, 19);
 
         position.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
         position.setForeground(new java.awt.Color(204, 51, 0));
@@ -1567,11 +1577,11 @@ public class HordeInterface extends javax.swing.JFrame {
         indObjet.setText("/10");
         indObjet.setToolTipText("Nombre d'item que peut contenir le sac.");
         hub.add(indObjet);
-        indObjet.setBounds(1000, 160, 30, 25);
+        indObjet.setBounds(1000, 160, 30, 19);
 
         nbObjet.setText("10");
         hub.add(nbObjet);
-        nbObjet.setBounds(980, 160, 20, 15);
+        nbObjet.setBounds(980, 160, 20, 14);
 
         nbEnergie.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
         nbEnergie.setForeground(new java.awt.Color(204, 51, 0));
@@ -1606,13 +1616,13 @@ public class HordeInterface extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Purisa", 1, 14)); // NOI18N
         jLabel2.setText("Défense de la ville: ");
         hub.add(jLabel2);
-        jLabel2.setBounds(590, 40, 190, 25);
+        jLabel2.setBounds(590, 40, 190, 19);
 
         defense.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
         defense.setForeground(new java.awt.Color(204, 51, 0));
         defense.setText("jLabel4");
         hub.add(defense);
-        defense.setBounds(760, 40, 55, 24);
+        defense.setBounds(760, 40, 63, 24);
         hub.add(jSeparator1);
         jSeparator1.setBounds(910, 80, 120, 10);
         hub.add(jSeparator2);
@@ -1763,6 +1773,16 @@ public class HordeInterface extends javax.swing.JFrame {
         this.bgEcranA.add(continuer);
         this.bgEcranA.add(quitter);
         
+        this.boutonRadio.add(afficherResume);
+        this.boutonRadio.add(afficherRegle);
+        this.boutonRadio.add(afficherConstruction);
+        this.boutonRadio.add(fouiller);
+        this.boutonRadio.add(construire);
+        this.boutonRadio.add(participer);
+        this.boutonRadio.add(consulterEntrepot);
+        this.boutonRadio.add(interagirPorte);
+        this.boutonRadio.add(CalculerDefenses);
+        
     }//GEN-LAST:event_formWindowOpened
 
     private void quitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitterActionPerformed
@@ -1861,7 +1881,7 @@ public class HordeInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_butBasMouseClicked
 
     private void afficherConstructionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afficherConstructionActionPerformed
-        // TODO add your handling code here:
+        Outils.affichage(partie.getMaVille().afficherConstruction(), 1, this);               // TODO add your handling code here:
     }//GEN-LAST:event_afficherConstructionActionPerformed
 
     private void fouillerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fouillerMouseClicked
@@ -1888,6 +1908,15 @@ public class HordeInterface extends javax.swing.JFrame {
         jTextPane1.setText(Journal.voirCarte(partie.getMonJournal()));
         jFrame1.setVisible(true);
     }//GEN-LAST:event_butCarteMouseClicked
+
+    private void consulterEntrepotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consulterEntrepotActionPerformed
+       Outils.affichage(partie.getMaVille().consulterEntrepot(), 1, this);    // TODO add your handling code here:
+    }//GEN-LAST:event_consulterEntrepotActionPerformed
+
+    private void interagirPorteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_interagirPorteActionPerformed
+       menu.setConsommationDePA(partie.getMaVille().ouverturePorte(partie));
+       menu.consommerPA();// TODO add your handling code here:
+    }//GEN-LAST:event_interagirPorteActionPerformed
     
     public void accederObjetCase(int i){
         if(partie.getJoueurActuel().getIndiceCase()==338){
@@ -2157,12 +2186,14 @@ public class HordeInterface extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton CalculerDefenses;
     private javax.swing.JProgressBar LifeProgressBar;
     private javax.swing.JProgressBar PAProgressBar;
     private javax.swing.JRadioButton afficherConstruction;
     private javax.swing.JRadioButton afficherRegle;
     private javax.swing.JRadioButton afficherResume;
     private javax.swing.ButtonGroup bgEcranA;
+    private javax.swing.ButtonGroup boutonRadio;
     private javax.swing.JLabel butBas;
     private javax.swing.JLabel butBois;
     private javax.swing.JLabel butCarte;
@@ -2209,7 +2240,6 @@ public class HordeInterface extends javax.swing.JFrame {
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;

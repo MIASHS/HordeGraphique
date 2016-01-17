@@ -125,23 +125,33 @@ public class Ville extends Case {
         return this.tauxDefense;
     }
 
-    public boolean ouverturePorte(Jeu partieActuelle) {
-        //bool ouverte -> 1 sinon 0
-        
-        if (ouverturePorte == true) {
-            Outils.affichage(Journal.consulterDescription(78),partieActuelle.getMonInterface());
-            Outils.affichage(Journal.consulterDescription(79),partieActuelle.getMonInterface());
-            return true;
-            
-        } else {
-            Outils.affichage(Journal.consulterDescription(80),partieActuelle.getMonInterface());
-            Outils.affichage(Journal.consulterDescription(81),partieActuelle.getMonInterface());
-            return false;
-        }
+    public String consulterDefense(){
+        String afficherTauxDefense;
+        return null;
         
     }
     
+    public boolean ouverturePorte(Jeu partieActuelle) {
+        //bool ouverte -> 1 sinon 0
+        //afficher si les portes sont ouvertes ou non
+        if (ouverturePorte == true) {
+            Outils.affichage(Journal.consulterDescription(78),1,partieActuelle.getMonInterface());
+            if(Outils.affichage(Journal.consulterDescription(79),0,partieActuelle.getMonInterface())==0){
+                return actionnerPorte(true);}else{ //retoune vrai l'ouverture de la porte
+            return false;
+            }
+                    
+        } else {
+            Outils.affichage(Journal.consulterDescription(80),1,partieActuelle.getMonInterface());
+            if(Outils.affichage(Journal.consulterDescription(81),0,partieActuelle.getMonInterface())==0){
+                
+            return actionnerPorte(false);}else{ // retoune faux l'ouverture de la porte
+        }
+            return false;
+    }
+    }
     public boolean actionnerPorte(boolean b){
+        // Fonction d'ouverture et de fermeture des portes de la ville
         if(b){
             ouverturePorte=false;
         }else{
@@ -193,4 +203,5 @@ public class Ville extends Case {
         return boisson;
     }
 
+    
 }
