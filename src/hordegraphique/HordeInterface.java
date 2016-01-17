@@ -17,28 +17,7 @@ public class HordeInterface extends javax.swing.JFrame {
     public HordeInterface() {
         initComponents();
     }
-    
-    private int cpt;
-    private boolean partieDemarree=false;
 
-    public boolean isPartieDemarree() {
-        return partieDemarree;
-    }
-
-    public void setPartieDemarree(boolean partieDemarree) {
-        this.partieDemarree = partieDemarree;
-    }
-
-    public int getCpt() {
-        return cpt;
-    }
-
-    public void setCpt(int cpt) {
-        this.cpt = cpt;
-    }
-    
-    
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -81,7 +60,6 @@ public class HordeInterface extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
@@ -91,6 +69,7 @@ public class HordeInterface extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+
         MapIcone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/map.gif"))); // NOI18N
         jFrame1.getContentPane().add(MapIcone, java.awt.BorderLayout.CENTER);
 
@@ -106,13 +85,13 @@ public class HordeInterface extends javax.swing.JFrame {
         PAProgressBar.setValue(10);
         PAProgressBar.setName("PA/100"); // NOI18N
         jPanel1.add(PAProgressBar);
-        PAProgressBar.setBounds(1020, 400, 146, 30);
+        PAProgressBar.setBounds(1020, 400, 148, 30);
         PAProgressBar.getAccessibleContext().setAccessibleName("");
 
         LifeProgressBar.setToolTipText("");
         LifeProgressBar.setValue(100);
         jPanel1.add(LifeProgressBar);
-        LifeProgressBar.setBounds(1020, 460, 146, 30);
+        LifeProgressBar.setBounds(1020, 460, 148, 30);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/Gourde.jpg"))); // NOI18N
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -135,19 +114,19 @@ public class HordeInterface extends javax.swing.JFrame {
 
         jLabel4.setText("Gourde");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(1040, 180, 40, 14);
+        jLabel4.setBounds(1040, 180, 40, 15);
 
         jLabel5.setText("Ration");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(1180, 180, 31, 14);
+        jLabel5.setBounds(1180, 180, 46, 15);
 
         jLabel6.setText("Points d'action:");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(1060, 380, 80, 14);
+        jLabel6.setBounds(1060, 380, 80, 15);
 
         jLabel7.setText("Points de vie:");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(1060, 440, 80, 14);
+        jLabel7.setBounds(1060, 440, 80, 15);
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Journal");
@@ -173,7 +152,6 @@ public class HordeInterface extends javax.swing.JFrame {
         jPanel1.add(jLabel9);
         jLabel9.setBounds(1090, 30, 40, 50);
 
-        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\Gabriel\\Documents\\NetBeansProjects\\Horde\\HordeGraphique\\src\\hordegraphique\\clou.jpg")); // NOI18N
         jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel11MouseClicked(evt);
@@ -184,7 +162,7 @@ public class HordeInterface extends javax.swing.JFrame {
 
         jLabel13.setText("Sac:");
         jPanel1.add(jLabel13);
-        jLabel13.setBounds(1140, 10, 30, 14);
+        jLabel13.setBounds(1140, 10, 30, 15);
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/Talkie Walkie.png"))); // NOI18N
         jLabel16.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -197,7 +175,7 @@ public class HordeInterface extends javax.swing.JFrame {
 
         jLabel15.setText("Afficher carte");
         jPanel1.add(jLabel15);
-        jLabel15.setBounds(40, 290, 80, 14);
+        jLabel15.setBounds(40, 290, 80, 15);
 
         jTextField1.setText("Nombres tours :");
         jPanel1.add(jTextField1);
@@ -210,7 +188,7 @@ public class HordeInterface extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jTextField2);
-        jTextField2.setBounds(850, 20, 50, 20);
+        jTextField2.setBounds(850, 20, 50, 19);
 
         jTextField3.setText("Joueur actuelle:");
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
@@ -219,15 +197,15 @@ public class HordeInterface extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jTextField3);
-        jTextField3.setBounds(320, 20, 90, 20);
+        jTextField3.setBounds(320, 20, 90, 19);
 
         jLabel1.setText("Déplacement:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(60, 0, 110, 14);
+        jLabel1.setBounds(60, 0, 110, 15);
 
         jLabel18.setText("Position joueur:");
         jPanel1.add(jLabel18);
-        jLabel18.setBounds(1190, 420, 80, 14);
+        jLabel18.setBounds(1190, 420, 80, 15);
 
         jTextField4.setText("Position X : Y");
         jTextField4.setToolTipText("");
@@ -237,7 +215,7 @@ public class HordeInterface extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jTextField4);
-        jTextField4.setBounds(1190, 450, 80, 20);
+        jTextField4.setBounds(1190, 450, 80, 19);
 
         jButton5.setText("Afficher carte");
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -246,11 +224,11 @@ public class HordeInterface extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton5);
-        jButton5.setBounds(30, 260, 120, 23);
+        jButton5.setBounds(30, 260, 120, 25);
 
         jButton6.setText("Finir tour");
         jPanel1.add(jButton6);
-        jButton6.setBounds(1200, 510, 100, 23);
+        jButton6.setBounds(1200, 510, 100, 25);
 
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel20.setText("Journal");
@@ -305,32 +283,29 @@ public class HordeInterface extends javax.swing.JFrame {
         jPanel1.add(jPanel2);
         jPanel2.setBounds(20, 20, 190, 160);
 
-        jLabel25.setText("jLabel25");
-        jPanel1.add(jLabel25);
-        jLabel25.setBounds(370, 110, 59, 15);
         jRadioButton1.setText("jRadioButton1");
         jPanel1.add(jRadioButton1);
-        jRadioButton1.setBounds(710, 320, 93, 23);
+        jRadioButton1.setBounds(710, 320, 125, 23);
 
         jRadioButton2.setText("jRadioButton2");
         jPanel1.add(jRadioButton2);
-        jRadioButton2.setBounds(710, 350, 93, 23);
+        jRadioButton2.setBounds(710, 350, 125, 23);
 
         jRadioButton3.setText("jRadioButton3");
         jPanel1.add(jRadioButton3);
-        jRadioButton3.setBounds(710, 380, 93, 23);
+        jRadioButton3.setBounds(710, 380, 125, 23);
 
         jRadioButton4.setText("jRadioButton4");
         jPanel1.add(jRadioButton4);
-        jRadioButton4.setBounds(710, 410, 93, 23);
+        jRadioButton4.setBounds(710, 410, 125, 23);
 
         jRadioButton5.setText("jRadioButton5");
         jPanel1.add(jRadioButton5);
-        jRadioButton5.setBounds(710, 440, 93, 23);
+        jRadioButton5.setBounds(710, 440, 125, 23);
 
         jLabel12.setText("jLabel12");
         jPanel1.add(jLabel12);
-        jLabel12.setBounds(370, 110, 40, 14);
+        jLabel12.setBounds(370, 110, 59, 15);
 
         jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/left.png"))); // NOI18N
         jLabel25.addMouseListener(new java.awt.event.MouseAdapter() {

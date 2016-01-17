@@ -207,11 +207,6 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel11">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Gabriel\Documents\NetBeansProjects\Horde\HordeGraphique\src\hordegraphique\clou.jpg"/>
-            </Property>
-          </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel11MouseClicked"/>
           </Events>
@@ -449,11 +444,6 @@
             </Component>
           </SubComponents>
         </Container>
-<<<<<<< HEAD
-        <Component class="javax.swing.JLabel" name="jLabel25">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel25"/>
-=======
         <Component class="javax.swing.JRadioButton" name="jRadioButton1">
           <Properties>
             <Property name="text" type="java.lang.String" value="jRadioButton1"/>
@@ -507,7 +497,6 @@
         <Component class="javax.swing.JLabel" name="jLabel12">
           <Properties>
             <Property name="text" type="java.lang.String" value="jLabel12"/>
->>>>>>> 1958a49bb941c66c9a1342cde8979bd2d239aa70
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -515,8 +504,6 @@
             </Constraint>
           </Constraints>
         </Component>
-<<<<<<< HEAD
-=======
         <Component class="javax.swing.JLabel" name="jLabel25">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -572,7 +559,6 @@
             </DimensionLayout>
           </Layout>
         </Container>
->>>>>>> 1958a49bb941c66c9a1342cde8979bd2d239aa70
       </SubComponents>
     </Container>
   </SubComponents>
