@@ -66,51 +66,63 @@ public class HordeInterface extends javax.swing.JFrame {
         hub = new javax.swing.JPanel();
         PAProgressBar = new javax.swing.JProgressBar();
         LifeProgressBar = new javax.swing.JProgressBar();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        butGourde = new javax.swing.JLabel();
+        butRation = new javax.swing.JLabel();
+        pointAction = new javax.swing.JLabel();
+        pointVie = new javax.swing.JLabel();
+        butBois = new javax.swing.JLabel();
+        butPlan = new javax.swing.JLabel();
+        butClou = new javax.swing.JLabel();
+        indsac = new javax.swing.JLabel();
+        butTalki = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jLabel20 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
+        indcoor = new javax.swing.JLabel();
+        finirTour = new javax.swing.JButton();
+        indJournal = new javax.swing.JLabel();
+        miniMap = new javax.swing.JPanel();
+        butHaut = new javax.swing.JLabel();
+        butDroit = new javax.swing.JLabel();
+        butGauche = new javax.swing.JLabel();
+        butBas = new javax.swing.JLabel();
+        butCarte = new javax.swing.JLabel();
+        pJournal = new javax.swing.JPanel();
+        page1 = new javax.swing.JLabel();
+        page2 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
         jRadioButton5 = new javax.swing.JRadioButton();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
+        nomJoueur = new javax.swing.JLabel();
+        tour = new javax.swing.JLabel();
+        jour = new javax.swing.JLabel();
+        indTour = new javax.swing.JLabel();
+        indJour = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        itemGauche = new javax.swing.JLabel();
+        item = new javax.swing.JLabel();
+        itemDroit = new javax.swing.JLabel();
+        prendreObjet = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        itemGauche1 = new javax.swing.JLabel();
+        item1 = new javax.swing.JLabel();
+        itemDroit1 = new javax.swing.JLabel();
+        prendreObjet1 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        itemGauche2 = new javax.swing.JLabel();
+        item2 = new javax.swing.JLabel();
+        itemDroit2 = new javax.swing.JLabel();
+        prendreObjet2 = new javax.swing.JButton();
 
         MapIcone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/map.gif"))); // NOI18N
         jFrame1.getContentPane().add(MapIcone, java.awt.BorderLayout.CENTER);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Horde");
-        setMinimumSize(new java.awt.Dimension(1310, 590));
-        setPreferredSize(new java.awt.Dimension(1310, 590));
+        setMinimumSize(new java.awt.Dimension(1080, 530));
+        setPreferredSize(new java.awt.Dimension(1080, 530));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -119,7 +131,8 @@ public class HordeInterface extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         ecranTitre.setBackground(new java.awt.Color(255, 255, 255));
-        ecranTitre.setMinimumSize(new java.awt.Dimension(1310, 590));
+        ecranTitre.setMinimumSize(new java.awt.Dimension(1080, 530));
+        ecranTitre.setPreferredSize(new java.awt.Dimension(1080, 530));
 
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/titre.png"))); // NOI18N
 
@@ -139,28 +152,29 @@ public class HordeInterface extends javax.swing.JFrame {
             .addGroup(ecranTitreLayout.createSequentialGroup()
                 .addGroup(ecranTitreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ecranTitreLayout.createSequentialGroup()
-                        .addGap(538, 538, 538)
+                        .addGap(513, 513, 513)
                         .addComponent(logo))
                     .addGroup(ecranTitreLayout.createSequentialGroup()
-                        .addGap(619, 619, 619)
+                        .addGap(585, 585, 585)
                         .addComponent(entrer)))
-                .addContainerGap(538, Short.MAX_VALUE))
+                .addContainerGap(513, Short.MAX_VALUE))
         );
         ecranTitreLayout.setVerticalGroup(
             ecranTitreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ecranTitreLayout.createSequentialGroup()
-                .addGap(220, 220, 220)
+                .addGap(200, 200, 200)
                 .addComponent(logo)
                 .addGap(47, 47, 47)
                 .addComponent(entrer)
-                .addContainerGap(188, Short.MAX_VALUE))
+                .addContainerGap(208, Short.MAX_VALUE))
         );
 
         getContentPane().add(ecranTitre);
-        ecranTitre.setBounds(0, 0, 1310, 590);
+        ecranTitre.setBounds(0, 0, 1080, 530);
 
         ecranAccueil.setBackground(new java.awt.Color(255, 255, 255));
-        ecranAccueil.setMinimumSize(new java.awt.Dimension(1310, 590));
+        ecranAccueil.setMinimumSize(new java.awt.Dimension(1080, 530));
+        ecranAccueil.setPreferredSize(new java.awt.Dimension(1080, 530));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/logo.png"))); // NOI18N
 
@@ -190,7 +204,7 @@ public class HordeInterface extends javax.swing.JFrame {
         ecranAccueilLayout.setHorizontalGroup(
             ecranAccueilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ecranAccueilLayout.createSequentialGroup()
-                .addContainerGap(468, Short.MAX_VALUE)
+                .addContainerGap(443, Short.MAX_VALUE)
                 .addGroup(ecranAccueilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ecranAccueilLayout.createSequentialGroup()
                         .addGroup(ecranAccueilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,7 +214,7 @@ public class HordeInterface extends javax.swing.JFrame {
                         .addGap(577, 577, 577))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ecranAccueilLayout.createSequentialGroup()
                         .addComponent(jLabel14)
-                        .addGap(469, 469, 469))))
+                        .addGap(444, 444, 444))))
         );
         ecranAccueilLayout.setVerticalGroup(
             ecranAccueilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,270 +231,422 @@ public class HordeInterface extends javax.swing.JFrame {
         );
 
         getContentPane().add(ecranAccueil);
-        ecranAccueil.setBounds(0, 0, 1310, 590);
+        ecranAccueil.setBounds(0, 0, 1080, 530);
 
-        hub.setToolTipText("PA/100");
+        hub.setToolTipText("");
+        hub.setMinimumSize(new java.awt.Dimension(1260, 590));
         hub.setLayout(null);
 
         PAProgressBar.setMaximum(10);
         PAProgressBar.setValue(10);
         PAProgressBar.setName("PA/100"); // NOI18N
         hub.add(PAProgressBar);
-        PAProgressBar.setBounds(1020, 400, 148, 30);
+        PAProgressBar.setBounds(900, 320, 148, 30);
         PAProgressBar.getAccessibleContext().setAccessibleName("");
 
         LifeProgressBar.setToolTipText("");
         LifeProgressBar.setValue(100);
         hub.add(LifeProgressBar);
-        LifeProgressBar.setBounds(1020, 460, 148, 30);
+        LifeProgressBar.setBounds(900, 380, 148, 30);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/Gourde.jpg"))); // NOI18N
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        butGourde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/gourde.png"))); // NOI18N
+        butGourde.setToolTipText("Boire/Remplir la gourde(en ville seulement)");
+        butGourde.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                butGourdeMouseClicked(evt);
             }
         });
-        hub.add(jLabel2);
-        jLabel2.setBounds(1020, 210, 80, 130);
+        hub.add(butGourde);
+        butGourde.setBounds(920, 140, 50, 50);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/ration.jpg"))); // NOI18N
-        jLabel3.setText("jLabel3");
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        butRation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/ration.png"))); // NOI18N
+        butRation.setToolTipText("manger/prendre une ration (en ville seulement)");
+        butRation.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
+                butRationMouseClicked(evt);
             }
         });
-        hub.add(jLabel3);
-        jLabel3.setBounds(1130, 210, 160, 130);
+        hub.add(butRation);
+        butRation.setBounds(980, 90, 40, 40);
 
-        jLabel4.setText("Gourde");
-        hub.add(jLabel4);
-        jLabel4.setBounds(1040, 180, 40, 15);
+        pointAction.setText("Points d'action:");
+        hub.add(pointAction);
+        pointAction.setBounds(900, 300, 130, 15);
 
-        jLabel5.setText("Ration");
-        hub.add(jLabel5);
-        jLabel5.setBounds(1180, 180, 46, 15);
+        pointVie.setText("Points de vie:");
+        hub.add(pointVie);
+        pointVie.setBounds(900, 360, 120, 15);
 
-        jLabel6.setText("Points d'action:");
-        hub.add(jLabel6);
-        jLabel6.setBounds(1060, 380, 80, 15);
-
-        jLabel7.setText("Points de vie:");
-        hub.add(jLabel7);
-        jLabel7.setBounds(1060, 440, 80, 15);
-
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Journal");
-        jLabel8.setMaximumSize(new java.awt.Dimension(35, 16));
-        hub.add(jLabel8);
-        jLabel8.setBounds(590, 100, 90, 30);
-
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/Boisson.jpg"))); // NOI18N
-        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+        butBois.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/soft.png"))); // NOI18N
+        butBois.setToolTipText("Boire une boisson énergissante");
+        butBois.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel10MouseClicked(evt);
+                butBoisMouseClicked(evt);
             }
         });
-        hub.add(jLabel10);
-        jLabel10.setBounds(1090, 100, 40, 50);
+        hub.add(butBois);
+        butBois.setBounds(920, 90, 40, 40);
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/planche.jpg"))); // NOI18N
-        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+        butPlan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/planche.png"))); // NOI18N
+        butPlan.setToolTipText("Ressource nécessaire aux constructions");
+        butPlan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel9MouseClicked(evt);
+                butPlanMouseClicked(evt);
             }
         });
-        hub.add(jLabel9);
-        jLabel9.setBounds(1090, 30, 40, 50);
+        hub.add(butPlan);
+        butPlan.setBounds(920, 30, 50, 50);
 
-        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+        butClou.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/clou.png"))); // NOI18N
+        butClou.setToolTipText("ressource nécessaire aux constructions");
+        butClou.setMaximumSize(new java.awt.Dimension(46, 46));
+        butClou.setMinimumSize(new java.awt.Dimension(46, 46));
+        butClou.setPreferredSize(new java.awt.Dimension(46, 46));
+        butClou.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel11MouseClicked(evt);
+                butClouMouseClicked(evt);
             }
         });
-        hub.add(jLabel11);
-        jLabel11.setBounds(1160, 30, 50, 40);
+        hub.add(butClou);
+        butClou.setBounds(980, 30, 46, 50);
 
-        jLabel13.setText("Sac:");
-        hub.add(jLabel13);
-        jLabel13.setBounds(1140, 10, 30, 15);
+        indsac.setText("Sac:");
+        hub.add(indsac);
+        indsac.setBounds(960, 10, 30, 15);
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/Talkie Walkie.png"))); // NOI18N
-        jLabel16.addMouseListener(new java.awt.event.MouseAdapter() {
+        butTalki.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/Talkie Walkie.png"))); // NOI18N
+        butTalki.setToolTipText("Mettre à jour la carte");
+        butTalki.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel16MouseClicked(evt);
+                butTalkiMouseClicked(evt);
             }
         });
-        hub.add(jLabel16);
-        jLabel16.setBounds(40, 320, 60, 190);
-
-        jLabel15.setText("Afficher carte");
-        hub.add(jLabel15);
-        jLabel15.setBounds(40, 290, 80, 15);
-
-        jTextField1.setText("Nombres tours :");
-        hub.add(jTextField1);
-        jTextField1.setBounds(700, 20, 90, 20);
-
-        jTextField2.setText("Jours:");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-        hub.add(jTextField2);
-        jTextField2.setBounds(850, 20, 50, 19);
-
-        jTextField3.setText("Joueur actuelle:");
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
-            }
-        });
-        hub.add(jTextField3);
-        jTextField3.setBounds(320, 20, 90, 19);
+        hub.add(butTalki);
+        butTalki.setBounds(30, 290, 60, 190);
 
         jLabel1.setText("Déplacement:");
         hub.add(jLabel1);
         jLabel1.setBounds(60, 0, 110, 15);
 
-        jLabel18.setText("Position joueur:");
-        hub.add(jLabel18);
-        jLabel18.setBounds(1190, 420, 80, 15);
+        indcoor.setText("Position joueur:");
+        hub.add(indcoor);
+        indcoor.setBounds(10, 200, 120, 15);
 
-        jTextField4.setText("Position X : Y");
-        jTextField4.setToolTipText("");
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        finirTour.setText("Finir tour");
+        finirTour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                finirTourActionPerformed(evt);
             }
         });
-        hub.add(jTextField4);
-        jTextField4.setBounds(1190, 450, 80, 19);
+        hub.add(finirTour);
+        finirTour.setBounds(900, 430, 150, 50);
 
-        jButton5.setText("Afficher carte");
-        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+        indJournal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        indJournal.setText("Journal");
+        indJournal.setMaximumSize(new java.awt.Dimension(35, 16));
+        hub.add(indJournal);
+        indJournal.setBounds(530, 50, 90, 30);
+
+        butHaut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/up.png"))); // NOI18N
+
+        butDroit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/right.png"))); // NOI18N
+
+        butGauche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/left.png"))); // NOI18N
+
+        butBas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/down.png"))); // NOI18N
+
+        butCarte.setText(" |          | ");
+
+        javax.swing.GroupLayout miniMapLayout = new javax.swing.GroupLayout(miniMap);
+        miniMap.setLayout(miniMapLayout);
+        miniMapLayout.setHorizontalGroup(
+            miniMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(miniMapLayout.createSequentialGroup()
+                .addComponent(butGauche)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addComponent(butCarte)
+                .addGap(34, 34, 34)
+                .addComponent(butDroit))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, miniMapLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(miniMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(butBas)
+                    .addComponent(butHaut))
+                .addGap(76, 76, 76))
+        );
+        miniMapLayout.setVerticalGroup(
+            miniMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(miniMapLayout.createSequentialGroup()
+                .addComponent(butHaut)
+                .addGroup(miniMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(miniMapLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(miniMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(butGauche)
+                            .addComponent(butDroit)))
+                    .addGroup(miniMapLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(butCarte)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(butBas))
+        );
+
+        hub.add(miniMap);
+        miniMap.setBounds(20, 20, 190, 160);
+
+        pJournal.setBackground(new java.awt.Color(255, 51, 255));
+
+        page1.setText("jLabel12");
+
+        page2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        page2.setText("Journal");
+        page2.setMaximumSize(new java.awt.Dimension(35, 16));
+
+        jRadioButton1.setText("jRadioButton1");
+
+        jRadioButton2.setText("jRadioButton2");
+
+        jRadioButton3.setText("jRadioButton3");
+
+        jRadioButton4.setText("jRadioButton4");
+
+        jRadioButton5.setText("jRadioButton5");
+
+        javax.swing.GroupLayout pJournalLayout = new javax.swing.GroupLayout(pJournal);
+        pJournal.setLayout(pJournalLayout);
+        pJournalLayout.setHorizontalGroup(
+            pJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pJournalLayout.createSequentialGroup()
+                .addGap(86, 86, 86)
+                .addComponent(page1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 227, Short.MAX_VALUE)
+                .addGroup(pJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRadioButton1)
+                    .addComponent(jRadioButton2)
+                    .addComponent(jRadioButton3)
+                    .addComponent(jRadioButton4)
+                    .addComponent(jRadioButton5)
+                    .addComponent(page2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(113, 113, 113))
+        );
+        pJournalLayout.setVerticalGroup(
+            pJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pJournalLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(pJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(page1)
+                    .addComponent(page2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
+                .addComponent(jRadioButton1)
+                .addGap(7, 7, 7)
+                .addComponent(jRadioButton2)
+                .addGap(7, 7, 7)
+                .addComponent(jRadioButton3)
+                .addGap(7, 7, 7)
+                .addComponent(jRadioButton4)
+                .addGap(7, 7, 7)
+                .addComponent(jRadioButton5)
+                .addGap(44, 44, 44))
+        );
+
+        hub.add(pJournal);
+        pJournal.setBounds(280, 80, 610, 400);
+
+        nomJoueur.setText("jLabel2");
+        hub.add(nomJoueur);
+        nomJoueur.setBounds(380, 20, 51, 15);
+
+        tour.setText("jLabel3");
+        hub.add(tour);
+        tour.setBounds(670, 20, 51, 15);
+
+        jour.setText("jLabel4");
+        hub.add(jour);
+        jour.setBounds(830, 20, 51, 15);
+
+        indTour.setText("tour(s):");
+        hub.add(indTour);
+        indTour.setBounds(610, 20, 53, 15);
+
+        indJour.setText("Jour(s):");
+        hub.add(indJour);
+        indJour.setBounds(770, 20, 60, 15);
+
+        jLabel2.setText("jLabel2");
+        hub.add(jLabel2);
+        jLabel2.setBounds(160, 200, 51, 15);
+
+        itemGauche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/left.png"))); // NOI18N
+        itemGauche.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton5MouseClicked(evt);
+                itemGaucheMouseClicked(evt);
             }
         });
-        hub.add(jButton5);
-        jButton5.setBounds(30, 260, 120, 25);
 
-        jButton6.setText("Finir tour");
-        hub.add(jButton6);
-        jButton6.setBounds(1200, 510, 100, 25);
+        item.setMaximumSize(new java.awt.Dimension(46, 46));
+        item.setMinimumSize(new java.awt.Dimension(46, 46));
+        item.setPreferredSize(new java.awt.Dimension(46, 46));
 
-        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("Journal");
-        jLabel20.setMaximumSize(new java.awt.Dimension(35, 16));
-        hub.add(jLabel20);
-        jLabel20.setBounds(530, 50, 90, 30);
+        itemDroit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/right.png"))); // NOI18N
+        itemDroit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemDroitMouseClicked(evt);
+            }
+        });
 
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/up.png"))); // NOI18N
+        prendreObjet.setText("Jeter");
+        prendreObjet.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                prendreObjetMouseClicked(evt);
+            }
+        });
 
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/right.png"))); // NOI18N
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(0, 2, Short.MAX_VALUE)
+                .addComponent(itemGauche)
+                .addGap(18, 18, 18)
+                .addComponent(item, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(itemDroit))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(prendreObjet, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(13, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(item, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(itemDroit, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(itemGauche, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(22, 22, 22)
+                .addComponent(prendreObjet))
+        );
 
-        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/left.png"))); // NOI18N
+        hub.add(jPanel1);
+        jPanel1.setBounds(900, 190, 150, 110);
 
-        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/down.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/zombie.png"))); // NOI18N
+        hub.add(jLabel3);
+        jLabel3.setBounds(150, 230, 110, 140);
 
-        jLabel24.setText(" |          | ");
+        itemGauche1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/left.png"))); // NOI18N
+        itemGauche1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemGauche1MouseClicked(evt);
+            }
+        });
+
+        item1.setMaximumSize(new java.awt.Dimension(46, 46));
+        item1.setMinimumSize(new java.awt.Dimension(46, 46));
+        item1.setPreferredSize(new java.awt.Dimension(46, 46));
+
+        itemDroit1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/right.png"))); // NOI18N
+        itemDroit1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemDroit1MouseClicked(evt);
+            }
+        });
+
+        prendreObjet1.setText("Prendre");
+        prendreObjet1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                prendreObjet1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel22)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(jLabel24)
-                .addGap(34, 34, 34)
-                .addComponent(jLabel21))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel23)
-                    .addComponent(jLabel19))
-                .addGap(76, 76, 76))
+                .addGap(0, 2, Short.MAX_VALUE)
+                .addComponent(itemGauche1)
+                .addGap(18, 18, 18)
+                .addComponent(item1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(itemDroit1))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(prendreObjet1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel19)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(13, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel22)
-                            .addComponent(jLabel21)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jLabel24)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addComponent(jLabel23))
+                    .addComponent(item1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(itemDroit1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(itemGauche1, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(22, 22, 22)
+                .addComponent(prendreObjet1))
         );
 
         hub.add(jPanel2);
-        jPanel2.setBounds(20, 20, 190, 160);
+        jPanel2.setBounds(120, 370, 150, 110);
 
-        jRadioButton1.setText("jRadioButton1");
-        hub.add(jRadioButton1);
-        jRadioButton1.setBounds(710, 320, 125, 23);
-
-        jRadioButton2.setText("jRadioButton2");
-        hub.add(jRadioButton2);
-        jRadioButton2.setBounds(710, 350, 125, 23);
-
-        jRadioButton3.setText("jRadioButton3");
-        hub.add(jRadioButton3);
-        jRadioButton3.setBounds(710, 380, 125, 23);
-
-        jRadioButton4.setText("jRadioButton4");
-        hub.add(jRadioButton4);
-        jRadioButton4.setBounds(710, 410, 125, 23);
-
-        jRadioButton5.setText("jRadioButton5");
-        hub.add(jRadioButton5);
-        jRadioButton5.setBounds(710, 440, 125, 23);
-
-        jLabel12.setText("jLabel12");
-        hub.add(jLabel12);
-        jLabel12.setBounds(370, 110, 59, 15);
-
-        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/left.png"))); // NOI18N
-        jLabel25.addMouseListener(new java.awt.event.MouseAdapter() {
+        itemGauche2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/left.png"))); // NOI18N
+        itemGauche2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel25MouseClicked(evt);
+                itemGauche2MouseClicked(evt);
             }
         });
-        hub.add(jLabel25);
-        jLabel25.setBounds(20, 200, 30, 36);
 
-        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/right.png"))); // NOI18N
-        jLabel26.addMouseListener(new java.awt.event.MouseAdapter() {
+        item2.setMaximumSize(new java.awt.Dimension(46, 46));
+        item2.setMinimumSize(new java.awt.Dimension(46, 46));
+        item2.setPreferredSize(new java.awt.Dimension(46, 46));
+
+        itemDroit2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/right.png"))); // NOI18N
+        itemDroit2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel26MouseClicked(evt);
+                itemDroit2MouseClicked(evt);
             }
         });
-        hub.add(jLabel26);
-        jLabel26.setBounds(140, 200, 30, 36);
 
-        jPanel4.setBackground(new java.awt.Color(255, 51, 255));
+        prendreObjet2.setText("Jeter");
+        prendreObjet2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                prendreObjet2MouseClicked(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 610, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(0, 2, Short.MAX_VALUE)
+                .addComponent(itemGauche2)
+                .addGap(18, 18, 18)
+                .addComponent(item2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(itemDroit2))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(prendreObjet2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(13, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(item2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(itemDroit2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(itemGauche2, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(22, 22, 22)
+                .addComponent(prendreObjet2))
         );
 
-        hub.add(jPanel4);
-        jPanel4.setBounds(270, 90, 610, 400);
+        hub.add(jPanel3);
+        jPanel3.setBounds(900, 190, 150, 110);
 
         getContentPane().add(hub);
         hub.setBounds(10, 0, 1350, 590);
@@ -488,56 +654,47 @@ public class HordeInterface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+    private void prendreObjetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prendreObjetMouseClicked
         // TODO add your handling code here: // Boutton afficher carte
-    }//GEN-LAST:event_jButton5MouseClicked
+    }//GEN-LAST:event_prendreObjetMouseClicked
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
-
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
+    private void butTalkiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butTalkiMouseClicked
         // TODO add your handling code here: // Talkie
-    }//GEN-LAST:event_jLabel16MouseClicked
+    }//GEN-LAST:event_butTalkiMouseClicked
 
-    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+    private void butClouMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butClouMouseClicked
         // TODO add your handling code here:// POUR CLOU
-    }//GEN-LAST:event_jLabel11MouseClicked
+    }//GEN-LAST:event_butClouMouseClicked
 
-    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+    private void butPlanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butPlanMouseClicked
         // TODO add your handling code here:// POUR LES PLANCHES
-    }//GEN-LAST:event_jLabel9MouseClicked
+    }//GEN-LAST:event_butPlanMouseClicked
 
-    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+    private void butBoisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butBoisMouseClicked
         // TODO add your handling code here:// boisson énergisante
-    }//GEN-LAST:event_jLabel10MouseClicked
+    }//GEN-LAST:event_butBoisMouseClicked
 
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+    private void butRationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butRationMouseClicked
         // TODO add your handling code here: POUR LES RATIONS
-    }//GEN-LAST:event_jLabel3MouseClicked
+    }//GEN-LAST:event_butRationMouseClicked
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    private void butGourdeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butGourdeMouseClicked
         // TODO add your handling code here: POUR LES GOURDES
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_butGourdeMouseClicked
 
-    private void jLabel26MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel26MouseClicked
+    private void itemDroitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemDroitMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel26MouseClicked
+    }//GEN-LAST:event_itemDroitMouseClicked
 
-    private void jLabel25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel25MouseClicked
+    private void itemGaucheMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemGaucheMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel25MouseClicked
+    }//GEN-LAST:event_itemGaucheMouseClicked
 
     private void continuerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continuerActionPerformed
         // TODO add your handling code here:
+        
+        this.ecranAccueil.setVisible(false);
+        this.hub.setVisible(true);
     }//GEN-LAST:event_continuerActionPerformed
 
     private void entrerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrerActionPerformed
@@ -614,6 +771,34 @@ public class HordeInterface extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_demarrerActionPerformed
 
+    private void finirTourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finirTourActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_finirTourActionPerformed
+
+    private void itemGauche1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemGauche1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itemGauche1MouseClicked
+
+    private void itemDroit1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemDroit1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itemDroit1MouseClicked
+
+    private void prendreObjet1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prendreObjet1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_prendreObjet1MouseClicked
+
+    private void itemGauche2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemGauche2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itemGauche2MouseClicked
+
+    private void itemDroit2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemDroit2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itemDroit2MouseClicked
+
+    private void prendreObjet2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_prendreObjet2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_prendreObjet2MouseClicked
+
     
     /**
      * @param args the command line arguments
@@ -655,52 +840,64 @@ public class HordeInterface extends javax.swing.JFrame {
     private javax.swing.JLabel MapIcone;
     private javax.swing.JProgressBar PAProgressBar;
     private javax.swing.ButtonGroup bgEcranA;
+    private javax.swing.JLabel butBas;
+    private javax.swing.JLabel butBois;
+    private javax.swing.JLabel butCarte;
+    private javax.swing.JLabel butClou;
+    private javax.swing.JLabel butDroit;
+    private javax.swing.JLabel butGauche;
+    private javax.swing.JLabel butGourde;
+    private javax.swing.JLabel butHaut;
+    private javax.swing.JLabel butPlan;
+    private javax.swing.JLabel butRation;
+    private javax.swing.JLabel butTalki;
     private javax.swing.JRadioButton continuer;
     private javax.swing.JRadioButton demarrer;
     private javax.swing.JPanel ecranAccueil;
     private javax.swing.JPanel ecranTitre;
     private javax.swing.JButton entrer;
+    private javax.swing.JButton finirTour;
     private javax.swing.JPanel hub;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JLabel indJour;
+    private javax.swing.JLabel indJournal;
+    private javax.swing.JLabel indTour;
+    private javax.swing.JLabel indcoor;
+    private javax.swing.JLabel indsac;
+    private javax.swing.JLabel item;
+    private javax.swing.JLabel item1;
+    private javax.swing.JLabel item2;
+    private javax.swing.JLabel itemDroit;
+    private javax.swing.JLabel itemDroit1;
+    private javax.swing.JLabel itemDroit2;
+    private javax.swing.JLabel itemGauche;
+    private javax.swing.JLabel itemGauche1;
+    private javax.swing.JLabel itemGauche2;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel jour;
     private javax.swing.JLabel logo;
+    private javax.swing.JPanel miniMap;
+    private javax.swing.JLabel nomJoueur;
+    private javax.swing.JPanel pJournal;
+    private javax.swing.JLabel page1;
+    private javax.swing.JLabel page2;
+    private javax.swing.JLabel pointAction;
+    private javax.swing.JLabel pointVie;
+    private javax.swing.JButton prendreObjet;
+    private javax.swing.JButton prendreObjet1;
+    private javax.swing.JButton prendreObjet2;
     private javax.swing.JRadioButton quitter;
+    private javax.swing.JLabel tour;
     // End of variables declaration//GEN-END:variables
 }
