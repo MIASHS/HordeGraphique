@@ -17,7 +17,26 @@ public class HordeInterface extends javax.swing.JFrame {
     public HordeInterface() {
         initComponents();
     }
+ private int cpt;
+    private boolean partieDemarree=false;
 
+    public boolean isPartieDemarree() {
+        return partieDemarree;
+    }
+
+    public void setPartieDemarree(boolean partieDemarree) {
+        this.partieDemarree = partieDemarree;
+    }
+
+    public int getCpt() {
+        return cpt;
+    }
+
+    public void setCpt(int cpt) {
+        this.cpt = cpt;
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
