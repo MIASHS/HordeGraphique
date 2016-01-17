@@ -7,7 +7,10 @@ package hordegraphique;
 
 
 import java.awt.BorderLayout;
+import java.awt.Image;
 import java.util.ArrayList;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 /**
  *
@@ -94,12 +97,14 @@ public class HordeInterface extends javax.swing.JFrame {
         jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
         jRadioButton5 = new javax.swing.JRadioButton();
+        jRadioButton6 = new javax.swing.JRadioButton();
+        jRadioButton7 = new javax.swing.JRadioButton();
         nomJoueur = new javax.swing.JLabel();
         tour = new javax.swing.JLabel();
         jour = new javax.swing.JLabel();
         indTour = new javax.swing.JLabel();
         indJour = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        position = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         itemGauche = new javax.swing.JLabel();
         item = new javax.swing.JLabel();
@@ -117,7 +122,14 @@ public class HordeInterface extends javax.swing.JFrame {
         itemDroit2 = new javax.swing.JLabel();
         prendreObjet2 = new javax.swing.JButton();
         fondMini = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lJournal = new javax.swing.JLabel();
+        indObjet = new javax.swing.JLabel();
+        nbObjet = new javax.swing.JLabel();
+        nbEnergie = new javax.swing.JLabel();
+        nbPlanche = new javax.swing.JLabel();
+        nbGourde = new javax.swing.JLabel();
+        nbRation = new javax.swing.JLabel();
+        nbClou = new javax.swing.JLabel();
 
         MapIcone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/map.gif"))); // NOI18N
         jFrame1.getContentPane().add(MapIcone, java.awt.BorderLayout.CENTER);
@@ -362,6 +374,8 @@ public class HordeInterface extends javax.swing.JFrame {
 
         butBas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/down.png"))); // NOI18N
 
+        butCarte.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        butCarte.setForeground(new java.awt.Color(255, 255, 255));
         butCarte.setText(" |          | ");
 
         javax.swing.GroupLayout miniMapLayout = new javax.swing.GroupLayout(miniMap);
@@ -374,7 +388,7 @@ public class HordeInterface extends javax.swing.JFrame {
                 .addContainerGap(72, Short.MAX_VALUE))
             .addGroup(miniMapLayout.createSequentialGroup()
                 .addComponent(butGauche)
-                .addGap(32, 32, 32)
+                .addGap(17, 17, 17)
                 .addGroup(miniMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(miniMapLayout.createSequentialGroup()
                         .addComponent(butCarte)
@@ -394,11 +408,12 @@ public class HordeInterface extends javax.swing.JFrame {
                         .addGap(42, 42, 42)
                         .addGroup(miniMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(butGauche)
-                            .addComponent(butDroit)))
-                    .addGroup(miniMapLayout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(butCarte)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                            .addComponent(butDroit))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, miniMapLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(butCarte)
+                        .addGap(50, 50, 50)))
                 .addComponent(butBas))
         );
 
@@ -411,18 +426,27 @@ public class HordeInterface extends javax.swing.JFrame {
         page1.setText("jLabel12");
 
         page2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        page2.setText("Journal");
+        page2.setText("Que souhaitez vous faire ?");
         page2.setMaximumSize(new java.awt.Dimension(35, 16));
 
-        jRadioButton1.setText("jRadioButton1");
+        jRadioButton1.setText("Résumé du jeu");
 
-        jRadioButton2.setText("jRadioButton2");
+        jRadioButton2.setText("Règle du jeu");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
 
-        jRadioButton3.setText("jRadioButton3");
+        jRadioButton3.setText("Liste des constructions");
 
-        jRadioButton4.setText("jRadioButton4");
+        jRadioButton4.setText("Construire");
 
-        jRadioButton5.setText("jRadioButton5");
+        jRadioButton5.setText("Participer au chantier");
+
+        jRadioButton6.setText("Consulter l'entrepôt");
+
+        jRadioButton7.setText("intéragir avec la porte");
 
         javax.swing.GroupLayout pJournalLayout = new javax.swing.GroupLayout(pJournal);
         pJournal.setLayout(pJournalLayout);
@@ -431,15 +455,20 @@ public class HordeInterface extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pJournalLayout.createSequentialGroup()
                 .addGap(86, 86, 86)
                 .addComponent(page1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 227, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
+                .addComponent(page2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(84, 84, 84))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pJournalLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRadioButton7)
+                    .addComponent(jRadioButton6)
                     .addComponent(jRadioButton1)
                     .addComponent(jRadioButton2)
                     .addComponent(jRadioButton3)
                     .addComponent(jRadioButton4)
-                    .addComponent(jRadioButton5)
-                    .addComponent(page2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(113, 113, 113))
+                    .addComponent(jRadioButton5))
+                .addGap(68, 68, 68))
         );
         pJournalLayout.setVerticalGroup(
             pJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -448,25 +477,30 @@ public class HordeInterface extends javax.swing.JFrame {
                 .addGroup(pJournalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(page1)
                     .addComponent(page2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
+                .addGap(70, 70, 70)
                 .addComponent(jRadioButton1)
-                .addGap(7, 7, 7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRadioButton2)
-                .addGap(7, 7, 7)
+                .addGap(3, 3, 3)
                 .addComponent(jRadioButton3)
-                .addGap(7, 7, 7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRadioButton4)
-                .addGap(7, 7, 7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRadioButton5)
-                .addGap(44, 44, 44))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton7)
+                .addContainerGap(102, Short.MAX_VALUE))
         );
 
         hub.add(pJournal);
         pJournal.setBounds(280, 80, 610, 400);
 
+        nomJoueur.setFont(new java.awt.Font("Liberation Sans Narrow", 0, 24)); // NOI18N
         nomJoueur.setText("jLabel2");
         hub.add(nomJoueur);
-        nomJoueur.setBounds(380, 20, 51, 15);
+        nomJoueur.setBounds(370, 10, 90, 30);
 
         tour.setText("jLabel3");
         hub.add(tour);
@@ -484,9 +518,9 @@ public class HordeInterface extends javax.swing.JFrame {
         hub.add(indJour);
         indJour.setBounds(770, 20, 60, 15);
 
-        jLabel2.setText("jLabel2");
-        hub.add(jLabel2);
-        jLabel2.setBounds(140, 200, 51, 15);
+        position.setText("jLabel2");
+        hub.add(position);
+        position.setBounds(140, 200, 51, 15);
 
         itemGauche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/left.png"))); // NOI18N
         itemGauche.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -673,9 +707,37 @@ public class HordeInterface extends javax.swing.JFrame {
         hub.add(fondMini);
         fondMini.setBounds(20, 20, 180, 180);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/Journal.png"))); // NOI18N
-        hub.add(jLabel4);
-        jLabel4.setBounds(280, 90, 610, 390);
+        lJournal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/Journal.png"))); // NOI18N
+        hub.add(lJournal);
+        lJournal.setBounds(280, 90, 610, 390);
+
+        indObjet.setText("/10");
+        hub.add(indObjet);
+        indObjet.setBounds(1000, 160, 30, 15);
+
+        nbObjet.setText("10");
+        hub.add(nbObjet);
+        nbObjet.setBounds(980, 160, 20, 15);
+
+        nbEnergie.setText("10");
+        hub.add(nbEnergie);
+        nbEnergie.setBounds(910, 120, 20, 15);
+
+        nbPlanche.setText("10");
+        hub.add(nbPlanche);
+        nbPlanche.setBounds(910, 60, 20, 15);
+
+        nbGourde.setText("10");
+        hub.add(nbGourde);
+        nbGourde.setBounds(910, 170, 20, 15);
+
+        nbRation.setText("10");
+        hub.add(nbRation);
+        nbRation.setBounds(1010, 120, 20, 15);
+
+        nbClou.setText("10");
+        hub.add(nbClou);
+        nbClou.setBounds(1010, 60, 20, 15);
 
         getContentPane().add(hub);
         hub.setBounds(10, 0, 1080, 530);
@@ -721,7 +783,23 @@ public class HordeInterface extends javax.swing.JFrame {
 
     private void continuerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continuerActionPerformed
         // TODO add your handling code here:
-        
+        nomJoueur.setText(partie.getJoueurActuel().getNom());
+        tour.setText(""+partie.getTempsPartie().getNumTour());
+        jour.setText(""+partie.getTempsPartie().getNbJour());
+        this.LifeProgressBar.setValue(partie.getJoueurActuel().getPdv());
+        this.PAProgressBar.setValue(partie.getJoueurActuel().getPa());
+        this.item1.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/ration.png")));
+        this.position.setText(partie.getJoueurActuel().renvoyerCoordonnees());
+        this.page1.setText(Journal.afficherPosition(partie, partie.getJoueurActuel()));
+        this.butCarte.setText("| VILLE |");
+        if(partie.getJoueurActuel().getSac().isEmpty()){
+            this.nbClou.setText("0");
+            this.nbEnergie.setText("0");
+            this.nbGourde.setText("0");
+            this.nbObjet.setText("0");
+            this.nbPlanche.setText("0");
+            this.nbRation.setText("0");
+        }
         this.ecranAccueil.setVisible(false);
         this.hub.setVisible(true);
     }//GEN-LAST:event_continuerActionPerformed
@@ -759,8 +837,8 @@ public class HordeInterface extends javax.swing.JFrame {
                 }
                 partie.setJoueurActuel(0);
             }          
-            ImagePanel panel = new ImagePanel("images/Journal.png");
-            pJournal=panel;
+            
+            
             this.ecranTitre.setVisible(false);
             this.ecranAccueil.setVisible(true); 
     }//GEN-LAST:event_entrerActionPerformed
@@ -830,6 +908,10 @@ public class HordeInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_prendreObjet2MouseClicked
 
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
     
     /**
      * @param args the command line arguments
@@ -892,6 +974,7 @@ public class HordeInterface extends javax.swing.JFrame {
     private javax.swing.JPanel hub;
     private javax.swing.JLabel indJour;
     private javax.swing.JLabel indJournal;
+    private javax.swing.JLabel indObjet;
     private javax.swing.JLabel indTour;
     private javax.swing.JLabel indcoor;
     private javax.swing.JLabel indsac;
@@ -907,9 +990,7 @@ public class HordeInterface extends javax.swing.JFrame {
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -918,15 +999,25 @@ public class HordeInterface extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JRadioButton jRadioButton5;
+    private javax.swing.JRadioButton jRadioButton6;
+    private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JLabel jour;
+    private javax.swing.JLabel lJournal;
     private javax.swing.JLabel logo;
     private javax.swing.JPanel miniMap;
+    private javax.swing.JLabel nbClou;
+    private javax.swing.JLabel nbEnergie;
+    private javax.swing.JLabel nbGourde;
+    private javax.swing.JLabel nbObjet;
+    private javax.swing.JLabel nbPlanche;
+    private javax.swing.JLabel nbRation;
     private javax.swing.JLabel nomJoueur;
     private javax.swing.JPanel pJournal;
     private javax.swing.JLabel page1;
     private javax.swing.JLabel page2;
     private javax.swing.JLabel pointAction;
     private javax.swing.JLabel pointVie;
+    private javax.swing.JLabel position;
     private javax.swing.JButton prendreObjet;
     private javax.swing.JButton prendreObjet1;
     private javax.swing.JButton prendreObjet2;

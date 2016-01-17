@@ -209,6 +209,10 @@ public class Joueur {
     }
 
     // ---------------DEBUT DES METHODES---------------------
+    
+    public String renvoyerCoordonnees(){
+        return "("+this.absysseActuelle+";"+this.ordonneeActuelle+")";
+    }
     // Permet au joueur de boire de l'eau
     /**
      * @return changement to know if a change was made
