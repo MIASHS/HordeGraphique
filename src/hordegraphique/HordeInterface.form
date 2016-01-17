@@ -880,6 +880,9 @@
                         <Property name="text" type="java.lang.String" value="Consulter l&apos;entrep&#xf4;t"/>
                         <Property name="opaque" type="boolean" value="false"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="consulterEntrepotActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="interagirPorte">
                       <Properties>
@@ -889,6 +892,9 @@
                         <Property name="text" type="java.lang.String" value="Int&#xe9;ragir avec la porte"/>
                         <Property name="opaque" type="boolean" value="false"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="interagirPorteActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="CalculerDefenses">
                       <Properties>

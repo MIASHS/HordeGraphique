@@ -310,6 +310,15 @@ public class Menu {
     public void consommerPA(){
         if (consommationDePA){partieActuelle.getJoueurActuel().setPa(partieActuelle.getJoueurActuel().getPa()-1,partieActuelle);}
     }
+
+    public boolean isConsommationDePA() {
+        return consommationDePA;
+    }
+
+    public void setConsommationDePA(boolean consommationDePA) {
+        this.consommationDePA = consommationDePA;
+    }
+    
     
     public void outilDeplacement(boolean absysse,boolean positif){
         int getVal;

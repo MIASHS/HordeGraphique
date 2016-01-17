@@ -1266,10 +1266,20 @@ public class HordeInterface extends javax.swing.JFrame {
         consulterEntrepot.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
         consulterEntrepot.setText("Consulter l'entrepôt");
         consulterEntrepot.setOpaque(false);
+        consulterEntrepot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consulterEntrepotActionPerformed(evt);
+            }
+        });
 
         interagirPorte.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
         interagirPorte.setText("Intéragir avec la porte");
         interagirPorte.setOpaque(false);
+        interagirPorte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                interagirPorteActionPerformed(evt);
+            }
+        });
 
         CalculerDefenses.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
         CalculerDefenses.setText("Calculer les défenses");
@@ -1871,7 +1881,7 @@ public class HordeInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_butBasMouseClicked
 
     private void afficherConstructionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afficherConstructionActionPerformed
-               // TODO add your handling code here:
+        Outils.affichage(partie.getMaVille().afficherConstruction(), 1, this);               // TODO add your handling code here:
     }//GEN-LAST:event_afficherConstructionActionPerformed
 
     private void fouillerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fouillerMouseClicked
@@ -1898,6 +1908,15 @@ public class HordeInterface extends javax.swing.JFrame {
         jTextPane1.setText(Journal.voirCarte(partie.getMonJournal()));
         jFrame1.setVisible(true);
     }//GEN-LAST:event_butCarteMouseClicked
+
+    private void consulterEntrepotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consulterEntrepotActionPerformed
+       Outils.affichage(partie.getMaVille().consulterEntrepot(), 1, this);    // TODO add your handling code here:
+    }//GEN-LAST:event_consulterEntrepotActionPerformed
+
+    private void interagirPorteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_interagirPorteActionPerformed
+       menu.setConsommationDePA(partie.getMaVille().ouverturePorte(partie));
+       menu.consommerPA();// TODO add your handling code here:
+    }//GEN-LAST:event_interagirPorteActionPerformed
     
     public void accederObjetCase(int i){
         if(partie.getJoueurActuel().getIndiceCase()==338){
