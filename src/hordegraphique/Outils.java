@@ -156,14 +156,16 @@ public abstract class Outils  {
     }
         
     public static int conversionInt(String str,Jeu partieActuelle){
-        Scanner sc=new Scanner(System.in);
+        
+        int num=0;
+        if(!str.isEmpty()){
         char[] lettres=str.toCharArray();
         int longueur=str.length();
-        int num=0;
+        
         
         if((longueur<2)){
             if((int)(lettres[0])>57 ||(int)(lettres[0])<49){
-                Outils.affichage(Journal.consulterDescription(48),partieActuelle.getMonInterface());
+                //Outils.affichage(Journal.consulterDescription(48),partieActuelle.getMonInterface());
                 
                 //num=conversionInt("2",partieActuelle);
             }else{
@@ -171,16 +173,17 @@ public abstract class Outils  {
             }
         }else{
                 if((int)(lettres[0])>50 ||(int)(lettres[0])<49 && (int)(lettres[1])>57 ||(int)(lettres[1])<48){
-                    Outils.affichage(Journal.consulterDescription(48),partieActuelle.getMonInterface());
+                    //Outils.affichage(Journal.consulterDescription(48),partieActuelle.getMonInterface());
                     
                     //num=conversionInt("2",partieActuelle);
                 }else{
                     num = Integer.parseInt(str);
                     if(num>20){
-                    Outils.affichage(Journal.consulterDescription(48),partieActuelle.getMonInterface());    
+                    //Outils.affichage(Journal.consulterDescription(48),partieActuelle.getMonInterface());    
                     num=0;
                     }
                 }
+        }
         }
         return num;
     }

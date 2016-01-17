@@ -5,6 +5,9 @@
  */
 package hordegraphique;
 
+
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Gabriel
@@ -17,9 +20,12 @@ public class HordeInterface extends javax.swing.JFrame {
     public HordeInterface() {
         initComponents();
     }
- private int cpt;
+    private int cpt;
     private boolean partieDemarree=false;
-
+    private Menu menu;
+    private Jeu partie;
+    private boolean isNbJoueurSet=false;
+    private int copieNbJoueur;
     public boolean isPartieDemarree() {
         return partieDemarree;
     }
@@ -48,7 +54,16 @@ public class HordeInterface extends javax.swing.JFrame {
 
         jFrame1 = new javax.swing.JFrame();
         MapIcone = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        bgEcranA = new javax.swing.ButtonGroup();
+        ecranTitre = new javax.swing.JPanel();
+        logo = new javax.swing.JLabel();
+        entrer = new javax.swing.JButton();
+        ecranAccueil = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        demarrer = new javax.swing.JRadioButton();
+        continuer = new javax.swing.JRadioButton();
+        quitter = new javax.swing.JRadioButton();
+        hub = new javax.swing.JPanel();
         PAProgressBar = new javax.swing.JProgressBar();
         LifeProgressBar = new javax.swing.JProgressBar();
         jLabel2 = new javax.swing.JLabel();
@@ -93,23 +108,130 @@ public class HordeInterface extends javax.swing.JFrame {
         jFrame1.getContentPane().add(MapIcone, java.awt.BorderLayout.CENTER);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Horde");
         setMinimumSize(new java.awt.Dimension(1310, 590));
         setPreferredSize(new java.awt.Dimension(1310, 590));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(null);
 
-        jPanel1.setToolTipText("PA/100");
-        jPanel1.setLayout(null);
+        ecranTitre.setBackground(new java.awt.Color(255, 255, 255));
+        ecranTitre.setMinimumSize(new java.awt.Dimension(1310, 590));
+
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/titre.png"))); // NOI18N
+
+        entrer.setBackground(new java.awt.Color(0, 0, 0));
+        entrer.setForeground(new java.awt.Color(204, 0, 51));
+        entrer.setText("Entrer");
+        entrer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entrerActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ecranTitreLayout = new javax.swing.GroupLayout(ecranTitre);
+        ecranTitre.setLayout(ecranTitreLayout);
+        ecranTitreLayout.setHorizontalGroup(
+            ecranTitreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ecranTitreLayout.createSequentialGroup()
+                .addGroup(ecranTitreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ecranTitreLayout.createSequentialGroup()
+                        .addGap(538, 538, 538)
+                        .addComponent(logo))
+                    .addGroup(ecranTitreLayout.createSequentialGroup()
+                        .addGap(619, 619, 619)
+                        .addComponent(entrer)))
+                .addContainerGap(538, Short.MAX_VALUE))
+        );
+        ecranTitreLayout.setVerticalGroup(
+            ecranTitreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ecranTitreLayout.createSequentialGroup()
+                .addGap(220, 220, 220)
+                .addComponent(logo)
+                .addGap(47, 47, 47)
+                .addComponent(entrer)
+                .addContainerGap(188, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(ecranTitre);
+        ecranTitre.setBounds(0, 0, 1310, 590);
+
+        ecranAccueil.setBackground(new java.awt.Color(255, 255, 255));
+        ecranAccueil.setMinimumSize(new java.awt.Dimension(1310, 590));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/logo.png"))); // NOI18N
+
+        demarrer.setText("Nouvelle Partie");
+        demarrer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                demarrerActionPerformed(evt);
+            }
+        });
+
+        continuer.setText("Continuer");
+        continuer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                continuerActionPerformed(evt);
+            }
+        });
+
+        quitter.setText("Quitter");
+        quitter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quitterActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ecranAccueilLayout = new javax.swing.GroupLayout(ecranAccueil);
+        ecranAccueil.setLayout(ecranAccueilLayout);
+        ecranAccueilLayout.setHorizontalGroup(
+            ecranAccueilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ecranAccueilLayout.createSequentialGroup()
+                .addContainerGap(468, Short.MAX_VALUE)
+                .addGroup(ecranAccueilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ecranAccueilLayout.createSequentialGroup()
+                        .addGroup(ecranAccueilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(demarrer)
+                            .addComponent(continuer)
+                            .addComponent(quitter))
+                        .addGap(577, 577, 577))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ecranAccueilLayout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addGap(469, 469, 469))))
+        );
+        ecranAccueilLayout.setVerticalGroup(
+            ecranAccueilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ecranAccueilLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel14)
+                .addGap(18, 18, 18)
+                .addComponent(demarrer)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(continuer)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(quitter)
+                .addContainerGap(91, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(ecranAccueil);
+        ecranAccueil.setBounds(0, 0, 1310, 590);
+
+        hub.setToolTipText("PA/100");
+        hub.setLayout(null);
 
         PAProgressBar.setMaximum(10);
         PAProgressBar.setValue(10);
         PAProgressBar.setName("PA/100"); // NOI18N
-        jPanel1.add(PAProgressBar);
+        hub.add(PAProgressBar);
         PAProgressBar.setBounds(1020, 400, 148, 30);
         PAProgressBar.getAccessibleContext().setAccessibleName("");
 
         LifeProgressBar.setToolTipText("");
         LifeProgressBar.setValue(100);
-        jPanel1.add(LifeProgressBar);
+        hub.add(LifeProgressBar);
         LifeProgressBar.setBounds(1020, 460, 148, 30);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/Gourde.jpg"))); // NOI18N
@@ -118,7 +240,7 @@ public class HordeInterface extends javax.swing.JFrame {
                 jLabel2MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel2);
+        hub.add(jLabel2);
         jLabel2.setBounds(1020, 210, 80, 130);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/ration.jpg"))); // NOI18N
@@ -128,29 +250,29 @@ public class HordeInterface extends javax.swing.JFrame {
                 jLabel3MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel3);
+        hub.add(jLabel3);
         jLabel3.setBounds(1130, 210, 160, 130);
 
         jLabel4.setText("Gourde");
-        jPanel1.add(jLabel4);
+        hub.add(jLabel4);
         jLabel4.setBounds(1040, 180, 40, 15);
 
         jLabel5.setText("Ration");
-        jPanel1.add(jLabel5);
+        hub.add(jLabel5);
         jLabel5.setBounds(1180, 180, 46, 15);
 
         jLabel6.setText("Points d'action:");
-        jPanel1.add(jLabel6);
+        hub.add(jLabel6);
         jLabel6.setBounds(1060, 380, 80, 15);
 
         jLabel7.setText("Points de vie:");
-        jPanel1.add(jLabel7);
+        hub.add(jLabel7);
         jLabel7.setBounds(1060, 440, 80, 15);
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Journal");
         jLabel8.setMaximumSize(new java.awt.Dimension(35, 16));
-        jPanel1.add(jLabel8);
+        hub.add(jLabel8);
         jLabel8.setBounds(590, 100, 90, 30);
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/Boisson.jpg"))); // NOI18N
@@ -159,7 +281,7 @@ public class HordeInterface extends javax.swing.JFrame {
                 jLabel10MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel10);
+        hub.add(jLabel10);
         jLabel10.setBounds(1090, 100, 40, 50);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/planche.jpg"))); // NOI18N
@@ -168,7 +290,7 @@ public class HordeInterface extends javax.swing.JFrame {
                 jLabel9MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel9);
+        hub.add(jLabel9);
         jLabel9.setBounds(1090, 30, 40, 50);
 
         jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -176,11 +298,11 @@ public class HordeInterface extends javax.swing.JFrame {
                 jLabel11MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel11);
+        hub.add(jLabel11);
         jLabel11.setBounds(1160, 30, 50, 40);
 
         jLabel13.setText("Sac:");
-        jPanel1.add(jLabel13);
+        hub.add(jLabel13);
         jLabel13.setBounds(1140, 10, 30, 15);
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/Talkie Walkie.png"))); // NOI18N
@@ -189,15 +311,15 @@ public class HordeInterface extends javax.swing.JFrame {
                 jLabel16MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel16);
+        hub.add(jLabel16);
         jLabel16.setBounds(40, 320, 60, 190);
 
         jLabel15.setText("Afficher carte");
-        jPanel1.add(jLabel15);
+        hub.add(jLabel15);
         jLabel15.setBounds(40, 290, 80, 15);
 
         jTextField1.setText("Nombres tours :");
-        jPanel1.add(jTextField1);
+        hub.add(jTextField1);
         jTextField1.setBounds(700, 20, 90, 20);
 
         jTextField2.setText("Jours:");
@@ -206,7 +328,7 @@ public class HordeInterface extends javax.swing.JFrame {
                 jTextField2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField2);
+        hub.add(jTextField2);
         jTextField2.setBounds(850, 20, 50, 19);
 
         jTextField3.setText("Joueur actuelle:");
@@ -215,15 +337,15 @@ public class HordeInterface extends javax.swing.JFrame {
                 jTextField3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField3);
+        hub.add(jTextField3);
         jTextField3.setBounds(320, 20, 90, 19);
 
         jLabel1.setText("Déplacement:");
-        jPanel1.add(jLabel1);
+        hub.add(jLabel1);
         jLabel1.setBounds(60, 0, 110, 15);
 
         jLabel18.setText("Position joueur:");
-        jPanel1.add(jLabel18);
+        hub.add(jLabel18);
         jLabel18.setBounds(1190, 420, 80, 15);
 
         jTextField4.setText("Position X : Y");
@@ -233,7 +355,7 @@ public class HordeInterface extends javax.swing.JFrame {
                 jTextField4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField4);
+        hub.add(jTextField4);
         jTextField4.setBounds(1190, 450, 80, 19);
 
         jButton5.setText("Afficher carte");
@@ -242,17 +364,17 @@ public class HordeInterface extends javax.swing.JFrame {
                 jButton5MouseClicked(evt);
             }
         });
-        jPanel1.add(jButton5);
+        hub.add(jButton5);
         jButton5.setBounds(30, 260, 120, 25);
 
         jButton6.setText("Finir tour");
-        jPanel1.add(jButton6);
+        hub.add(jButton6);
         jButton6.setBounds(1200, 510, 100, 25);
 
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel20.setText("Journal");
         jLabel20.setMaximumSize(new java.awt.Dimension(35, 16));
-        jPanel1.add(jLabel20);
+        hub.add(jLabel20);
         jLabel20.setBounds(530, 50, 90, 30);
 
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/up.png"))); // NOI18N
@@ -299,31 +421,31 @@ public class HordeInterface extends javax.swing.JFrame {
                 .addComponent(jLabel23))
         );
 
-        jPanel1.add(jPanel2);
+        hub.add(jPanel2);
         jPanel2.setBounds(20, 20, 190, 160);
 
         jRadioButton1.setText("jRadioButton1");
-        jPanel1.add(jRadioButton1);
+        hub.add(jRadioButton1);
         jRadioButton1.setBounds(710, 320, 125, 23);
 
         jRadioButton2.setText("jRadioButton2");
-        jPanel1.add(jRadioButton2);
+        hub.add(jRadioButton2);
         jRadioButton2.setBounds(710, 350, 125, 23);
 
         jRadioButton3.setText("jRadioButton3");
-        jPanel1.add(jRadioButton3);
+        hub.add(jRadioButton3);
         jRadioButton3.setBounds(710, 380, 125, 23);
 
         jRadioButton4.setText("jRadioButton4");
-        jPanel1.add(jRadioButton4);
+        hub.add(jRadioButton4);
         jRadioButton4.setBounds(710, 410, 125, 23);
 
         jRadioButton5.setText("jRadioButton5");
-        jPanel1.add(jRadioButton5);
+        hub.add(jRadioButton5);
         jRadioButton5.setBounds(710, 440, 125, 23);
 
         jLabel12.setText("jLabel12");
-        jPanel1.add(jLabel12);
+        hub.add(jLabel12);
         jLabel12.setBounds(370, 110, 59, 15);
 
         jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/left.png"))); // NOI18N
@@ -332,7 +454,7 @@ public class HordeInterface extends javax.swing.JFrame {
                 jLabel25MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel25);
+        hub.add(jLabel25);
         jLabel25.setBounds(20, 200, 30, 36);
 
         jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hordegraphique/images/right.png"))); // NOI18N
@@ -341,7 +463,7 @@ public class HordeInterface extends javax.swing.JFrame {
                 jLabel26MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel26);
+        hub.add(jLabel26);
         jLabel26.setBounds(140, 200, 30, 36);
 
         jPanel4.setBackground(new java.awt.Color(255, 51, 255));
@@ -357,11 +479,11 @@ public class HordeInterface extends javax.swing.JFrame {
             .addGap(0, 400, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel4);
+        hub.add(jPanel4);
         jPanel4.setBounds(270, 90, 610, 400);
 
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(10, 0, 1350, 590);
+        getContentPane().add(hub);
+        hub.setBounds(10, 0, 1350, 590);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -414,6 +536,84 @@ public class HordeInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel25MouseClicked
 
+    private void continuerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continuerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_continuerActionPerformed
+
+    private void entrerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrerActionPerformed
+        // TODO add your handling code here:
+        this.ecranTitre.setVisible(true);
+        this.ecranAccueil.setVisible(false);
+            
+            
+            this.hub.setVisible(false);
+        if(!partieDemarree){
+                partie=new Jeu();
+                partie.lancerJeu(this);
+                menu=partie.getMenuPartie();
+            }
+        
+            if(!isNbJoueurSet){
+                String str="";
+                while(partie.getNombreJoueur()==0){
+                    while(str.isEmpty()||str.equals(null)){
+                            str=JOptionPane.showInputDialog(Journal.consulterDescription(57));
+                    }
+                    partie.setNombreJoueur(Outils.conversionInt(str,partie));   
+                }
+                copieNbJoueur=0;
+                while(copieNbJoueur<partie.getNombreJoueur()){
+                    String nomJoueur="";
+                    while(nomJoueur.isEmpty()||str.equals(null)){
+                        nomJoueur=JOptionPane.showInputDialog(Journal.consulterDescription(58)+copieNbJoueur+" ?");
+                    }
+                    Joueur unJoueur= new Joueur(this.partie,nomJoueur);
+                    partie.getTabJoueur().add(unJoueur);
+                    copieNbJoueur+=1;
+                }
+                partie.setJoueurActuel(0);
+            }          
+            this.ecranTitre.setVisible(false);
+            this.ecranAccueil.setVisible(true); 
+    }//GEN-LAST:event_entrerActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        //this.jLabel2.setText(Journal.consulterDescription(56));
+        this.ecranTitre.setVisible(true);
+        this.ecranAccueil.setVisible(false);
+        this.hub.setVisible(false);
+        
+        this.bgEcranA.add(demarrer);
+        this.bgEcranA.add(continuer);
+        this.bgEcranA.add(quitter);
+        
+    }//GEN-LAST:event_formWindowOpened
+
+    private void quitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitterActionPerformed
+        // TODO add your handling code here:
+        //JOptionPane.showInputDialog(JOptionPane.showConfirmDialog(rootPane, "Etes vous sur de vouloir quitter ?"));
+        if(JOptionPane.showConfirmDialog(rootPane, "Etes vous sur de vouloir quitter ?")==0){
+            Menu.quitter();
+        }
+    }//GEN-LAST:event_quitterActionPerformed
+
+    private void demarrerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_demarrerActionPerformed
+        // TODO add your handling code here:
+        
+        if(!partie.getPartie()){
+            menu.demarrer(partie, this);
+        }else{
+            if(JOptionPane.showConfirmDialog(rootPane,Journal.consulterDescription(9))==0){
+                this.partieDemarree=false;
+                isNbJoueurSet=false;
+                //this.jTextArea1.setText("");
+                //jButton2.doClick();
+                entrer.doClick();
+            }
+        }
+    }//GEN-LAST:event_demarrerActionPerformed
+
     
     /**
      * @param args the command line arguments
@@ -454,6 +654,13 @@ public class HordeInterface extends javax.swing.JFrame {
     private javax.swing.JProgressBar LifeProgressBar;
     private javax.swing.JLabel MapIcone;
     private javax.swing.JProgressBar PAProgressBar;
+    private javax.swing.ButtonGroup bgEcranA;
+    private javax.swing.JRadioButton continuer;
+    private javax.swing.JRadioButton demarrer;
+    private javax.swing.JPanel ecranAccueil;
+    private javax.swing.JPanel ecranTitre;
+    private javax.swing.JButton entrer;
+    private javax.swing.JPanel hub;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JFrame jFrame1;
@@ -462,6 +669,7 @@ public class HordeInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
@@ -481,7 +689,6 @@ public class HordeInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JRadioButton jRadioButton1;
@@ -493,5 +700,7 @@ public class HordeInterface extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel logo;
+    private javax.swing.JRadioButton quitter;
     // End of variables declaration//GEN-END:variables
 }
