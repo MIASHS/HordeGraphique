@@ -9,7 +9,7 @@ import java.util.Random;
 
 /**
  *
- * @author Gabriel
+ * @author Valère,Sebastien,Gabriel
  */
 public class Zombies {
    

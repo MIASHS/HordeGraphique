@@ -10,13 +10,13 @@ import java.util.Arrays;
 
 /**
  *
- * @author Seb
+ * @author Valère,Sebastien,Gabriel
  */
 public class Journal {
     //attributs de la class
-    private ArrayList<String> listeDeMorts=new ArrayList<String>(19);
-    private ArrayList<Construction> tabConstruction=new ArrayList<Construction>(7);
-    private ArrayList<String> carte = new ArrayList<String>(625);
+    private ArrayList<String> listeDeMorts=new ArrayList<String>(19); // liste de mort
+    private ArrayList<Construction> tabConstruction=new ArrayList<Construction>(7); // liste de construction
+    private ArrayList<String> carte = new ArrayList<String>(625); // liste pour la carte
     
     
     public ArrayList<Construction> getTabConstruction(){
@@ -167,7 +167,7 @@ public class Journal {
     }
     public static String consulterDescription(int choix){
         String description="";
-        // Choix des description
+        // Choix des descriptions
         switch (choix){
             case 0: description="\nLa gourde permet de récupérer 6 points d'action.\n Elle n'est pas réutilisable. Elle occupe une place de la sac.\n On ne peut boire qu'une fois par jour.";
                     break;

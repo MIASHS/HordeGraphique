@@ -10,19 +10,19 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Seb
+ * @author Valère,Sebastien,Gabriel
  */
 
 public class Construction {
     //attributs de la class
     //Nom de la construction
-    private String nom;
+    private String nom; // indique le nom
 
     // les ressources necessaires pour la construction
-    private ArrayList<Integer> ressources_necessaire= new ArrayList<Integer>();
+    private ArrayList<Integer> ressources_necessaire= new ArrayList<Integer>(); //liste de ressources necessaire pour une construction
     //private int[] ressources_necessaire;
     // nombre de points d'action utilisés pour cette construction
-    private int conso_pa;
+    private int conso_pa; // indique la consomation des PA
 
     // indique le nombre de zombies auquel la construction peut resister
     private int resistance;

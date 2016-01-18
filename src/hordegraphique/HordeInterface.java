@@ -25,7 +25,7 @@ import javax.swing.JSeparator;
 import javax.swing.JTextPane;
 /**
  *
- * @author Gabriel
+ * @author Valère,Sebastien,Gabriel
  */
 public class HordeInterface extends javax.swing.JFrame {
 
@@ -35,14 +35,14 @@ public class HordeInterface extends javax.swing.JFrame {
     public HordeInterface() {
         initComponents();
     }
-    private int cpt;
-    private boolean partieDemarree=false;
-    private Menu menu;
-    private Jeu partie;
-    private boolean isNbJoueurSet=false;
-    private int copieNbJoueur;
-    private int cptCase=0;
-    private int cptSac=0;
+    private int cpt; // indique le compteur
+    private boolean partieDemarree=false; // indique si la partie est en place 
+    private Menu menu; // indique le menu
+    private Jeu partie; // mettre en place le jeu
+    private boolean isNbJoueurSet=false; // nombre de joureurs
+    private int copieNbJoueur; // copie du nombre de joueurs
+    private int cptCase=0; // compteur de case
+    private int cptSac=0; //compteur de Sac
     
     // Debut getter et setter
     public JRadioButton getAfficherConstruction() {

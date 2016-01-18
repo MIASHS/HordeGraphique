@@ -12,13 +12,14 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author oneiroi
+ * @author Valère,Sebastien,Gabriel
  */
 
 public class ImagePanel extends JPanel {
 
-    private Image image = null;
+    private Image image = null; // indique l'image
 
+    //Constructteur de la classe
     public ImagePanel(String filename) {
         this.image = new ImageIcon(filename).getImage();
     }

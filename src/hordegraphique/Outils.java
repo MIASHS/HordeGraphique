@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author oneiroi
+ * @author Valère,Sebastien,Gabriel
  */
 public abstract class Outils  {
     

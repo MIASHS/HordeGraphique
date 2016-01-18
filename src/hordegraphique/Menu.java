@@ -15,18 +15,18 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author oneiroi
+ * @author Valère,Sebastien,Gabriel
  */
 public class Menu {
     
     //Variable memoire pour conserver le menu et le jeu 
 //    private SousMenu sm;
-    private Jeu partieActuelle;
-    private Menu menuActuel;
-    private ArrayList<Case> tabGrille=new ArrayList<>();
+    private Jeu partieActuelle; // indique la partie actuelle
+    private Menu menuActuel; // indique le menu actuel
+    private ArrayList<Case> tabGrille=new ArrayList<>(); // liste de TabGrille
     private Scanner sc = new Scanner(System.in);
-    private boolean consommationDePA=false;
-    private HordeInterface monInterface;
+    private boolean consommationDePA=false; // indique la consommation de PA
+    private HordeInterface monInterface; // indique l'interface
     private String strReceived="";
     //Constructor
     public Menu(HordeInterface i,Jeu partie){

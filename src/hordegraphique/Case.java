@@ -11,19 +11,19 @@ import java.util.Scanner;
 
 /**
  *
- * @author Gabriel
+ * @author Valère,Sebastien,Gabriel
  */
 public class Case {
-    // attribut de la class Case
-    protected int longitude;
-    protected int latitude;
-    protected int nbZombiesRestants;
-    private ArrayList<Item> items= new ArrayList<Item>(); // valeur par défault//
-    private boolean fouillee;
-    private boolean caseTrouve;
+    // attributs de la class Case
+    protected int longitude; // indique la longitude du joueurs
+    protected int latitude;// indique la latitude du joueurs
+    protected int nbZombiesRestants; // indique le nombre de zombies restants
+    private ArrayList<Item> items= new ArrayList<Item>(); // liste items//
+    private boolean fouillee; // vérifie si la case est fouillée ou non 
+    private boolean caseTrouve; // vérifie si la case est trouvée ou non 
     protected boolean laVille = false;
-    private Zombies zomb=new Zombies();
-    private char fond='B';
+    private Zombies zomb=new Zombies(); // objet zombie
+    private char fond='B'; // correspond à un fond 
     Scanner sc= new Scanner(System.in);
     Random ra=new Random();
 

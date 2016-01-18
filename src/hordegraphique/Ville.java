@@ -11,16 +11,17 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Gabriel
+ * @author Valère,Sebastien,Gabriel
  */
 public class Ville extends Case {
     
     Scanner sc=new Scanner(System.in);
-    private Item[] entrepot= new Item[4]; // valeur par défaut//
-    private int tauxDefense;
-    ArrayList<Construction> batiment = new ArrayList<Construction>(7); // valeur par défaut//
-    ArrayList<Construction> batimentEnCours = new ArrayList<Construction>(7); // valeur par défaut//
-    private boolean ouverturePorte = true;
+    private Item[] entrepot= new Item[4]; // tableau d'entrepot//
+    private int tauxDefense; // indique le taux de defence
+    ArrayList<Construction> batiment = new ArrayList<Construction>(7); // liste de construction//
+    ArrayList<Construction> batimentEnCours = new ArrayList<Construction>(7); // liste de construction//
+    private boolean ouverturePorte = true; // indique si porte ouverte ou non
+    
     public int getTauxDefense() {return tauxDefense;}
     public void setTauxDefense(int tauxDefense) {this.tauxDefense = tauxDefense;}
 

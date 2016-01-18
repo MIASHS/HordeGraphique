@@ -10,16 +10,17 @@ import java.util.Random;
 
 /**
  *
- * @author oneiroi
+ * @author Valère,Sebastien,Gabriel
  */
 public class Carte {
     //attributs de la class carte
-    private ArrayList<Case> tabCase=new ArrayList<Case>();
-    private int xVille;
-    private int yVille;
-    private Ville maVille;
-    private Item[] tabItem= new Item[3];
+    private ArrayList<Case> tabCase=new ArrayList<Case>();// liste de cases
+    private int xVille; // repère horizontal
+    private int yVille;// repère vertical
+    private Ville maVille; // ville
+    private Item[] tabItem= new Item[3]; // tableau items
     
+    //getter et setter
     public int getxVille() {return xVille;}
     
     public int getyVille() {return yVille;}
@@ -48,6 +49,7 @@ public class Carte {
     }
     
     public void affecterFond(){
+        // On ajoute une image de fond pour les déplacements
         for(int i=0;i<625 ;i++){
             if(tabCase.get(i).longitude>=13){
                 tabCase.get(i).setFond('P');

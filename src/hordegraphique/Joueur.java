@@ -12,32 +12,32 @@ import java.util.Scanner;
  */
 /**
  *
- * @author Seb
+ * @author Valère,Sebastien,Gabriel
  */
 public class Joueur {
-    //attribut de la class
+    //attributs de la class
     //Nom du joueur 
-    private String nom;
+    private String nom; // indique le nom
 
     // Points de vie du joueur
-    private int pdv;
+    private int pdv; // indique les points de vie
 
     // Points d'action du joueur
-    private int pa;
+    private int pa; // indique les PA
 
     //Affiche le tour courant
-    private int nbTours;
+    private int nbTours;// indique le nombre de tours
 
     // Affiche le jour courant
-    private int nbJours;
+    private int nbJours;// indique le nombre de jours
 
     // nb de gourdes par jour
     //private int gourde;
-    private int ordonneeActuelle;
-    private int absysseActuelle;
-    private int indiceCase;
-    private boolean dejaBu;
-    private boolean dejaMange;
+    private int ordonneeActuelle; //indique la position du joueurs
+    private int absysseActuelle; //indique la position du joueurs
+    private int indiceCase; // indique les coordonnées de la case
+    private boolean dejaBu; // si la gourde est déja bu
+    private boolean dejaMange; // si c'est déja mangé
     private boolean dependant=false;
     private int nbJourDependant=0;
     Scanner sc=new Scanner(System.in);
