@@ -1780,6 +1780,7 @@ public class HordeInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(partie.getJoueurActuel().getSac().isEmpty()){cptSac=-1;}else{
         cptSac+=1;
+        System.out.println("coucou "+cptSac);
         if(cptSac>4){
         cptSac=0;
         }
@@ -1789,6 +1790,7 @@ public class HordeInterface extends javax.swing.JFrame {
     private void itemGaucheMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemGaucheMouseClicked
         // TODO add your handling code here:
         if(partie.getJoueurActuel().getSac().isEmpty()){cptSac=-1;}else{cptSac-=1;
+            System.out.println("coucou "+cptSac);
             if(cptSac<0){
                 cptSac=4;
             }
@@ -2132,8 +2134,8 @@ public class HordeInterface extends javax.swing.JFrame {
         switch(i){
             case 0: this.item.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/ration.png")));
                                         
-                    while(k<partie.getJoueurActuel().getSac().size()||partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(12))){
-                        if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(51))){j=k;}
+                    while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
+                        if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(51))){j=k;trouve=true;}
                         k++;
                     }
                     if(j!=-1){
@@ -2141,8 +2143,8 @@ public class HordeInterface extends javax.swing.JFrame {
                     }
                     break;
             case 1: this.item.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/planche.png")));
-                    while(k<partie.getJoueurActuel().getSac().size()||partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(54))){
-                        if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(54))){j=k;}
+                    while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
+                        if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(54))){j=k;trouve=true;}
                         k++;
                     }
                     if(j!=-1){
@@ -2151,9 +2153,10 @@ public class HordeInterface extends javax.swing.JFrame {
                     
                     break;
             case 2: this.item.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/clou.png")));
-                    while(k<partie.getJoueurActuel().getSac().size()||partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(55))){
-                        if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(55))){j=k;}
+                    while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
+                        if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(55))){j=k;trouve=true;}
                         k++;
+                        
                     }
                     if(j!=-1){
                         this.item.setToolTipText("Il y a "+partie.getJoueurActuel().getSac().get(j).getQuantite()+" plaques de métal dans le sac./En cliquant sur l'icone vous pourrez déposer une plaque de métal sur la case.");
@@ -2161,8 +2164,8 @@ public class HordeInterface extends javax.swing.JFrame {
                     
                     break;
             case 3: this.item.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/soft.png")));
-                    while(k<partie.getJoueurActuel().getSac().size()||partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(53))){
-                        if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(53))){j=k;}
+                    while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
+                        if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(53))){j=k;trouve=true;}
                         k++;
                     }
                     if(j!=-1){
@@ -2171,8 +2174,8 @@ public class HordeInterface extends javax.swing.JFrame {
                     
                     break;
             case 4: this.item.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/gourde.png")));
-                    while(k<partie.getJoueurActuel().getSac().size()||partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(52))){
-                        if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(52))){j=k;}
+                    while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
+                        if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(52))){j=k;trouve=true;}
                         k++;
                     }
                     if(j!=-1){
@@ -2188,8 +2191,9 @@ public class HordeInterface extends javax.swing.JFrame {
     
     public void demarrerViderSac(){
     int k=0,j=-1;boolean trouve=false;
-        switch(cptCase){
-            case 0: while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
+        switch(cptSac){
+            case 0: System.out.println("Je suis ici Ration "+cptCase+" "+partie.getJoueurActuel().getSac().size());
+                    while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
                         if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(51))){
                             j=k;
                             trouve=true;
@@ -2201,7 +2205,8 @@ public class HordeInterface extends javax.swing.JFrame {
                     }
                     
                     break;
-            case 1: while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
+            case 1: System.out.println("Je suis ici Planche "+cptCase+" "+partie.getJoueurActuel().getSac().size());
+                    while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
                         if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(54))){
                             j=k;
                             trouve=true;
@@ -2212,7 +2217,8 @@ public class HordeInterface extends javax.swing.JFrame {
                     getNbPlanche().setText(""+(Integer.parseInt(getNbPlanche().getText())-1));
                     }
                     break;
-            case 2: while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
+            case 2: System.out.println("Je suis ici Clou "+cptCase+" "+partie.getJoueurActuel().getSac().size());
+                while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
                         if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(55))){
                             j=k;
                             trouve=true;
@@ -2223,7 +2229,8 @@ public class HordeInterface extends javax.swing.JFrame {
                     getNbClou().setText(""+(Integer.parseInt(getNbClou().getText())-1));
                     }
                     break;
-            case 3: while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
+            case 3: System.out.println("Je suis ici Boisson "+cptCase+" "+partie.getJoueurActuel().getSac().size());
+                    while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
                         if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(53))){
                             j=k;
                             trouve=true;
@@ -2234,7 +2241,8 @@ public class HordeInterface extends javax.swing.JFrame {
                     getNbEnergie().setText(""+(Integer.parseInt(getNbEnergie().getText())-1));
                     }
                     break;
-            case 4: while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
+            case 4: System.out.println("Je suis ici Gourde "+cptCase+" "+partie.getJoueurActuel().getSac().size());
+                    while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
                         if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(52))){
                             j=k;
                             trouve=true;
@@ -2266,8 +2274,10 @@ public class HordeInterface extends javax.swing.JFrame {
             }
         }else{
             if(partie.getGrille().getTabCase().get(partie.getJoueurActuel().getIndiceCase()).getNbZombiesRestants()==0){
-                if(partie.getGrille().getTabCase().get(partie.getJoueurActuel().getIndiceCase()).getItem().get(cptCase-1).getQuantite()>0){
-                    menu.prendreObjetCase(cptCase);
+                if(cptCase!=0||cptCase!=4){
+                    if(partie.getGrille().getTabCase().get(partie.getJoueurActuel().getIndiceCase()).getItem().get(cptCase-1).getQuantite()>0){
+                        menu.prendreObjetCase(cptCase);
+                    }
                 }
             }else{
                 Outils.affichage(Journal.consulterDescription(7), this);

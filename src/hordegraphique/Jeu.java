@@ -148,6 +148,9 @@ public class Jeu {
         }
             monJournal.ajouterListeDeMorts(str);
             nombreJoueur-=1;
+            for(int i=0;i<joueurActuel.getSac().size();i++){
+                joueurActuel.outilViderSac(joueurActuel.viderSac(this),i,this);
+            }
             getTabJoueur().remove(getIndexJoueurActuel());
             if(getNombreJoueur()<=1){return true;}else{return false;}
     }
