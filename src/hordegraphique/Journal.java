@@ -95,7 +95,7 @@ public class Journal {
             case 'J':   string = Journal.consulterDescription(112);
                         break;
             case 'S':   string = Journal.consulterDescription(95)+temps.getNumTour()+Journal.consulterDescription(96)+temps.getNbJour()+Journal.consulterDescription(97)
-                        + Journal.consulterDescription(98)+Journal.afficherPosition(partie, joueur)+"\n"+afficherDescriptionJoueur(joueur)+"\n";
+                        + Journal.consulterDescription(98)+Journal.afficherPosition(partie, joueur)+"\n"+afficherDescriptionJoueur(joueur)+partie.getMonJournal().afficherListeDeMort()+"\n";
                         break;
             case 'K':   string = Journal.consulterDescription(113);
                         break;
@@ -147,7 +147,8 @@ public class Journal {
     public String afficherListeDeMort(){
         // afficher la liste des morts
         String str="\n";
-        for(int index=0;index<listeDeMorts.size();index++){str+=listeDeMorts.get(index)+";\n";}
+        if(!listeDeMorts.isEmpty()){
+            for(int index=0;index<listeDeMorts.size();index++){str+=listeDeMorts.get(index)+";\n";}}
         return str;
     }
     public static String afficherMort(Jeu partie, boolean nuit,boolean pasDrogue){
@@ -159,11 +160,12 @@ public class Journal {
             }else{
                 str= "\n"+partie.getJoueurActuel().getNom()+Journal.consulterDescription(105)+partie.getTempsPartie().getNumTour()+Journal.consulterDescription(106)+partie.getTempsPartie().getNbJour()+Journal.consulterDescription(108);
             }
-            return str;
+
         }else{
             str= "\n"+partie.getJoueurActuel().getNom()+Journal.consulterDescription(109)+partie.getTempsPartie().getNbJour()+Journal.consulterDescription(107);
-            return str;
+            
         }
+        return str;
     }
     public static String consulterDescription(int choix){
         String description="";

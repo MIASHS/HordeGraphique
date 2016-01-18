@@ -104,7 +104,13 @@ public class Jeu {
     public void setPartie(boolean demarree){
         this.partieDemarree = demarree;
         if(!this.partieDemarree){
-        lancerJeu(monInterface);
+        this.monInterface.getEcranAccueil().setVisible(false);
+        this.monInterface.getEcranTitre().setVisible(false);
+        this.monInterface.getHub().setVisible(false);
+        monInterface.setIsNbJoueurSet(demarree);
+        this.nombreJoueur=0;
+        monInterface.getEntrer().doClick();
+        //lancerJeu(monInterface);
         }
     }
     public Carte getGrille() {return grille;}
@@ -152,9 +158,9 @@ public class Jeu {
         String str="";
         if(!tempsPartie.getNuit()){
             Outils.affichage(Journal.consulterDescription(60),this.getMonInterface());
-            Journal.afficherMort(this, !tempsPartie.getNuit(), true);
+            str=Journal.afficherMort(this, !tempsPartie.getNuit(), true);
         }else{
-            Journal.afficherMort(this, tempsPartie.getNuit(), true);
+            str=Journal.afficherMort(this, tempsPartie.getNuit(), true);
         }
             monJournal.ajouterListeDeMorts(str);
             nombreJoueur-=1;
@@ -171,12 +177,12 @@ public class Jeu {
         if(!tempsPartie.getNuit()){
             if(k){
             Outils.affichage(Journal.consulterDescription(60),this.getMonInterface());
-            Journal.afficherMort(this, !tempsPartie.getNuit(), k);
+            str=Journal.afficherMort(this, !tempsPartie.getNuit(), k);
             }else{
-            Journal.afficherMort(this, !tempsPartie.getNuit(), !k);
+            str=Journal.afficherMort(this, !tempsPartie.getNuit(), !k);
             }
         }else{
-            Journal.afficherMort(this, tempsPartie.getNuit(), false);
+            str=Journal.afficherMort(this, tempsPartie.getNuit(), false);
         }
             monJournal.ajouterListeDeMorts(str);
             nombreJoueur-=1;
@@ -187,14 +193,15 @@ public class Jeu {
     public void finDePartie(){
         // Méthode de mettre la fin de parti
         boolean continuerPartie = false;
-        Scanner sc=new Scanner(System.in);
+  //      Scanner sc=new Scanner(System.in);
         Outils.affichage("\n"+this.tabJoueur.get(0).getNom()+Journal.consulterDescription(61),this.getMonInterface());
-        sc.next();
-        Outils.affichage(Journal.consulterDescription(62),this.getMonInterface());
-        if(Outils.conversionBoolean(sc.next(),this)){
-            setPartie(continuerPartie);
-        }else{
+    //    sc.next();
+        
+        //if(Outils.affichage(Journal.consulterDescription(62),0,this.getMonInterface())==0){
+        //    setPartie(false);
+            
+       // }else{
             menuPartie.menuNiveauZero('Q');
-        }
+       // }
     }
 }

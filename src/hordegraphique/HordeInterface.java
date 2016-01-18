@@ -1849,9 +1849,10 @@ public class HordeInterface extends javax.swing.JFrame {
     private void entrerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrerActionPerformed
         // Fonction du label entrer du premier ecran
         // TODO add your handling code here:
+       
         this.ecranTitre.setVisible(true);
         this.ecranAccueil.setVisible(false);
-            
+          
             
             this.hub.setVisible(false);
         if(!partieDemarree){
@@ -2084,7 +2085,7 @@ public class HordeInterface extends javax.swing.JFrame {
         // choix de la construction
         Outils.affichage(Journal.consulterConstruction(partie.getMonJournal()),1,this);
         if(Outils.affichage(Journal.consulterDescription(119),0, this)==0){
-                partie.getMaVille().construire(partie,Outils.donnerReponseChiffre(partie.getMaVille().getBatiment().size()-1, partie, JOptionPane.showInputDialog(Journal.consulterDescription(36))));
+                partie.getMaVille().construire(partie,Outils.donnerReponseChiffre(partie.getMonJournal().getTabConstruction().size()-1, partie, JOptionPane.showInputDialog(Journal.consulterDescription(36))));
         }// TODO add your handling code here:
     }//GEN-LAST:event_construireActionPerformed
 

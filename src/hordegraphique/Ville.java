@@ -70,7 +70,7 @@ public class Ville extends Case {
             }
         }
         if(!batimentDejaFait){
-            if (this.entrepot[1].getQuantite() >=partie.getMonJournal().getConstruction(choix).getRessources_necessaire().get(0)  && this.entrepot[2].getQuantite() >= partie.getMonJournal().getConstruction(choix).getRessources_necessaire().get(1) && partie.getJoueurActuel().getPa() >= 1) {
+            if (this.entrepot[1].getQuantite() >=partie.getMonJournal().getTabConstruction().get(choix).getRessources_necessaire().get(0)  && this.entrepot[2].getQuantite() >= partie.getMonJournal().getTabConstruction().get(choix).getRessources_necessaire().get(1) && partie.getJoueurActuel().getPa() >= 1) {
                 partie.getJoueurActuel().setPa(partie.getJoueurActuel().getPa()-1,partie);
                 batimentEnCours.add(partie.getMonJournal().getConstruction(choix));
             } else {
@@ -89,7 +89,7 @@ public class Ville extends Case {
     public void accederAuChantier(Jeu partieActuelle,int num){
         //Outils.donnerReponseChiffre(batimentEnCours.size()-1,partieActuelle);
         Outils.affichage(Journal.consulterDescription(74)+batimentEnCours.get(num).getConso_pa()+Journal.consulterDescription(75),partieActuelle.getMonInterface());
-        if(Outils.affichage(Journal.consulterDescription(76),1,partieActuelle.getMonInterface())==0){
+        if(Outils.affichage(Journal.consulterDescription(76),0,partieActuelle.getMonInterface())==0){
             participerAuChantier(partieActuelle,Outils.donnerReponseChiffre(partieActuelle.getJoueurActuel().getPa(), partieActuelle, JOptionPane.showInputDialog(Journal.consulterDescription(76))),num);
         }
     }
