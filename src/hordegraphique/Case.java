@@ -14,6 +14,7 @@ import java.util.Scanner;
  * @author Gabriel
  */
 public class Case {
+    // attribut de la class Case
     protected int longitude;
     protected int latitude;
     protected int nbZombiesRestants;
@@ -27,6 +28,7 @@ public class Case {
     Random ra=new Random();
 
     public Case(int longitude, int latitude) {
+        //Constructeur de la class
         this.longitude = longitude;
         this.latitude = latitude;
         this.nbZombiesRestants = 0;
@@ -50,6 +52,7 @@ public class Case {
     }
     
     public String afficherItems(){
+        // afficher les items sur la case
         String tabItem="\n";
         for(int i=0;i<items.size();i++){
             tabItem+=i+"|"+items.get(i).getNom()+"|"+items.get(i).getQuantite()+'\n';
@@ -61,7 +64,7 @@ public class Case {
     public String itemCarte(){
         return "P"+this.items.get(0).getQuantite()+"M"+this.items.get(1).getQuantite()+"B"+this.items.get(2).getQuantite();
     }
-    
+    //Getter et Setter
     public boolean getFouillee(){
         return fouillee;
     }
@@ -72,7 +75,7 @@ public class Case {
     public ArrayList<Item> getItem(){
         return items;
     }    
-    public boolean fouiller(Jeu partieActuelle, boolean b){ // On donne le choix au joueur de fouiller la case ou non
+    public boolean fouiller(Jeu partieActuelle, boolean b){ // Méthode qui donne le choix au joueur de fouiller la case ou non
         boolean changement=false;
         
         
@@ -86,6 +89,7 @@ public class Case {
   }
 
     public boolean attaquer(Joueur ceJoueur,Jeu partie){
+        // méthode qui permet d'attaquer le/les zombies dans la case
         int pourcentage;
         boolean changement=false;
         if(ceJoueur.getPa()>=nbZombiesRestants){

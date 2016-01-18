@@ -12,6 +12,7 @@ import java.util.Random;
  * @author oneiroi
  */
 public class Temps {
+    // attributs de la class
     private int numTour;
     private int nbJours;
     private boolean nuit;
@@ -30,6 +31,7 @@ public class Temps {
     }
     
     public void incrementerTour(Jeu partie){
+        // ajout de tour à chaque fin de tours
         if(partie.getIndexJoueurActuel()<partie.getNombreJoueur()-1){
             partie.setIndexJoueurActuel(partie.getIndexJoueurActuel()+1);
             
@@ -53,7 +55,9 @@ public class Temps {
         partie.setJoueurActuel(partie.getIndexJoueurActuel());    
         this.debuterTour(partie);
     }
-    private void incrementerNbJour(){nbJours+=1;}
+    private void incrementerNbJour()
+    // on ajoute de jours à chaque fin de tours
+    {nbJours+=1;}
     public void deroulementNuit(Jeu partie){
         nuit=true;
         for(int i=0;i<partie.getNombreJoueur();i++){
@@ -72,6 +76,7 @@ public class Temps {
         }
     }
     public void debuterTour(Jeu partie){
+        // début des tours
         //partie.getMonInterface().setCpt(1);
         Outils.afficher(1,partie);
         Outils.affichage(partie.getMonJournal().afficherListeDeMort(),1,partie.getMonInterface());

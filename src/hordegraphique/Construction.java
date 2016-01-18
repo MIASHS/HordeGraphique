@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 
 public class Construction {
-
+    //attributs de la class
     //Nom de la construction
     private String nom;
 
@@ -27,14 +27,14 @@ public class Construction {
     // indique le nombre de zombies auquel la construction peut resister
     private int resistance;
 
-    // Constructeur
+    // Constructeur de la class Construction
     public Construction(String nom, ArrayList<Integer> ressources_necessaire, int conso_pa, int resistance) {
         this.nom = nom;
         this.ressources_necessaire = ressources_necessaire;
         this.conso_pa = conso_pa;
         this.resistance = resistance;
     }
-
+    // Getter et Setter de la class
     public String getNom() {
         return nom;
     }
@@ -69,10 +69,13 @@ public class Construction {
     }
 
     public int getResistance() {
+        
         return resistance;
     }
 
     public void setResistance(int resistance) {
         this.resistance = resistance;
     }
+    //Fin Getter Setter
 }
+

@@ -13,6 +13,7 @@ import java.util.Random;
  * @author oneiroi
  */
 public class Carte {
+    //attributs de la class carte
     private ArrayList<Case> tabCase=new ArrayList<Case>();
     private int xVille;
     private int yVille;
@@ -82,6 +83,7 @@ public class Carte {
     }
     
     public void dispertionDesItems(){
+        // répartition des items sur la carte de manière aléatoire
         int r=-1;
         int n=1;
         int u=312;
@@ -118,6 +120,7 @@ public class Carte {
     }
     
     public void ajouterItem(int i, int j, int k){
+        // ajout des items sur la cartes
         Random ra=new Random();
         if(tabItem[i].getQuantite()!=0){
             if(i==2){

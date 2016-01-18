@@ -13,14 +13,13 @@
             <file>file:/home/oneiroi/NetBeansProjects/HordeGraphique/src/hordegraphique/Journal.java</file>
         </group>
         <group>
-            <file>file:/home/oneiroi/NetBeansProjects/HordeGraphique/src/hordegraphique/Temps.java</file>
-            <file>file:/home/oneiroi/NetBeansProjects/HordeGraphique/src/hordegraphique/Joueur.java</file>
-            <file>file:/home/oneiroi/NetBeansProjects/HordeGraphique/src/hordegraphique/Case.java</file>
-            <file>file:/home/oneiroi/NetBeansProjects/HordeGraphique/src/hordegraphique/Menu.java</file>
-            <file>file:/home/oneiroi/NetBeansProjects/HordeGraphique/src/hordegraphique/HordeInterface.java</file>
-            <file>file:/home/oneiroi/NetBeansProjects/HordeGraphique/src/hordegraphique/Jeu.java</file>
-            <file>file:/home/oneiroi/NetBeansProjects/HordeGraphique/src/hordegraphique/Outils.java</file>
-            <file>file:/home/oneiroi/NetBeansProjects/HordeGraphique/src/hordegraphique/Journal.java</file>
+            <file>file:/C:/Users/Gabriel/Documents/GitHub/HordeGraphique/src/hordegraphique/Item.java</file>
+            <file>file:/C:/Users/Gabriel/Documents/GitHub/HordeGraphique/src/hordegraphique/Carte.java</file>
+            <file>file:/C:/Users/Gabriel/Documents/GitHub/HordeGraphique/src/hordegraphique/Temps.java</file>
+            <file>file:/C:/Users/Gabriel/Documents/GitHub/HordeGraphique/src/hordegraphique/Case.java</file>
+            <file>file:/C:/Users/Gabriel/Documents/GitHub/HordeGraphique/src/hordegraphique/Journal.java</file>
+            <file>file:/C:/Users/Gabriel/Documents/GitHub/HordeGraphique/src/hordegraphique/Joueur.java</file>
+            <file>file:/C:/Users/Gabriel/Documents/GitHub/HordeGraphique/src/hordegraphique/Construction.java</file>
         </group>
     </open-files>
 </project-private>

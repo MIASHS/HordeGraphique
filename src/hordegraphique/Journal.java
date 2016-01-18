@@ -13,6 +13,7 @@ import java.util.Arrays;
  * @author Seb
  */
 public class Journal {
+    //attributs de la class
     private ArrayList<String> listeDeMorts=new ArrayList<String>(19);
     private ArrayList<Construction> tabConstruction=new ArrayList<Construction>(7);
     private ArrayList<String> carte = new ArrayList<String>(625);
@@ -35,6 +36,7 @@ public class Journal {
         
      }
     public Journal(){
+        // Types de constructions
         ArrayList tab=new ArrayList(2);
         tab.add(0, 10);tab.add(1,20);
         tabConstruction.add(0,new Construction(Journal.consulterDescription(87),tab,10,20));
@@ -58,6 +60,7 @@ public class Journal {
     }
 // Permet de voir la liste et les détails des constructions
     public static String consulterConstruction(Journal journal) {
+        // permet de voir les construction déja construite
         String tabNom=Journal.consulterDescription(94);
         for(int i=0;i<journal.tabConstruction.size();i++){
             tabNom+=i+" :"+journal.tabConstruction.get(i).getNom()+" - "+journal.tabConstruction.get(i).getRessources(0)+";"+journal.tabConstruction.get(i).getRessources(1)+" - "+journal.tabConstruction.get(i).getConso_pa()+" - +"+journal.tabConstruction.get(i).getResistance()+"\n";
@@ -67,11 +70,13 @@ public class Journal {
 
 // Permer de voir la liste des objets et leur détails dans l'entrepot
     public Item[] consulterEntrepot(Ville ville) {
+        // permet de voir les objets dans l'entrepot
          return ville.getEntrepot();
     }
 
 // Permet d'obtenir des infos sur le jeu (jour, tour)
     public int ConsulterTemps(Temps temps) {
+        // permet de recuperer le temps --> Nombres de tours et de jours 
         return temps.getNbJour()& temps.getNumTour();
     }
 
@@ -113,6 +118,7 @@ public class Journal {
     }
     
     public static String afficherPosition(Jeu partie,Joueur ceJoueur){
+        //affiche la position du joueur
         if(ceJoueur.getAbsysseActuelle()== partie.getGrille().getxVille() && ceJoueur.getOrdonneeActuelle()==partie.getGrille().getyVille()){
             return ""+ceJoueur.getNom()+Journal.consulterDescription(99);
         }else{
@@ -120,9 +126,11 @@ public class Journal {
         }
     }
     public static String afficherDescriptionJoueur(Joueur ceJoueur){
+        //affiche la description du joueur
         return ""+ceJoueur.getNom()+Journal.consulterDescription(102)+ceJoueur.getPa()+Journal.consulterDescription(103)+ ceJoueur.getPdv()+Journal.consulterDescription(104);
     }
     public static String afficherContenuSac(Joueur ceJoueur){
+        //affiche le contenu du sac
         String str="\n";
         if(!ceJoueur.getSac().isEmpty()){
             for(int index=0;index<ceJoueur.getSac().size();index++){str+=index+" "+ceJoueur.getSac().get(index).getNom()+";\n";}
@@ -133,14 +141,17 @@ public class Journal {
         return str;
     }
     public void ajouterListeDeMorts(String str){
+        // méthode permet d'ajouter des morts
         listeDeMorts.add(str);
     }
     public String afficherListeDeMort(){
+        // afficher la liste des morts
         String str="\n";
         for(int index=0;index<listeDeMorts.size();index++){str+=listeDeMorts.get(index)+";\n";}
         return str;
     }
     public static String afficherMort(Jeu partie, boolean nuit,boolean pasDrogue){
+        // affiche la mort
         String str="";
         if(!nuit){
             if(pasDrogue){
@@ -156,7 +167,7 @@ public class Journal {
     }
     public static String consulterDescription(int choix){
         String description="";
-        
+        // Choix des description
         switch (choix){
             case 0: description="\nLa gourde permet de récupérer 6 points d'action.\n Elle n'est pas réutilisable. Elle occupe une place de la sac.\n On ne peut boire qu'une fois par jour.";
                     break;
@@ -405,6 +416,7 @@ public class Journal {
     }
     
     public static String miseAJourCarte(Joueur joueur, Journal journal){
+        // mise à jour de la carte
         if(joueur.getPa() ==0){
             return Journal.consulterDescription(5);
         }
@@ -425,6 +437,7 @@ public class Journal {
     }
     
     public static String voirCarte(Journal journal){
+        // methode pour voir la carte
         String str="";
         int k=0;
          for(int i=0;i<25;i++){

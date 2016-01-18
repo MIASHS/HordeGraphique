@@ -15,7 +15,7 @@ import java.util.Scanner;
  * @author Seb
  */
 public class Joueur {
-
+    //attribut de la class
     //Nom du joueur 
     private String nom;
 
@@ -46,7 +46,7 @@ public class Joueur {
     private ArrayList<Item> sac = new ArrayList<>(10);
     private ArrayList carteJoueur = new ArrayList<>();
    
-    
+    //Getter Setter de la class
     public int getOrdonneeActuelle() {
         return ordonneeActuelle;
     }
@@ -68,7 +68,7 @@ public class Joueur {
         this.absysseActuelle = absysseActuelle;
     }
 
-    // Constructeur
+    // Constructeur de la class
     public Joueur(Jeu partie, String nom) {
         this.nom = nom;
         this.pdv = 100;
@@ -81,6 +81,8 @@ public class Joueur {
         this.dejaBu=false;
         this.dejaMange=false;
     }
+    
+    //Getter Setter de la class
     public int getIndiceCase(){
         return indiceCase;
     }
@@ -214,6 +216,7 @@ public class Joueur {
     // ---------------DEBUT DES METHODES---------------------
     
     public String renvoyerCoordonnees(){
+        // méthode de renvoie des coordonnees de la carte ou se trouve le joueurs
         return "("+this.absysseActuelle+";"+this.ordonneeActuelle+")";
     }
     // Permet au joueur de boire de l'eau
@@ -221,6 +224,7 @@ public class Joueur {
      * @return changement to know if a change was made
      */
     public boolean boire(Jeu partie) {
+        // Methode qui permet au joueur de boire
         int i=0;
         boolean changement=false;
         if(!sac.isEmpty()){
@@ -245,6 +249,7 @@ public class Joueur {
     }
     //Permet au joueur de manger une ration s'il en dispose
     public boolean manger(Jeu partie) {
+        // permet au joueur de manger
         int i=0;
         boolean changement=false;
         if(!sac.isEmpty()){
@@ -331,6 +336,7 @@ public class Joueur {
         }
     }
     public void outilViderSac(boolean b,int num, Jeu partieActuelle){
+        //Permet au joueur de vider des items de son sac
         if(b){
         //int num=0;//Outils.donnerReponseChiffre(sac.size()-1,partieActuelle);
             
