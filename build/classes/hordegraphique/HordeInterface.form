@@ -862,6 +862,9 @@
                         <Property name="text" type="java.lang.String" value="Construire"/>
                         <Property name="opaque" type="boolean" value="false"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="construireActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="participer">
                       <Properties>
@@ -871,6 +874,9 @@
                         <Property name="text" type="java.lang.String" value="Participer au chantier"/>
                         <Property name="opaque" type="boolean" value="false"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="participerActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="consulterEntrepot">
                       <Properties>
@@ -904,6 +910,9 @@
                         <Property name="text" type="java.lang.String" value="Calculer les d&#xe9;fenses"/>
                         <Property name="opaque" type="boolean" value="false"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CalculerDefensesActionPerformed"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>

@@ -1358,10 +1358,20 @@ public class HordeInterface extends javax.swing.JFrame {
         construire.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
         construire.setText("Construire");
         construire.setOpaque(false);
+        construire.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                construireActionPerformed(evt);
+            }
+        });
 
         participer.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
         participer.setText("Participer au chantier");
         participer.setOpaque(false);
+        participer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                participerActionPerformed(evt);
+            }
+        });
 
         consulterEntrepot.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
         consulterEntrepot.setText("Consulter l'entrepôt");
@@ -1384,6 +1394,11 @@ public class HordeInterface extends javax.swing.JFrame {
         CalculerDefenses.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
         CalculerDefenses.setText("Calculer les défenses");
         CalculerDefenses.setOpaque(false);
+        CalculerDefenses.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CalculerDefensesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout interieurLayout = new javax.swing.GroupLayout(interieur);
         interieur.setLayout(interieurLayout);
@@ -1749,7 +1764,8 @@ public class HordeInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_prendreObjetMouseClicked
 
     private void butTalkiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butTalkiMouseClicked
-        // TODO add your handling code here: // Talkie
+        //Mise à jours de la carte
+        Journal.miseAJourCarte(partie.getJoueurActuel(), partie.getMonJournal());       // TODO add your handling code here: // Talkie
         Journal.toString(partie, 'M');
     }//GEN-LAST:event_butTalkiMouseClicked
 
@@ -2018,13 +2034,35 @@ public class HordeInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_butCarteMouseClicked
 
     private void consulterEntrepotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consulterEntrepotActionPerformed
-       Outils.affichage(partie.getMaVille().consulterEntrepot(), 1, this);    // TODO add your handling code here:
+      //afficher entrepot
+        Outils.affichage(partie.getMaVille().consulterEntrepot(), 1, this);    // TODO add your handling code here:
     }//GEN-LAST:event_consulterEntrepotActionPerformed
 
     private void interagirPorteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_interagirPorteActionPerformed
-       menu.setConsommationDePA(partie.getMaVille().ouverturePorte(partie));
+       // choix fermeture ou de l'ouverture de la porte
+        menu.setConsommationDePA(partie.getMaVille().ouverturePorte(partie));
        menu.consommerPA();// TODO add your handling code here:
     }//GEN-LAST:event_interagirPorteActionPerformed
+
+    private void CalculerDefensesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalculerDefensesActionPerformed
+       // calcule des défence total en fonction des construction et de la porte
+        Outils.affichage(partie.getMaVille().consulterDefense(), 1, this);
+        this.defense.setText(""+partie.getMaVille().getTauxDefense());// TODO add your handling code here:
+    }//GEN-LAST:event_CalculerDefensesActionPerformed
+
+    private void participerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_participerActionPerformed
+        // participer à la construction d'un batiment
+        Outils.affichage(partie.getMaVille().afficherConstructionEnCours(), 1, this);
+        partie.getMaVille().accederAuChantier(partie,Outils.donnerReponseChiffre(partie.getMaVille().getBatimentEnCours().size()-1, partie, JOptionPane.showInputDialog("Dans quel batiment souhaitez vous investir?")));
+    }//GEN-LAST:event_participerActionPerformed
+
+    private void construireActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_construireActionPerformed
+        // choix de la construction
+        Outils.affichage(Journal.consulterConstruction(partie.getMonJournal()),1,this);
+        if(Outils.affichage("Que souhaitez vous construire ?",0, this)==0){
+                partie.getMaVille().construire(partie,Outils.donnerReponseChiffre(partie.getMaVille().getBatiment().size()-1, partie, JOptionPane.showInputDialog(Journal.consulterDescription(36))));
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_construireActionPerformed
     
     public void accederObjetCase(int i){
         if(partie.getJoueurActuel().getIndiceCase()==338){

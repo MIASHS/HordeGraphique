@@ -333,9 +333,9 @@ public class Journal {
                     break;
             case 81:description="\nSouhaitez-vous l'ouvrir ?(O/N)($1PA)";
                     break;
-            case 82:description="\nNom de la construction - Réssistance\n";
+            case 82:description="\nNom de la construction - Résistance\n";
                     break; 
-            case 83:description="\nNom de la construction - PA - Réssistance\n";
+            case 83:description="\nNom de la construction - PA - Résistance\n";
                     break; 
             case 84:description="\nIl n' y a plus de ration.";
                     break; 
@@ -357,7 +357,7 @@ public class Journal {
                     break; 
             case 93:description="Abris anti-atomique";
                     break; 
-            case 94:description="\n   Nom de la construction - Ressources nécessaires - PA - Réssistance\n";
+            case 94:description="\n   Nom de la construction - Ressources nécessaires - PA - Résistance\n";
                     break;
             case 95:description="\nLe nombre de tours est de ";
                     break; 

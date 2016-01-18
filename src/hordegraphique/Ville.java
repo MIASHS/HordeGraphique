@@ -7,6 +7,7 @@ package hordegraphique;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -84,10 +85,12 @@ public class Ville extends Case {
         }    
     }
     
-    public void accederAuChantier(Joueur ceJoueur,Jeu partieActuelle,int num){
+    public void accederAuChantier(Jeu partieActuelle,int num){
         //Outils.donnerReponseChiffre(batimentEnCours.size()-1,partieActuelle);
         Outils.affichage(Journal.consulterDescription(74)+batimentEnCours.get(num).getConso_pa()+Journal.consulterDescription(75),partieActuelle.getMonInterface());
-        Outils.affichage(Journal.consulterDescription(76),partieActuelle.getMonInterface());
+        if(Outils.affichage(Journal.consulterDescription(76),1,partieActuelle.getMonInterface())==0){
+            participerAuChantier(partieActuelle,Outils.donnerReponseChiffre(partieActuelle.getJoueurActuel().getPa(), partieActuelle, JOptionPane.showInputDialog(Journal.consulterDescription(76))),num);
+        }
     }
     
     public void participerAuChantier(Jeu partieActuelle, int num,int choix){
@@ -126,9 +129,8 @@ public class Ville extends Case {
     }
 
     public String consulterDefense(){
-        String afficherTauxDefense;
-        return null;
-        
+        String afficherTauxDefense = " Nom des batiments "+afficherConstruction()+"\n Taux de défense est de "+this.defenseVille()+"";
+        return afficherTauxDefense;
     }
     
     public boolean ouverturePorte(Jeu partieActuelle) {
@@ -163,7 +165,7 @@ public class Ville extends Case {
     public String afficherConstruction() {
         String tabNom=Journal.consulterDescription(82);
         for(int i=0;i<batiment.size();i++){
-            tabNom+=batiment.get(i).getNom()+" - "+batiment.get(i).getResistance()+"\n";
+            tabNom+=i+" - "+batiment.get(i).getNom()+" - "+batiment.get(i).getResistance()+"\n";
         }
         return tabNom;
     }
@@ -171,7 +173,7 @@ public class Ville extends Case {
     public String afficherConstructionEnCours() {
         String tabNom=Journal.consulterDescription(83);
         for(int i=0;i<batimentEnCours.size();i++){
-            tabNom+=batimentEnCours.get(i).getNom()+" - "+batimentEnCours.get(i).getConso_pa()+" - "+batimentEnCours.get(i).getResistance()+"\n";
+            tabNom+=i+" - "+batimentEnCours.get(i).getNom()+" - "+batimentEnCours.get(i).getConso_pa()+" - "+batimentEnCours.get(i).getResistance()+"\n";
         }
         return tabNom;
     }
