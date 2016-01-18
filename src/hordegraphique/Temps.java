@@ -9,13 +9,13 @@ import java.util.Random;
 
 /**
  *
- * @author oneiroi
+ * @author Valère,Sebastien,Gabriel
  */
 public class Temps {
     // attributs de la class
-    private int numTour;
-    private int nbJours;
-    private boolean nuit;
+    private int numTour;// indique le numéro de tour
+    private int nbJours; // nombre de jours
+    private boolean nuit; // indique si il fait nuit
     // getters&setter
     public void setNumTour(int i){}
     public int getNumTour(){return numTour;}

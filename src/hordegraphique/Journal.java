@@ -10,13 +10,13 @@ import java.util.Arrays;
 
 /**
  *
- * @author Seb
+ * @author Valère,Sebastien,Gabriel
  */
 public class Journal {
     //attributs de la class
-    private ArrayList<String> listeDeMorts=new ArrayList<String>(19);
-    private ArrayList<Construction> tabConstruction=new ArrayList<Construction>(7);
-    private ArrayList<String> carte = new ArrayList<String>(625);
+    private ArrayList<String> listeDeMorts=new ArrayList<String>(19); // liste de mort
+    private ArrayList<Construction> tabConstruction=new ArrayList<Construction>(7); // liste de construction
+    private ArrayList<String> carte = new ArrayList<String>(625); // liste pour la carte
     
     
     public ArrayList<Construction> getTabConstruction(){
@@ -66,7 +66,7 @@ public class Journal {
             tabNom+=i+" :"+journal.tabConstruction.get(i).getNom()+" - "+journal.tabConstruction.get(i).getRessources(0)+";"+journal.tabConstruction.get(i).getRessources(1)+" - "+journal.tabConstruction.get(i).getConso_pa()+" - +"+journal.tabConstruction.get(i).getResistance()+"\n";
         }
         return tabNom;
-    }
+ }
 
 // Permer de voir la liste des objets et leur détails dans l'entrepot
     public Item[] consulterEntrepot(Ville ville) {
@@ -167,7 +167,7 @@ public class Journal {
     }
     public static String consulterDescription(int choix){
         String description="";
-        // Choix des description
+        // Choix des descriptions
         switch (choix){
             case 0: description="\nLa gourde permet de récupérer 6 points d'action.\n Elle n'est pas réutilisable. Elle occupe une place de la sac.\n On ne peut boire qu'une fois par jour.";
                     break;
@@ -333,9 +333,9 @@ public class Journal {
                     break;
             case 81:description="\nSouhaitez-vous l'ouvrir ?(O/N)($1PA)";
                     break;
-            case 82:description="\nNom de la construction - Réssistance\n";
+            case 82:description="\nNom de la construction - Résistance\n";
                     break; 
-            case 83:description="\nNom de la construction - PA - Réssistance\n";
+            case 83:description="\nNom de la construction - PA - Résistance\n";
                     break; 
             case 84:description="\nIl n' y a plus de ration.";
                     break; 
@@ -357,7 +357,7 @@ public class Journal {
                     break; 
             case 93:description="Abris anti-atomique";
                     break; 
-            case 94:description="\n   Nom de la construction - Ressources nécessaires - PA - Réssistance\n";
+            case 94:description="\n   Nom de la construction - Ressources nécessaires - PA - Résistance\n";
                     break;
             case 95:description="\nLe nombre de tours est de ";
                     break; 
@@ -406,6 +406,14 @@ public class Journal {
             case 117:description="\nVous ne pouvez choisir que la proposition ayant l'indice 0.";
                     break;
             case 118:description="la case n'a pas encore été fouillé";
+                    break;
+            case 119:description="Que souhaitez vous construire ?";
+                    break;
+            case 120:description="Les joueurs (ou Citoyens) sont regroupés dans de petites villes et ont pour tâche de s'organiser\n" +
+"chaque jour pour tenir le plus longtemps possible face aux attaques des zombies... Le dernier\n" +
+"survivant deviendra le vainqueur. La journée, les Citoyens peuvent quitter la sécurité de la Ville pour explorer l'Outre-Monde\n" +
+"et fouiller les étendues désertiques pour y trouver des armes, du matériel et de la nourriture. Chaque soir à minuit, les Hordes de morts-vivants attaquent la Ville ! Les objets trouvés dans\n" +
+"la journée aident alors à bâtir des défenses et à protéger les maisons.";
                     break;
             default:description="Erreur.";
                     break;

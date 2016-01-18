@@ -11,19 +11,19 @@ import java.util.Scanner;
 
 /**
  *
- * @author Gabriel
+ * @author Valère,Sebastien,Gabriel
  */
 public class Case {
-    // attribut de la class Case
-    protected int longitude;
-    protected int latitude;
-    protected int nbZombiesRestants;
-    private ArrayList<Item> items= new ArrayList<Item>(); // valeur par défault//
-    private boolean fouillee;
-    private boolean caseTrouve;
+    // attributs de la class Case
+    protected int longitude; // indique la longitude du joueurs
+    protected int latitude;// indique la latitude du joueurs
+    protected int nbZombiesRestants; // indique le nombre de zombies restants
+    private ArrayList<Item> items= new ArrayList<Item>(); // liste items//
+    private boolean fouillee; // vérifie si la case est fouillée ou non 
+    private boolean caseTrouve; // vérifie si la case est trouvée ou non 
     protected boolean laVille = false;
-    private Zombies zomb=new Zombies();
-    private char fond='B';
+    private Zombies zomb=new Zombies(); // objet zombie
+    private char fond='B'; // correspond à un fond 
     Scanner sc= new Scanner(System.in);
     Random ra=new Random();
 
@@ -38,7 +38,7 @@ public class Case {
         this.items.add(1,new Item(Journal.consulterDescription(55),0,Journal.consulterDescription(3)));
         this.items.add(2,new Item(Journal.consulterDescription(53),0,Journal.consulterDescription(4)));
     }
-
+    // getter et setter de la class
     public char getFond() {
         return fond;
     }
@@ -62,6 +62,7 @@ public class Case {
     }
     
     public String itemCarte(){
+        //retourne une chaine de caractère
         return "P"+this.items.get(0).getQuantite()+"M"+this.items.get(1).getQuantite()+"B"+this.items.get(2).getQuantite();
     }
     //Getter et Setter

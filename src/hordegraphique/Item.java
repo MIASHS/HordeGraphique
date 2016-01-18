@@ -7,12 +7,12 @@ package hordegraphique;
 
 /**
  *
- * @author Seb
+ * @author Valère,Sebastien,Gabriel
  */
 public class Item {
-    //Attribut de la classe 
+    //Getter et setter de la class
     public String getNom() {
-        return nom;
+        return nom; 
     }
 
     public void setNom(String nom) {
@@ -35,7 +35,7 @@ public class Item {
         this.description = description;
     }
     
-
+    // constructeur de la class
     public Item(String nom, int quantite, String description) {
         //Constructeur de la class
         this.nom = nom;
@@ -43,14 +43,16 @@ public class Item {
         this.description = description;
         
     }
+    
+    // constructeur de la class
     public Item(String nom, String description) {
         //Constructeur de la class
         this.nom = nom;
         this.description = description;
     }
     //attribut de la class
-    private String nom;
-    private int quantite;
-    private String description;
+    private String nom;// indique le nom
+    private int quantite; // Indique la quantité
+    private String description; // indique la description
     
 }
