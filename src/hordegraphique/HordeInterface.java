@@ -1780,7 +1780,7 @@ public class HordeInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(partie.getJoueurActuel().getSac().isEmpty()){cptSac=-1;}else{
         cptSac+=1;
-        System.out.println("coucou "+cptSac);
+        
         if(cptSac>4){
         cptSac=0;
         }
@@ -1790,7 +1790,7 @@ public class HordeInterface extends javax.swing.JFrame {
     private void itemGaucheMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemGaucheMouseClicked
         // TODO add your handling code here:
         if(partie.getJoueurActuel().getSac().isEmpty()){cptSac=-1;}else{cptSac-=1;
-            System.out.println("coucou "+cptSac);
+            
             if(cptSac<0){
                 cptSac=4;
             }
@@ -2192,7 +2192,7 @@ public class HordeInterface extends javax.swing.JFrame {
     public void demarrerViderSac(){
     int k=0,j=-1;boolean trouve=false;
         switch(cptSac){
-            case 0: System.out.println("Je suis ici Ration "+cptCase+" "+partie.getJoueurActuel().getSac().size());
+            case 0: 
                     while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
                         if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(51))){
                             j=k;
@@ -2205,7 +2205,7 @@ public class HordeInterface extends javax.swing.JFrame {
                     }
                     
                     break;
-            case 1: System.out.println("Je suis ici Planche "+cptCase+" "+partie.getJoueurActuel().getSac().size());
+            case 1: 
                     while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
                         if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(54))){
                             j=k;
@@ -2217,7 +2217,7 @@ public class HordeInterface extends javax.swing.JFrame {
                     getNbPlanche().setText(""+(Integer.parseInt(getNbPlanche().getText())-1));
                     }
                     break;
-            case 2: System.out.println("Je suis ici Clou "+cptCase+" "+partie.getJoueurActuel().getSac().size());
+            case 2: 
                 while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
                         if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(55))){
                             j=k;
@@ -2229,7 +2229,7 @@ public class HordeInterface extends javax.swing.JFrame {
                     getNbClou().setText(""+(Integer.parseInt(getNbClou().getText())-1));
                     }
                     break;
-            case 3: System.out.println("Je suis ici Boisson "+cptCase+" "+partie.getJoueurActuel().getSac().size());
+            case 3: 
                     while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
                         if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(53))){
                             j=k;
@@ -2241,7 +2241,7 @@ public class HordeInterface extends javax.swing.JFrame {
                     getNbEnergie().setText(""+(Integer.parseInt(getNbEnergie().getText())-1));
                     }
                     break;
-            case 4: System.out.println("Je suis ici Gourde "+cptCase+" "+partie.getJoueurActuel().getSac().size());
+            case 4: 
                     while(k<partie.getJoueurActuel().getSac().size()&&!trouve){
                         if(partie.getJoueurActuel().getSac().get(k).getNom().equals(Journal.consulterDescription(52))){
                             j=k;
