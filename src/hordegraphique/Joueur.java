@@ -277,7 +277,10 @@ public class Joueur {
         }
         
         if(sac.get(i).getNom().equals(Journal.consulterDescription(53))){
-            Outils.affichage(Journal.consulterDescription(66),partieActuelle.getMonInterface());
+            if(Outils.affichage(Journal.consulterDescription(66),0,partieActuelle.getMonInterface())==0){
+                actionBoireBoisson(partieActuelle,i);
+            }
+            
             
         }else{
             Outils.affichage(Journal.consulterDescription(68),partieActuelle.getMonInterface());
@@ -294,6 +297,8 @@ public class Joueur {
                 }
                 dependant=true;
                 sac.remove(i);
+                partieActuelle.getMonInterface().getNbRation().setText(""+(Integer.parseInt(partieActuelle.getMonInterface().getNbRation().getText())-1));
+                                partieActuelle.getMonInterface().getNbObjet().setText(""+(Integer.parseInt(partieActuelle.getMonInterface().getNbObjet().getText())-1));
                 Outils.affichage(Journal.consulterDescription(67),partieActuelle.getMonInterface());
                 return true;
             

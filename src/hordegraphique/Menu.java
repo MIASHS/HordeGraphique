@@ -596,6 +596,8 @@ public class Menu {
                 }else{
                     consommationDePA=consoSup;
                     consommerPA();
+                    monInterface.getNbGourde().setText(""+(Integer.parseInt(monInterface.getNbGourde().getText())-1));
+                    monInterface.getNbObjet().setText(""+(Integer.parseInt(monInterface.getNbObjet().getText())-1));
                     //monInterface.setCpt(monInterface.getCpt()-23);
                     //menuNiveauUn('S');
                 }
@@ -623,19 +625,21 @@ public class Menu {
                 }else{
                     consommationDePA=consoSup;
                     consommerPA();
-                    monInterface.setCpt(monInterface.getCpt()-23);
-                    menuNiveauUn('S');
+                    monInterface.getNbRation().setText(""+(Integer.parseInt(monInterface.getNbRation().getText())-1));
+                    monInterface.getNbObjet().setText(""+(Integer.parseInt(monInterface.getNbObjet().getText())-1));
+                    //monInterface.setCpt(monInterface.getCpt()-23);
+                    //menuNiveauUn('S');
 
                 }
             }else{
-                //Outils.affichage(Journal.consulterDescription(5),this.getMonInterface()); 
-                monInterface.setCpt(monInterface.getCpt()-23);
-                menuNiveauUn('S');
+                Outils.affichage(Journal.consulterDescription(5),this.getMonInterface()); 
+                //monInterface.setCpt(monInterface.getCpt()-23);
+                //menuNiveauUn('S');
             }
         }else{
-                //Outils.affichage(Journal.consulterDescription(27),this.getMonInterface());            
-                monInterface.setCpt(monInterface.getCpt()-23);
-                menuNiveauUn('S');
+                Outils.affichage(Journal.consulterDescription(27),this.getMonInterface());            
+                //monInterface.setCpt(monInterface.getCpt()-23);
+                //menuNiveauUn('S');
         }
     }
     

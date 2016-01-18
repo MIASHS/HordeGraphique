@@ -8,6 +8,7 @@ package hordegraphique;
 import java.awt.event.MouseListener;
 import java.util.Scanner;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 /**
  *
  * @author oneiroi
@@ -43,7 +44,54 @@ public class Jeu {
     public void setNombreJoueur(int i){nombreJoueur=i;}
     public void setIndexJoueurActuel(int i){indexJoueurActuel=i;}    
     public int getIndexJoueurActuel(){return indexJoueurActuel;}
-    public void setJoueurActuel(int i){if(nombreJoueur==1){finDePartie();}else{joueurActuel=tabJoueur.get(i);}}    
+    public void setJoueurActuel(int i){if(nombreJoueur==1){finDePartie();}else{joueurActuel=tabJoueur.get(i);this.monInterface.getNomJoueur().setText(joueurActuel.getNom());monInterface.getTour().setText(""+this.getTempsPartie().getNumTour());
+        monInterface.getJour().setText(""+this.getTempsPartie().getNbJour());
+        this.monInterface.getLifeProgressBar().setValue(this.getJoueurActuel().getPdv());
+        this.monInterface.getPAProgressBar().setValue(this.getJoueurActuel().getPa());
+        this.monInterface.getItem1().setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/ration.png")));
+        if(joueurActuel.getIndiceCase()==338){this.monInterface.getItem1().setToolTipText("Il y a "+this.getMaVille().getEntrepot()[0].getQuantite()+" rations dans l'entrepôt.");}
+        this.monInterface.getPosition().setText(this.getJoueurActuel().renvoyerCoordonnees());
+        Outils.affichage(Journal.afficherPosition(this, this.getJoueurActuel()), 1, monInterface);
+        this.monInterface.getButCarte().setText(this.grille.getTabCase().get(this.getJoueurActuel().getIndiceCase()).itemCarte());
+        this.monInterface.getDefense().setText(""+0);
+        
+            this.getMonInterface().getNbClou().setText("0");
+            this.getMonInterface().getNbEnergie().setText("0");
+            this.getMonInterface().getNbGourde().setText("0");
+            this.getMonInterface().getNbObjet().setText("0");
+            this.getMonInterface().getNbPlanche().setText("0");
+            this.getMonInterface().getNbRation().setText("0");
+        if(!this.getJoueurActuel().getSac().isEmpty()){
+            String[] str={Journal.consulterDescription(51),Journal.consulterDescription(52),Journal.consulterDescription(53),Journal.consulterDescription(54),Journal.consulterDescription(55)};
+            for(int index=0;index<joueurActuel.getSac().size();index++){
+                for(int j=0;j<str.length;j++){
+                    if(joueurActuel.getSac().get(index).getNom().equals(str[j])){
+                        switch(j){
+                            case 0:
+                                monInterface.getNbRation().setText(""+(Integer.parseInt(monInterface.getNbRation().getText())+1));
+                                monInterface.getNbObjet().setText(""+(Integer.parseInt(monInterface.getNbObjet().getText())+1));
+                                break;
+                            case 1:
+                                monInterface.getNbRation().setText(""+(Integer.parseInt(monInterface.getNbGourde().getText())+1));
+                            monInterface.getNbObjet().setText(""+(Integer.parseInt(monInterface.getNbObjet().getText())+1));
+                                break;
+                            case 2:
+                                monInterface.getNbRation().setText(""+(Integer.parseInt(monInterface.getNbEnergie().getText())+1));
+                            monInterface.getNbObjet().setText(""+(Integer.parseInt(monInterface.getNbObjet().getText())+1));
+                                break;
+                            case 3:
+                                monInterface.getNbRation().setText(""+(Integer.parseInt(monInterface.getNbPlanche().getText())+1));
+                            monInterface.getNbObjet().setText(""+(Integer.parseInt(monInterface.getNbObjet().getText())+1));
+                                break;
+                            case 4:monInterface.getNbRation().setText(""+(Integer.parseInt(monInterface.getNbClou().getText())+1));
+                            monInterface.getNbObjet().setText(""+(Integer.parseInt(monInterface.getNbObjet().getText())+1));
+                                break;
+                        }
+                    }
+                }
+            }
+        }}}
+    
     public Joueur getJoueurActuel(){return joueurActuel;}
     public boolean getPartie(){return partieDemarree;}
     public void setPartie(boolean demarree){
