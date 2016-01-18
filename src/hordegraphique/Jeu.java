@@ -72,18 +72,18 @@ public class Jeu {
                                 monInterface.getNbObjet().setText(""+(Integer.parseInt(monInterface.getNbObjet().getText())+1));
                                 break;
                             case 1:
-                                monInterface.getNbRation().setText(""+(Integer.parseInt(monInterface.getNbGourde().getText())+1));
+                                monInterface.getNbGourde().setText(""+(Integer.parseInt(monInterface.getNbGourde().getText())+1));
                             monInterface.getNbObjet().setText(""+(Integer.parseInt(monInterface.getNbObjet().getText())+1));
                                 break;
                             case 2:
-                                monInterface.getNbRation().setText(""+(Integer.parseInt(monInterface.getNbEnergie().getText())+1));
+                                monInterface.getNbEnergie().setText(""+(Integer.parseInt(monInterface.getNbEnergie().getText())+1));
                             monInterface.getNbObjet().setText(""+(Integer.parseInt(monInterface.getNbObjet().getText())+1));
                                 break;
                             case 3:
-                                monInterface.getNbRation().setText(""+(Integer.parseInt(monInterface.getNbPlanche().getText())+1));
+                                monInterface.getNbPlanche().setText(""+(Integer.parseInt(monInterface.getNbPlanche().getText())+1));
                             monInterface.getNbObjet().setText(""+(Integer.parseInt(monInterface.getNbObjet().getText())+1));
                                 break;
-                            case 4:monInterface.getNbRation().setText(""+(Integer.parseInt(monInterface.getNbClou().getText())+1));
+                            case 4:monInterface.getNbClou().setText(""+(Integer.parseInt(monInterface.getNbClou().getText())+1));
                             monInterface.getNbObjet().setText(""+(Integer.parseInt(monInterface.getNbObjet().getText())+1));
                                 break;
                         }

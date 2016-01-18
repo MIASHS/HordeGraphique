@@ -76,8 +76,8 @@ public abstract class Outils  {
                         
                         
             case 1:     Outils.affichage(Journal.toString(partieActuelle,'S'),partieActuelle.getMonInterface());
-                        Outils.affichage(Journal.consulterDescription(37),partieActuelle.getMonInterface());
-                        Outils.affichage(Journal.consulterDescription(36),partieActuelle.getMonInterface());
+                        //Outils.affichage(Journal.consulterDescription(37),partieActuelle.getMonInterface());
+                        //Outils.affichage(Journal.consulterDescription(36),partieActuelle.getMonInterface());
                         
                         
                         break;
@@ -191,6 +191,10 @@ public abstract class Outils  {
                 //num=conversionInt("2",partieActuelle);
             }else{
                 num=Integer.parseInt(str);
+                if(num<1||num>9){
+                    //Outils.affichage(Journal.consulterDescription(48),partieActuelle.getMonInterface());    
+                    num=0;
+                    }
             }
         }else{
                 if((int)(lettres[0])>50 ||(int)(lettres[0])<49 && (int)(lettres[1])>57 ||(int)(lettres[1])<48){

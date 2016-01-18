@@ -72,7 +72,7 @@ public class Temps {
         }
     }
     public void debuterTour(Jeu partie){
-        partie.getMonInterface().setCpt(1);
+        //partie.getMonInterface().setCpt(1);
         Outils.afficher(1,partie);
     }
 }

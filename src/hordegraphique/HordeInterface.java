@@ -1836,17 +1836,19 @@ public class HordeInterface extends javax.swing.JFrame {
             }
         
             if(!isNbJoueurSet){
-                String str="";
+                String str;
                 while(partie.getNombreJoueur()==0){
-                    while(str.isEmpty()||str.equals(null)){
+                    str="";
+                    while(str.isEmpty()){
                             str=JOptionPane.showInputDialog(Journal.consulterDescription(57));
                     }
-                    partie.setNombreJoueur(Outils.conversionInt(str,partie));   
+                    if(!str.isEmpty()){int num=Outils.conversionInt(str,partie); if(num>1){partie.setNombreJoueur(num);}}
+                    
                 }
                 copieNbJoueur=0;
                 while(copieNbJoueur<partie.getNombreJoueur()){
                     String nomJoueur="";
-                    while(nomJoueur.isEmpty()||str.equals(null)){
+                    while(nomJoueur.isEmpty()||nomJoueur.equals(null)){
                         nomJoueur=JOptionPane.showInputDialog(Journal.consulterDescription(58)+copieNbJoueur+" ?");
                     }
                     Joueur unJoueur= new Joueur(this.partie,nomJoueur);
@@ -1987,12 +1989,15 @@ public class HordeInterface extends javax.swing.JFrame {
 
     private void fouillerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fouillerMouseClicked
         // TODO add your handling code here:
+        if(!partie.getGrille().getTabCase().get(partie.getJoueurActuel().getIndiceCase()).getFouillee()){
         menu.fouillerCase(JOptionPane.showConfirmDialog(null,Journal.consulterDescription(70))==0);
-        
-        if(partie.getGrille().getTabCase().get(partie.getJoueurActuel().getIndiceCase()).getFouillee()){
+        Outils.affichage(partie.getGrille().getTabCase().get(partie.getJoueurActuel().getIndiceCase()).afficherItems(), 1, this);
+          partie.getJoueurActuel().getCarteJoueur().add(partie.getJoueurActuel().getIndiceCase()+":"+partie.getGrille().getTabCase().get(partie.getJoueurActuel().getIndiceCase()).itemCarte());
+          partie.getMonInterface().getButCarte().setText("|"+partie.getGrille().getTabCase().get(partie.getJoueurActuel().getIndiceCase()).itemCarte()+"|");
+        }else{        
             Outils.affichage(partie.getGrille().getTabCase().get(partie.getJoueurActuel().getIndiceCase()).afficherItems(), 1, this);
           partie.getJoueurActuel().getCarteJoueur().add(partie.getJoueurActuel().getIndiceCase()+":"+partie.getGrille().getTabCase().get(partie.getJoueurActuel().getIndiceCase()).itemCarte());
-          partie.getMonInterface().getButCarte().setText(" |"+partie.getGrille().getTabCase().get(partie.getJoueurActuel().getIndiceCase()).itemCarte()+"| ");
+          partie.getMonInterface().getButCarte().setText("|"+partie.getGrille().getTabCase().get(partie.getJoueurActuel().getIndiceCase()).itemCarte()+"|");
         }
     }//GEN-LAST:event_fouillerMouseClicked
 
@@ -2247,9 +2252,28 @@ public class HordeInterface extends javax.swing.JFrame {
     }
     
     public void demarrerPrendreObjet(){
-        if(partie.getJoueurActuel().getIndiceCase()==338){if(cptCase==0||cptCase==3){if(cptCase==0){menu.accesObjet(JOptionPane.showConfirmDialog(rootPane,(Journal.consulterDescription(17)))==0,1,partie);}else{menu.accesObjet(JOptionPane.showConfirmDialog(rootPane,(Journal.consulterDescription(18)))==0,cptCase,partie);}}else{if(cptCase==4){menu.prendreGourde((JOptionPane.showConfirmDialog(rootPane,(Journal.consulterDescription(20)))==0));}}}else{menu.prendreObjetCase(cptCase);}
+        if(partie.getJoueurActuel().getIndiceCase()==338){
+            if(cptCase==0||cptCase==3){
+                if(cptCase==0){
+                    menu.accesObjet(JOptionPane.showConfirmDialog(rootPane,(Journal.consulterDescription(17)))==0,1,partie);
+                }else{
+                    menu.accesObjet(JOptionPane.showConfirmDialog(rootPane,(Journal.consulterDescription(18)))==0,cptCase,partie);
+                }
+            }else{
+                if(cptCase==4){
+                    menu.prendreGourde((JOptionPane.showConfirmDialog(rootPane,(Journal.consulterDescription(20)))==0));
+                }
+            }
+        }else{
+            if(partie.getGrille().getTabCase().get(partie.getJoueurActuel().getIndiceCase()).getNbZombiesRestants()==0){
+                if(partie.getGrille().getTabCase().get(partie.getJoueurActuel().getIndiceCase()).getItem().get(cptCase-1).getQuantite()>0){
+                    menu.prendreObjetCase(cptCase);
+                }
+            }else{
+                Outils.affichage(Journal.consulterDescription(7), this);
+            }
+        }
     }
-   
     
     /**
      * @param args the command line arguments

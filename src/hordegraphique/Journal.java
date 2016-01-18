@@ -378,7 +378,7 @@ public class Journal {
                     break;
             case 109:description=" est décédé(e) dans la nuit du jour ";
                     break; 
-            case 110:description=" a été ajouté â votre sac. ";
+            case 110:description=" a été ajouté à votre sac. ";
                     break; 
             case 111:description=" a été retiré de votre sac.";
                     break; 
