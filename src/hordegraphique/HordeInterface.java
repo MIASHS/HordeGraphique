@@ -1309,6 +1309,11 @@ public class HordeInterface extends javax.swing.JFrame {
         afficherResume.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
         afficherResume.setText("Résumé du jeu");
         afficherResume.setOpaque(false);
+        afficherResume.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                afficherResumeActionPerformed(evt);
+            }
+        });
 
         afficherRegle.setFont(new java.awt.Font("URW Chancery L", 1, 18)); // NOI18N
         afficherRegle.setText("Règle du jeu");
@@ -1937,7 +1942,10 @@ public class HordeInterface extends javax.swing.JFrame {
     private void finirTourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finirTourActionPerformed
         // TODO add your handling code here:
         // Fonction pour finir le tour
+        page1.setText("");
         menu.finirTour();
+        //rend la page vide
+
     }//GEN-LAST:event_finirTourActionPerformed
 
     private void itemGauche1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemGauche1MouseClicked
@@ -1966,7 +1974,8 @@ public class HordeInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_prendreObjet1MouseClicked
 
     private void afficherRegleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afficherRegleActionPerformed
-        // TODO add your handling code here:
+        // affiche les régles du jeux dans le journal
+        Outils.affichage(Journal.consulterDescription(120),1, this);// TODO add your handling code here:
     }//GEN-LAST:event_afficherRegleActionPerformed
 
     private void item1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_item1MouseClicked
@@ -2074,10 +2083,15 @@ public class HordeInterface extends javax.swing.JFrame {
     private void construireActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_construireActionPerformed
         // choix de la construction
         Outils.affichage(Journal.consulterConstruction(partie.getMonJournal()),1,this);
-        if(Outils.affichage("Que souhaitez vous construire ?",0, this)==0){
+        if(Outils.affichage(Journal.consulterDescription(119),0, this)==0){
                 partie.getMaVille().construire(partie,Outils.donnerReponseChiffre(partie.getMaVille().getBatiment().size()-1, partie, JOptionPane.showInputDialog(Journal.consulterDescription(36))));
         }// TODO add your handling code here:
     }//GEN-LAST:event_construireActionPerformed
+
+    private void afficherResumeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afficherResumeActionPerformed
+        //affiche un résumé du jeu dans le journal
+        Outils.affichage(partie.getMonJournal().toString(partie, 'S')+ partie.getMonJournal().afficherListeDeMort(), 1, this);        // TODO add your handling code here:
+    }//GEN-LAST:event_afficherResumeActionPerformed
     
     public void accederObjetCase(int i){
         // accéder à objet de la case

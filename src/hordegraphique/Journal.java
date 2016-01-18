@@ -66,7 +66,7 @@ public class Journal {
             tabNom+=i+" :"+journal.tabConstruction.get(i).getNom()+" - "+journal.tabConstruction.get(i).getRessources(0)+";"+journal.tabConstruction.get(i).getRessources(1)+" - "+journal.tabConstruction.get(i).getConso_pa()+" - +"+journal.tabConstruction.get(i).getResistance()+"\n";
         }
         return tabNom;
-    }
+ }
 
 // Permer de voir la liste des objets et leur détails dans l'entrepot
     public Item[] consulterEntrepot(Ville ville) {
@@ -406,6 +406,14 @@ public class Journal {
             case 117:description="\nVous ne pouvez choisir que la proposition ayant l'indice 0.";
                     break;
             case 118:description="la case n'a pas encore été fouillé";
+                    break;
+            case 119:description="Que souhaitez vous construire ?";
+                    break;
+            case 120:description="Les joueurs (ou Citoyens) sont regroupés dans de petites villes et ont pour tâche de s'organiser\n" +
+"chaque jour pour tenir le plus longtemps possible face aux attaques des zombies... Le dernier\n" +
+"survivant deviendra le vainqueur. La journée, les Citoyens peuvent quitter la sécurité de la Ville pour explorer l'Outre-Monde\n" +
+"et fouiller les étendues désertiques pour y trouver des armes, du matériel et de la nourriture. Chaque soir à minuit, les Hordes de morts-vivants attaquent la Ville ! Les objets trouvés dans\n" +
+"la journée aident alors à bâtir des défenses et à protéger les maisons.";
                     break;
             default:description="Erreur.";
                     break;

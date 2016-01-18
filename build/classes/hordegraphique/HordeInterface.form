@@ -729,6 +729,9 @@
                 <Property name="text" type="java.lang.String" value="R&#xe9;sum&#xe9; du jeu"/>
                 <Property name="opaque" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="afficherResumeActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JRadioButton" name="afficherRegle">
               <Properties>
