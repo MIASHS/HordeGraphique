@@ -2274,7 +2274,7 @@ public class HordeInterface extends javax.swing.JFrame {
             }
         }else{
             if(partie.getGrille().getTabCase().get(partie.getJoueurActuel().getIndiceCase()).getNbZombiesRestants()==0){
-                if(cptCase!=0||cptCase!=4){
+                if(cptCase!=0&&cptCase!=4){
                     if(partie.getGrille().getTabCase().get(partie.getJoueurActuel().getIndiceCase()).getItem().get(cptCase-1).getQuantite()>0){
                         menu.prendreObjetCase(cptCase);
                     }

@@ -294,8 +294,10 @@ public class Menu {
                                     break;
                     }
             }else{
-                Outils.affichage(Journal.consulterDescription(5),this.getMonInterface());
-            }
+                    if((partieActuelle.getGrille().getTabCase().get(partieActuelle.getJoueurActuel().getIndiceCase()).getNbZombiesRestants()!=0)){
+                        Outils.affichage(Journal.consulterDescription(7),this.getMonInterface());
+                    }else{Outils.affichage(Journal.consulterDescription(5),this.getMonInterface());
+                    }}
             consommerPA();
             //this.retournerMenu(-3);
             //sc.nextLine();
@@ -364,7 +366,7 @@ public class Menu {
                         partieActuelle.getJoueurActuel().setIndiceCase(partieActuelle.getJoueurActuel().getIndiceCase()+indice);
                         partieActuelle.getMonInterface().getFondMini().setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/"+partieActuelle.getGrille().getTabCase().get(partieActuelle.getJoueurActuel().getIndiceCase()).getFond()+".jpg")));
                         partieActuelle.getMonInterface().getPosition().setText(partieActuelle.getJoueurActuel().renvoyerCoordonnees());
-                        if(partieActuelle.getJoueurActuel().getIndiceCase()==338){partieActuelle.getMonInterface().getButCarte().setText(" | VILLE | ");partieActuelle.getMonInterface().getExterieur().setVisible(false);partieActuelle.getMonInterface().getInterieur().setVisible(true);}else{partieActuelle.getMonInterface().getButCarte().setText(" |          | ");partieActuelle.getMonInterface().getExterieur().setVisible(true);partieActuelle.getMonInterface().getInterieur().setVisible(false);}
+                        if(partieActuelle.getJoueurActuel().getIndiceCase()==338){partieActuelle.getMonInterface().getButCarte().setText(" | VILLE | ");partieActuelle.getMonInterface().getExterieur().setVisible(false);partieActuelle.getMonInterface().getInterieur().setVisible(true);}else{if(!partieActuelle.getGrille().getTabCase().get(partieActuelle.getJoueurActuel().getIndiceCase()).getFouillee()){partieActuelle.getMonInterface().getButCarte().setText(" |          | ");}else{partieActuelle.getMonInterface().getButCarte().setText("|"+partieActuelle.getGrille().getTabCase().get(partieActuelle.getJoueurActuel().getIndiceCase()).itemCarte()+"|");}partieActuelle.getMonInterface().getExterieur().setVisible(true);partieActuelle.getMonInterface().getInterieur().setVisible(false);}
                         consommationDePA=true;
                     }
                 }
@@ -373,7 +375,7 @@ public class Menu {
                 partieActuelle.getJoueurActuel().setIndiceCase(partieActuelle.getJoueurActuel().getIndiceCase()+indice);
                 partieActuelle.getMonInterface().getFondMini().setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/"+partieActuelle.getGrille().getTabCase().get(partieActuelle.getJoueurActuel().getIndiceCase()).getFond()+".jpg")));
                 partieActuelle.getMonInterface().getPosition().setText(partieActuelle.getJoueurActuel().renvoyerCoordonnees());
-                if(partieActuelle.getJoueurActuel().getIndiceCase()==338){partieActuelle.getMonInterface().getButCarte().setText(" | VILLE | ");partieActuelle.getMonInterface().getExterieur().setVisible(false);partieActuelle.getMonInterface().getInterieur().setVisible(true);}else{partieActuelle.getMonInterface().getButCarte().setText(" |          | ");partieActuelle.getMonInterface().getExterieur().setVisible(true);partieActuelle.getMonInterface().getInterieur().setVisible(false);}
+                if(partieActuelle.getJoueurActuel().getIndiceCase()==338){partieActuelle.getMonInterface().getButCarte().setText(" | VILLE | ");partieActuelle.getMonInterface().getExterieur().setVisible(false);partieActuelle.getMonInterface().getInterieur().setVisible(true);}else{if(!partieActuelle.getGrille().getTabCase().get(partieActuelle.getJoueurActuel().getIndiceCase()).getFouillee()){partieActuelle.getMonInterface().getButCarte().setText(" |          | ");}else{partieActuelle.getMonInterface().getButCarte().setText("|"+partieActuelle.getGrille().getTabCase().get(partieActuelle.getJoueurActuel().getIndiceCase()).itemCarte()+"|");}partieActuelle.getMonInterface().getExterieur().setVisible(true);partieActuelle.getMonInterface().getInterieur().setVisible(false);}
                 consommationDePA=true;
             }
         }

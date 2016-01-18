@@ -74,6 +74,6 @@ public class Temps {
     public void debuterTour(Jeu partie){
         //partie.getMonInterface().setCpt(1);
         Outils.afficher(1,partie);
-        //partie.getMonInterface().getPage1().setText(Journal.);
+        Outils.affichage(partie.getMonJournal().afficherListeDeMort(),1,partie.getMonInterface());
     }
 }

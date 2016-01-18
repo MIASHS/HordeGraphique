@@ -48,11 +48,14 @@ public class Jeu {
         monInterface.getJour().setText(""+this.getTempsPartie().getNbJour());
         this.monInterface.getLifeProgressBar().setValue(this.getJoueurActuel().getPdv());
         this.monInterface.getPAProgressBar().setValue(this.getJoueurActuel().getPa());
-        this.monInterface.getItem1().setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/ration.png")));
-        if(joueurActuel.getIndiceCase()==338){this.monInterface.getItem1().setToolTipText("Il y a "+this.getMaVille().getEntrepot()[0].getQuantite()+" rations dans l'entrepôt.");}
-        this.monInterface.getPosition().setText(this.getJoueurActuel().renvoyerCoordonnees());
+        this.getMonInterface().getFondMini().setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/"+this.getGrille().getTabCase().get(this.getJoueurActuel().getIndiceCase()).getFond()+".jpg")));
+        this.getMonInterface().getPosition().setText(this.getJoueurActuel().renvoyerCoordonnees());
+        if(this.getJoueurActuel().getIndiceCase()==338){this.getMonInterface().getButCarte().setText(" | VILLE | ");this.getMonInterface().getExterieur().setVisible(false);this.getMonInterface().getInterieur().setVisible(true);}else{if(!this.grille.getTabCase().get(this.joueurActuel.getIndiceCase()).getFouillee()){this.getMonInterface().getButCarte().setText(" |          | ");}else{this.getMonInterface().getButCarte().setText("|"+this.getGrille().getTabCase().get(this.getJoueurActuel().getIndiceCase()).itemCarte()+"|");}this.getMonInterface().getExterieur().setVisible(true);this.getMonInterface().getInterieur().setVisible(false);}
+        this.monInterface.accederObjetCase(0);
+        
+        this.monInterface.setCptCase(0);
         Outils.affichage(Journal.afficherPosition(this, this.getJoueurActuel()), 1, monInterface);
-        this.monInterface.getButCarte().setText(this.grille.getTabCase().get(this.getJoueurActuel().getIndiceCase()).itemCarte());
+        //this.monInterface.getButCarte().setText(this.grille.getTabCase().get(this.getJoueurActuel().getIndiceCase()).itemCarte());
         this.monInterface.getDefense().setText(""+0);
         
             this.getMonInterface().getNbClou().setText("0");
@@ -62,6 +65,8 @@ public class Jeu {
             this.getMonInterface().getNbPlanche().setText("0");
             this.getMonInterface().getNbRation().setText("0");
         if(!this.getJoueurActuel().getSac().isEmpty()){
+            this.monInterface.accederObjetSac(0);
+            this.monInterface.setCptSac(0);
             String[] str={Journal.consulterDescription(51),Journal.consulterDescription(52),Journal.consulterDescription(53),Journal.consulterDescription(54),Journal.consulterDescription(55)};
             for(int index=0;index<joueurActuel.getSac().size();index++){
                 for(int j=0;j<str.length;j++){
