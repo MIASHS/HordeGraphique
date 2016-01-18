@@ -46,7 +46,7 @@ public class Joueur {
     private ArrayList<Item> sac = new ArrayList<>(10);
     private ArrayList carteJoueur = new ArrayList<>();
    
-    //Getter Setter de la class
+    //Debut Getter Setter de la class
     public int getOrdonneeActuelle() {
         return ordonneeActuelle;
     }
@@ -67,7 +67,7 @@ public class Joueur {
         this.ordonneeActuelle = ordonneeActuelle;
         this.absysseActuelle = absysseActuelle;
     }
-
+    // Fin Getter et Setter
     // Constructeur de la class
     public Joueur(Jeu partie, String nom) {
         this.nom = nom;
@@ -138,6 +138,7 @@ public class Joueur {
     /**
      * @param pa the pa to set
      */
+    // getter et setter
     public void setPa(int pa,Jeu partie) {
         if(pa<10){
             this.pa = pa;
@@ -212,7 +213,7 @@ public class Joueur {
         dejaMange=false;
         if(dependant){nbJourDependant+=1;if(nbJourDependant>=3){if(setPdv(pdv-5,partie)){if(partie.dernierJoueur(this,k,false)){partie.finDePartie();}}}}
     }
-
+    //fin getter et setter
     // ---------------DEBUT DES METHODES---------------------
     
     public String renvoyerCoordonnees(){

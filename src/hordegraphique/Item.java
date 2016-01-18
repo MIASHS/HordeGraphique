@@ -10,7 +10,7 @@ package hordegraphique;
  * @author Seb
  */
 public class Item {
-    //Attribut de la classe 
+    //Attribut de la class
     public String getNom() {
         return nom;
     }
@@ -35,7 +35,7 @@ public class Item {
         this.description = description;
     }
     
-
+    // constructeur de la class
     public Item(String nom, int quantite, String description) {
         //Constructeur de la class
         this.nom = nom;
@@ -43,6 +43,8 @@ public class Item {
         this.description = description;
         
     }
+    
+    // constructeur de la class
     public Item(String nom, String description) {
         //Constructeur de la class
         this.nom = nom;

@@ -120,7 +120,7 @@ public class Carte {
     }
     
     public void ajouterItem(int i, int j, int k){
-        // ajout des items sur la cartes
+        // ajout des items sur la cartes de manière aléatoire
         Random ra=new Random();
         if(tabItem[i].getQuantite()!=0){
             if(i==2){

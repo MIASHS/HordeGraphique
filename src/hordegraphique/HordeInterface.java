@@ -43,7 +43,8 @@ public class HordeInterface extends javax.swing.JFrame {
     private int copieNbJoueur;
     private int cptCase=0;
     private int cptSac=0;
-
+    
+    // Debut getter et setter
     public JRadioButton getAfficherConstruction() {
         return afficherConstruction;
     }
@@ -840,7 +841,7 @@ public class HordeInterface extends javax.swing.JFrame {
     public void setjTextPane1(JTextPane jTextPane1) {
         this.jTextPane1 = jTextPane1;
     }
-    
+    // Fin des getters et setters
     
     
     
@@ -1815,6 +1816,7 @@ public class HordeInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_itemGaucheMouseClicked
 
     private void continuerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continuerActionPerformed
+        // Fonction pour commencer la partie
         // TODO add your handling code here:
         nomJoueur.setText(partie.getJoueurActuel().getNom());
         tour.setText(""+partie.getTempsPartie().getNumTour());
@@ -1840,6 +1842,7 @@ public class HordeInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_continuerActionPerformed
 
     private void entrerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrerActionPerformed
+        // Fonction du label entrer du premier ecran
         // TODO add your handling code here:
         this.ecranTitre.setVisible(true);
         this.ecranAccueil.setVisible(false);
@@ -1883,6 +1886,7 @@ public class HordeInterface extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
+        // Fonction pour aller vers l'ecran menu 
         //this.jLabel2.setText(Journal.consulterDescription(56));
         this.ecranTitre.setVisible(true);
         this.ecranAccueil.setVisible(false);
@@ -1907,6 +1911,7 @@ public class HordeInterface extends javax.swing.JFrame {
 
     private void quitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitterActionPerformed
         // TODO add your handling code here:
+        // Fonction pour quitter
         //JOptionPane.showInputDialog(JOptionPane.showConfirmDialog(rootPane, "Etes vous sur de vouloir quitter ?"));
         if(JOptionPane.showConfirmDialog(rootPane, "Etes vous sur de vouloir quitter ?")==0){
             Menu.quitter();
@@ -1915,7 +1920,7 @@ public class HordeInterface extends javax.swing.JFrame {
 
     private void demarrerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_demarrerActionPerformed
         // TODO add your handling code here:
-        
+        // Fonction pour démarrer la partie
         if(!partie.getPartie()){
             menu.demarrer(partie, this);
         }else{
@@ -1931,10 +1936,12 @@ public class HordeInterface extends javax.swing.JFrame {
 
     private void finirTourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finirTourActionPerformed
         // TODO add your handling code here:
+        // Fonction pour finir le tour
         menu.finirTour();
     }//GEN-LAST:event_finirTourActionPerformed
 
     private void itemGauche1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemGauche1MouseClicked
+       // fonction de switch d'item gauche
         // TODO add your handling code here:
         cptCase-=1;
         if(cptCase<0){
@@ -1945,6 +1952,7 @@ public class HordeInterface extends javax.swing.JFrame {
 
     private void itemDroit1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemDroit1MouseClicked
         // TODO add your handling code here:
+        // fonction de switch d'item droit
         cptCase+=1;
         if(cptCase>4){
         cptCase=0;
@@ -1978,35 +1986,42 @@ public class HordeInterface extends javax.swing.JFrame {
 
     private void prendreObjetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prendreObjetActionPerformed
         // TODO add your handling code here:
+        //Fonction pour prendre un objet
         demarrerViderSac();
     }//GEN-LAST:event_prendreObjetActionPerformed
 
     private void butDroitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butDroitMouseClicked
         // TODO add your handling code here:
+        // déplacement vers la droite
         menu.seDeplacer('D');
     }//GEN-LAST:event_butDroitMouseClicked
 
     private void butHautMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butHautMouseClicked
         // TODO add your handling code here:
+        //Déplacement vers le haut
         menu.seDeplacer('Z');
     }//GEN-LAST:event_butHautMouseClicked
 
     private void butGaucheMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butGaucheMouseClicked
         // TODO add your handling code here:
+        //déplacement vers la gauche
         menu.seDeplacer('Q');
     }//GEN-LAST:event_butGaucheMouseClicked
 
     private void butBasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_butBasMouseClicked
         // TODO add your handling code here:
+        // Déplacement vers le bas
         menu.seDeplacer('S');
     }//GEN-LAST:event_butBasMouseClicked
 
     private void afficherConstructionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afficherConstructionActionPerformed
+       // afficher les construction
         Outils.affichage(partie.getMaVille().afficherConstruction(), 1, this);               // TODO add your handling code here:
     }//GEN-LAST:event_afficherConstructionActionPerformed
 
     private void fouillerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fouillerMouseClicked
         // TODO add your handling code here:
+        // fonction pour fouiller la case
         if(!partie.getGrille().getTabCase().get(partie.getJoueurActuel().getIndiceCase()).getFouillee()){
         menu.fouillerCase(JOptionPane.showConfirmDialog(null,Journal.consulterDescription(70))==0);
         Outils.affichage(partie.getGrille().getTabCase().get(partie.getJoueurActuel().getIndiceCase()).afficherItems(), 1, this);
@@ -2065,6 +2080,7 @@ public class HordeInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_construireActionPerformed
     
     public void accederObjetCase(int i){
+        // accéder à objet de la case
         if(partie.getJoueurActuel().getIndiceCase()==338){
         switch(i){
             case 0: this.item1.setIcon(new ImageIcon(getClass().getResource("/hordegraphique/images/ration.png")));
@@ -2110,6 +2126,7 @@ public class HordeInterface extends javax.swing.JFrame {
     }
     
     public void accederObjetSac(int i){
+        // permet de permuter l'objet à choisir
         int k=0,j=-1;boolean trouve=false;
         if(partie.getJoueurActuel().getIndiceCase()==338){
         
@@ -2228,6 +2245,7 @@ public class HordeInterface extends javax.swing.JFrame {
     }
     
     public void demarrerViderSac(){
+        // fonction pour vider le sac
     int k=0,j=-1;boolean trouve=false;
         switch(cptSac){
             case 0: System.out.println("Je suis ici Ration "+cptCase+" "+partie.getJoueurActuel().getSac().size());
@@ -2298,6 +2316,7 @@ public class HordeInterface extends javax.swing.JFrame {
     }
     
     public void demarrerPrendreObjet(){
+        // méthode pour prendre un objet
         if(partie.getJoueurActuel().getIndiceCase()==338){
             if(cptCase==0||cptCase==3){
                 if(cptCase==0){

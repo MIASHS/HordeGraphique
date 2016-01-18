@@ -38,7 +38,7 @@ public class Case {
         this.items.add(1,new Item(Journal.consulterDescription(55),0,Journal.consulterDescription(3)));
         this.items.add(2,new Item(Journal.consulterDescription(53),0,Journal.consulterDescription(4)));
     }
-
+    // getter et setter de la class
     public char getFond() {
         return fond;
     }
@@ -62,6 +62,7 @@ public class Case {
     }
     
     public String itemCarte(){
+        //retourne une chaine de caractère
         return "P"+this.items.get(0).getQuantite()+"M"+this.items.get(1).getQuantite()+"B"+this.items.get(2).getQuantite();
     }
     //Getter et Setter
